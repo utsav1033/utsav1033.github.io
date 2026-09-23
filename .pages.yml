@@ -1,0 +1,33 @@
+media:
+  input: images
+  output: /images
+content:
+  - name: posts
+    label: Blog posts
+    type: collection
+    path: posts
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, date]
+      sort: [date]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: description
+        label: One-line summary
+        type: string
+      - name: draft
+        label: Draft (hide from blog)
+        type: boolean
+      - name: body
+        label: Post
+        type: rich-text
