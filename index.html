@@ -101,6 +101,10 @@ h3 a:hover{color:var(--acc)}
 dl{display:grid;grid-template-columns:150px 1fr;gap:10px 24px;margin:0}
 dt{font-family:"Pixelify Sans","Courier New",monospace;color:var(--acc);font-size:17px;padding-top:2px}
 dd{margin:0}
+.tools{gap:18px 24px;align-items:center}
+.tools dt{padding-top:0}
+.tools dd{display:flex;flex-wrap:wrap;gap:10px}
+.tools img{display:block;height:28px;width:auto;box-shadow:3px 3px 0 var(--k)}
 .hello p{font-size:21px}
 .hello .links{font-size:22px}
 
@@ -165,10 +169,10 @@ footer{color:var(--dim);font-size:15px;padding:18px 32px 40px;max-width:1040px;m
 
 .hero-art{
   display:block;
-  width:300px;
+  width:420px;
   height:auto;
-  max-width:36vw;
-  flex:0 0 300px;
+  max-width:42vw;
+  flex:0 0 420px;
   aspect-ratio:499/455;
   object-fit:cover;
   object-position:top;
@@ -192,36 +196,30 @@ footer{color:var(--dim);font-size:15px;padding:18px 32px 40px;max-width:1040px;m
 .hello-row{
   display:grid;
   grid-template-columns:minmax(0,1fr) auto;
-  gap:24px;
+  gap:0;
   align-items:end;
   margin-top:28px;
-  padding:24px 36px 0;
-  background:linear-gradient(to top,var(--k) 0 12px,transparent 12px),#111c4b;
+  padding:0 28px 0 0;
+  background:#111c4b;
   box-shadow:0 0 0 4px var(--k),10px 10px 0 4px var(--k);
 }
 
 .fighter-slot{
-  align-self:end;
-  display:flex;
-  justify-content:flex-end;
-  align-items:flex-end;
+  align-self:stretch;
   min-width:0;
-  overflow:visible;
 }
 
 .fighter{
   display:block;
-  width:400px;
+  width:100%;
   height:auto;
-  max-width:none;
   image-rendering:pixelated;
-  margin:0 0 4px;
 }
 
 #cbox{
   justify-self:end;
   align-self:end;
-  margin:0 0 48px 0;
+  margin:0 0 76px 0;
   width:390px;
   max-width:390px;
   padding:18px 24px 20px;
@@ -237,7 +235,7 @@ footer{color:var(--dim);font-size:15px;padding:18px 32px 40px;max-width:1040px;m
   }
 
   .hero-art{
-    width:min(300px,100%);
+    width:100%;
     max-width:100%;
     height:auto;
     flex:0 0 auto;
@@ -256,26 +254,17 @@ footer{color:var(--dim);font-size:15px;padding:18px 32px 40px;max-width:1040px;m
   .hello-row{
     grid-template-columns:1fr;
     gap:0;
-    padding:20px 20px 0;
+    padding:0;
   }
 
-  .fighter-slot{
-    justify-content:flex-start;
-    width:100%;
-    overflow:visible;
-  }
-
-  .fighter{
-    width:min(400px,100%);
-    max-width:100%;
-    height:auto;
-  }
+  .fighter{width:100%}
 
   #cbox{
     justify-self:start;
     width:100%;
     max-width:100%;
-    margin:0 0 20px 0;
+    margin:20px 20px 0;
+    width:auto;
     transform:none;
     order:-1;
   }
@@ -423,13 +412,13 @@ footer{color:var(--dim);font-size:15px;padding:18px 32px 40px;max-width:1040px;m
 
   <section aria-labelledby="tools" style="--acc:var(--lilac)">
     <h2 id="tools">Toolbox</h2>
-    <dl>
-      <dt>Inference</dt><dd>vLLM, llama.cpp, MLX, speculative decoding, prompt caching, LoRA, Pi, OpenClaw</dd>
-      <dt>ML</dt><dd>PyTorch, TensorFlow, scikit-learn, XGBoost, NumPy, OCR and PDF parsing</dd>
-      <dt>Languages</dt><dd>Python, Swift, TypeScript, Java, C++, SQL</dd>
-      <dt>Backend</dt><dd>FastAPI, Spring Boot, Next.js, Angular, microservices</dd>
-      <dt>Data</dt><dd>Postgres, SQLite, MySQL, Redis</dd>
-      <dt>Infra</dt><dd>Linux, Docker, Nginx, AWS, Azure DevOps, GitHub Actions</dd>
+    <dl class="tools">
+      <dt>Inference</dt><dd><img src="https://img.shields.io/badge/vLLM-30A2FF?style=for-the-badge&amp;logo=vllm&amp;logoColor=white" alt="vLLM" height="28" loading="lazy"><img src="https://img.shields.io/badge/llama.cpp-1F2A44?style=for-the-badge" alt="llama.cpp" height="28" loading="lazy"><img src="https://img.shields.io/badge/MLX-000000?style=for-the-badge&amp;logo=apple&amp;logoColor=white" alt="MLX" height="28" loading="lazy"><img src="https://img.shields.io/badge/Speculative%20decoding-34489a?style=for-the-badge" alt="Speculative decoding" height="28" loading="lazy"><img src="https://img.shields.io/badge/Prompt%20caching-34489a?style=for-the-badge" alt="Prompt caching" height="28" loading="lazy"><img src="https://img.shields.io/badge/LoRA-34489a?style=for-the-badge" alt="LoRA" height="28" loading="lazy"><img src="https://img.shields.io/badge/Pi-34489a?style=for-the-badge" alt="Pi" height="28" loading="lazy"><img src="https://img.shields.io/badge/OpenClaw-34489a?style=for-the-badge" alt="OpenClaw" height="28" loading="lazy"></dd>
+      <dt>ML</dt><dd><img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&amp;logo=pytorch&amp;logoColor=white" alt="PyTorch" height="28" loading="lazy"><img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&amp;logo=tensorflow&amp;logoColor=white" alt="TensorFlow" height="28" loading="lazy"><img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&amp;logo=scikitlearn&amp;logoColor=white" alt="scikit-learn" height="28" loading="lazy"><img src="https://img.shields.io/badge/XGBoost-1A8BD0?style=for-the-badge" alt="XGBoost" height="28" loading="lazy"><img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&amp;logo=numpy&amp;logoColor=white" alt="NumPy" height="28" loading="lazy"><img src="https://img.shields.io/badge/OCR%20%2B%20PDF%20parsing-34489a?style=for-the-badge" alt="OCR + PDF parsing" height="28" loading="lazy"></dd>
+      <dt>Languages</dt><dd><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&amp;logo=python&amp;logoColor=white" alt="Python" height="28" loading="lazy"><img src="https://img.shields.io/badge/Swift-F05138?style=for-the-badge&amp;logo=swift&amp;logoColor=white" alt="Swift" height="28" loading="lazy"><img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&amp;logo=typescript&amp;logoColor=white" alt="TypeScript" height="28" loading="lazy"><img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&amp;logo=openjdk&amp;logoColor=white" alt="Java" height="28" loading="lazy"><img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&amp;logo=cplusplus&amp;logoColor=white" alt="C++" height="28" loading="lazy"><img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge" alt="SQL" height="28" loading="lazy"></dd>
+      <dt>Backend</dt><dd><img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&amp;logo=fastapi&amp;logoColor=white" alt="FastAPI" height="28" loading="lazy"><img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&amp;logo=springboot&amp;logoColor=white" alt="Spring Boot" height="28" loading="lazy"><img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&amp;logo=nextdotjs&amp;logoColor=white" alt="Next.js" height="28" loading="lazy"><img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&amp;logo=angular&amp;logoColor=white" alt="Angular" height="28" loading="lazy"><img src="https://img.shields.io/badge/Microservices-34489a?style=for-the-badge" alt="Microservices" height="28" loading="lazy"></dd>
+      <dt>Data</dt><dd><img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&amp;logo=postgresql&amp;logoColor=white" alt="PostgreSQL" height="28" loading="lazy"><img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&amp;logo=sqlite&amp;logoColor=white" alt="SQLite" height="28" loading="lazy"><img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&amp;logo=mysql&amp;logoColor=white" alt="MySQL" height="28" loading="lazy"><img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&amp;logo=redis&amp;logoColor=white" alt="Redis" height="28" loading="lazy"></dd>
+      <dt>Infra</dt><dd><img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&amp;logo=linux&amp;logoColor=black" alt="Linux" height="28" loading="lazy"><img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&amp;logo=docker&amp;logoColor=white" alt="Docker" height="28" loading="lazy"><img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&amp;logo=nginx&amp;logoColor=white" alt="Nginx" height="28" loading="lazy"><img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge" alt="AWS" height="28" loading="lazy"><img src="https://img.shields.io/badge/Azure%20DevOps-0078D7?style=for-the-badge" alt="Azure DevOps" height="28" loading="lazy"><img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=for-the-badge&amp;logo=githubactions&amp;logoColor=white" alt="GitHub Actions" height="28" loading="lazy"></dd>
     </dl>
   </section>
 
