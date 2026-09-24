@@ -141,14 +141,14 @@ footer{color:var(--dim);font-size:15px;padding:18px 32px 40px;max-width:1040px;m
 /* FINAL GIF LAYOUT */
 .top-banner{
   display:block;
-  width:100vw;
+  width:100%;
   height:auto;
-  max-height:none;
-  object-fit:fill;
-  object-position:center;
-  image-rendering:auto;
+  aspect-ratio:1032/510;
+  max-height:min(72vh,760px);
+  object-fit:cover;
+  object-position:50% 40%;
+  image-rendering:pixelated;
   border-bottom:4px solid var(--k);
-  margin-left:calc(50% - 50vw);
 }
 
 .hero{
@@ -165,13 +165,15 @@ footer{color:var(--dim);font-size:15px;padding:18px 32px 40px;max-width:1040px;m
 
 .hero-art{
   display:block;
-  width:420px;
+  width:300px;
   height:auto;
-  max-width:42vw;
-  flex:0 0 420px;
-  object-fit:contain;
-  object-position:center;
-  image-rendering:auto;
+  max-width:36vw;
+  flex:0 0 300px;
+  aspect-ratio:499/455;
+  object-fit:cover;
+  object-position:top;
+  border:4px solid var(--k);
+  box-shadow:8px 8px 0 var(--k);
 }
 
 .role-head h3{
@@ -190,10 +192,12 @@ footer{color:var(--dim);font-size:15px;padding:18px 32px 40px;max-width:1040px;m
 .hello-row{
   display:grid;
   grid-template-columns:minmax(0,1fr) auto;
-  gap:0;
+  gap:24px;
   align-items:end;
-  min-height:300px;
   margin-top:28px;
+  padding:24px 36px 0;
+  background:linear-gradient(to top,var(--k) 0 12px,transparent 12px),#111c4b;
+  box-shadow:0 0 0 4px var(--k),10px 10px 0 4px var(--k);
 }
 
 .fighter-slot{
@@ -207,19 +211,17 @@ footer{color:var(--dim);font-size:15px;padding:18px 32px 40px;max-width:1040px;m
 
 .fighter{
   display:block;
-  width:420px;
+  width:400px;
   height:auto;
   max-width:none;
-  object-fit:contain;
-  object-position:right bottom;
-  image-rendering:auto;
-  margin:0;
+  image-rendering:pixelated;
+  margin:0 0 4px;
 }
 
 #cbox{
   justify-self:end;
   align-self:end;
-  margin:0 8px 36px 0;
+  margin:0 0 48px 0;
   width:390px;
   max-width:390px;
   padding:18px 24px 20px;
@@ -227,12 +229,6 @@ footer{color:var(--dim);font-size:15px;padding:18px 32px 40px;max-width:1040px;m
 }
 
 @media (max-width:760px){
-  .top-banner{
-    width:100vw;
-    max-height:none;
-    height:auto;
-  }
-
   .hero{
     flex-direction:column;
     align-items:flex-start;
@@ -241,7 +237,7 @@ footer{color:var(--dim);font-size:15px;padding:18px 32px 40px;max-width:1040px;m
   }
 
   .hero-art{
-    width:min(420px,100%);
+    width:min(300px,100%);
     max-width:100%;
     height:auto;
     flex:0 0 auto;
@@ -260,7 +256,7 @@ footer{color:var(--dim);font-size:15px;padding:18px 32px 40px;max-width:1040px;m
   .hello-row{
     grid-template-columns:1fr;
     gap:0;
-    min-height:0;
+    padding:20px 20px 0;
   }
 
   .fighter-slot{
@@ -270,7 +266,7 @@ footer{color:var(--dim);font-size:15px;padding:18px 32px 40px;max-width:1040px;m
   }
 
   .fighter{
-    width:min(420px,100%);
+    width:min(400px,100%);
     max-width:100%;
     height:auto;
   }
@@ -279,8 +275,9 @@ footer{color:var(--dim);font-size:15px;padding:18px 32px 40px;max-width:1040px;m
     justify-self:start;
     width:100%;
     max-width:100%;
-    margin:0 0 8px 0;
+    margin:0 0 20px 0;
     transform:none;
+    order:-1;
   }
 }
 </style>
