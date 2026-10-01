@@ -42,7 +42,8 @@ svg.sprite{display:block;image-rendering:pixelated;max-width:100%;height:auto}
 #sky{border-bottom:4px solid var(--k)}
 .hero{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:end;padding:12px 0 48px}
 .hero-art{width:220px;align-self:center}
-h1{font-size:clamp(44px,8vw,68px);line-height:.95;margin:0 0 20px;color:var(--ink);text-shadow:4px 4px 0 var(--k)}
+.hero>div{container-type:inline-size;min-width:0;width:100%}
+h1{font-size:clamp(44px,8vw,68px);font-size:min(68px,100cqi/12.2);white-space:nowrap;line-height:.95;margin:0 0 20px;color:var(--ink);text-shadow:4px 4px 0 var(--k)}
 .caret{display:inline-block;width:.42em;height:.8em;background:var(--coral);margin-left:.12em;vertical-align:-.04em;animation:blink 1.1s steps(1) infinite}
 .lede{font-size:22px;line-height:1.55;max-width:40em;margin:0 0 16px}
 .sub{color:var(--dim);margin:0 0 22px}
@@ -278,8 +279,8 @@ footer{color:var(--dim);font-size:15px;padding:18px 32px 40px;max-width:1040px;m
   <header class="hero">
     <img src="hero.gif" alt="" class="hero-art">
     <div>
-      <h1>hi,&nbsp;i<br>am<br>utsav<br>khairnar<span class="caret" aria-hidden="true"></span></h1>
-      <p class="lede">I build agents that operate real software, clicking through Chrome, Photoshop and Blender on someone's behalf, and the evals and inference work that make them fast, cheap and honest about whether they worked.</p>
+      <h1>hi<br>i am utsav khairnar<span class="caret" aria-hidden="true"></span></h1>
+      <p class="lede">I like building things around harnesses, evals and kernels, and tools that make my life easier.</p>
       <p class="sub">AI engineer intern at Alma (Memfold AI) in Bangalore. Most curious about AI security and inference.</p>
       <nav class="links" aria-label="Contact">
         <a href="mailto:utsavkhairnar14@gmail.com">Email</a>
