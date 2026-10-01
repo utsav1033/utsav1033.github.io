@@ -278,7 +278,7 @@ footer{color:var(--dim);font-size:15px;padding:18px 32px 40px;max-width:1040px;m
   <header class="hero">
     <img src="hero.gif" alt="" class="hero-art">
     <div>
-      <h1>hi,<br>i<br>am<br>utsav<br>khairnar<span class="caret" aria-hidden="true"></span></h1>
+      <h1>hi,&nbsp;i<br>am<br>utsav<br>khairnar<span class="caret" aria-hidden="true"></span></h1>
       <p class="lede">I build agents that operate real software, clicking through Chrome, Photoshop and Blender on someone's behalf, and the evals and inference work that make them fast, cheap and honest about whether they worked.</p>
       <p class="sub">AI engineer intern at Alma (Memfold AI) in Bangalore. Most curious about AI security and inference.</p>
       <nav class="links" aria-label="Contact">
@@ -361,12 +361,20 @@ footer{color:var(--dim);font-size:15px;padding:18px 32px 40px;max-width:1040px;m
 
   <section aria-labelledby="built" style="--acc:var(--mint)">
     <h2 id="built">Things I've built</h2>
-    <article class="proj" style="--acc:var(--yellow)">
-      <div data-sprite="cursor"></div>
+    <article class="proj" style="--acc:var(--coral)">
+      <div data-sprite="chef"></div>
       <div>
-        <h3><a href="https://github.com/utsav1033">Smart Cursor</a></h3>
-        <p>Hold a key, point at any word on your screen, and a local model explains it in the context of the paragraph around it. Every lookup lands in a SQLite glossary you build just by reading.</p>
-        <p class="how">Qwen3 4B, 4-bit on MLX, running on an M4. The paragraph is prefetched into the prompt cache as you scroll, so only the term is new at hover time, and a 0.6B draft model does speculative decoding. The target is first token under 150 ms at p95.</p>
+        <h3><a href="https://github.com/utsav1033/kernel-sahab">carmen</a></h3>
+        <p>A self-correcting harness that gets LLMs to write fast GPU kernels, and proves they're right. The model (Carmy) writes the kernel but is never trusted to grade it; a plain, deterministic judge runs it on the real GPU and says where it's wrong, not just that it's wrong.</p>
+        <p class="how">Three drafts per round in parallel, ranked by a judge that checks a float64 answer key, invariants, tail lengths, NaN/inf, races and fresh fuzz every round, plus a hidden draw the model never sees. Memory keeps only lessons the judge proved. Apple Metal today; a new chip is one adapter file.</p>
+        <div class="stats cols-2">
+          <div class="stat" style="--acc:var(--coral)">
+            <p class="big">1.79×</p><p class="what">faster than MLX on masked softmax, verified on an M4</p>
+          </div>
+          <div class="stat" style="--acc:var(--yellow)">
+            <p class="big">12/12</p><p class="what">seeded broken kernels killed by the judge</p>
+          </div>
+        </div>
       </div>
     </article>
     <article class="proj" style="--acc:var(--mint)">
@@ -464,7 +472,7 @@ function svg(rows){var h=rows.length,w=0,o='';rows.forEach(function(r){if(r.leng
   rows.forEach(function(r,y){for(var x=0;x<r.length;x++){var c=r[x];if(c!=='.')o+='<rect x="'+x+'" y="'+y+'" width="1.02" height="1.02" class="p-'+c+'"/>';}});
   return '<svg class="sprite" viewBox="0 0 '+w+' '+h+'" width="'+(w*8)+'" height="'+(h*8)+'" shape-rendering="crispEdges" aria-hidden="true">'+o+'</svg>';}
 var ICONS={
-  cursor:['k.........','kk........','kyk.......','kyyk......','kyyyk.....','kyyyyk....','kyyyyyk...','kyyyyyyk..','kyyyykkkk.','kykyyk....','kk.kyyk...','k...kyyk..','.....kk...'],
+  chef:['...kkkkkk...','.kkwwwwwwkk.','kwwwkwwkwwwk','kwwwwwwwwwwk','kwwwwwwwwwwk','.kkwwwwwwkk.','...kwwwwk...','...kwwwwk...','...krrrrk...','...kkkkkk...'],
   check:['...kkkk...','kkkyyyykkk','kwwwwwwwwk','kwwwwwwcwk','kwwwwwccwk','kwcwwccwwk','kwccccwwwk','kwwccwwwwk','kwwwwwwwwk','kwmmmmmmwk','kwwwwwwwwk','kkkkkkkkkk'],
   flow:['....llll....','....llll....','.....mm.....','.....mm.....','..mmmmmmmm..','..mm....mm..','..mm....mm..','rrrr...y.y.y','rrrr........','rrrr...y...y','rrrr........','.......y.y.y'],
   ka:['....oo....','....oo....','....oo....','....oo....','oooooooooo','oooooooooo','....oo....','....oo....','....oo....','....oo....']};
