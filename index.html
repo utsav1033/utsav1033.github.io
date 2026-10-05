@@ -365,15 +365,21 @@ footer{color:var(--dim);font-size:15px;padding:18px 32px 40px;max-width:1040px;m
     <article class="proj" style="--acc:var(--coral)">
       <div data-sprite="chef"></div>
       <div>
-        <h3><a href="https://github.com/utsav1033/kernel-sahab">carmen</a></h3>
-        <p>A self-correcting harness that gets LLMs to write fast GPU kernels, and proves they're right. The model (Carmy) writes the kernel but is never trusted to grade it; a plain, deterministic judge runs it on the real GPU and says where it's wrong, not just that it's wrong.</p>
-        <p class="how">Three drafts per round in parallel, ranked by a judge that checks a float64 answer key, invariants, tail lengths, NaN/inf, races and fresh fuzz every round, plus a hidden draw the model never sees. Memory keeps only lessons the judge proved. Apple Metal today; a new chip is one adapter file.</p>
+        <h3><a href="https://github.com/utsav1033/carmen">carmen</a></h3>
+        <p>An AI writes GPU kernels for Apple Silicon, a judge it can't fool decides what's real, and the winners go into a real model. I built it to learn how kernels work, and because most "AI made it 3× faster" claims fall apart on inputs the model never saw.</p>
+        <p class="how">Its kernels replaced 8 MLX kernels with 2 in every layer of Qwen 2.5 0.5B, and the model writes 3% faster with the same output. Small, but proven. Getting there meant fixing carmen itself: once the judge said 1.15× and the model said 18% slower, so I rebuilt how it measures until the two agreed. On the way it caught two of my own fake wins.</p>
         <div class="stats cols-2">
           <div class="stat" style="--acc:var(--coral)">
-            <p class="big">1.79×</p><p class="what">faster than MLX on masked softmax, verified on an M4</p>
+            <p class="big">1.03×</p><p class="what">faster decode on Qwen 2.5 0.5B, identical output, beyond noise</p>
           </div>
           <div class="stat" style="--acc:var(--yellow)">
-            <p class="big">12/12</p><p class="what">seeded broken kernels killed by the judge</p>
+            <p class="big">75/75</p><p class="what">planted bugs caught; a standard one-shape check let 35 through</p>
+          </div>
+          <div class="stat" style="--acc:var(--mint)">
+            <p class="big">1.82×</p><p class="what">faster than MLX on a fused kernel, 1.38× even against mx.compile</p>
+          </div>
+          <div class="stat" style="--acc:var(--lilac)">
+            <p class="big">8 → 2</p><p class="what">kernels per layer, written by the AI, proven correct by the judge</p>
           </div>
         </div>
       </div>
