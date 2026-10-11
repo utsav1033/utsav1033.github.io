@@ -1,8 +1,13 @@
+{% comment %} A job: heading, lead, then its items on the left and their figures stacked on the right. {% endcomment %}
 {% assign e = include.entry %}
+{% assign figs = e.items | where_exp: "i", "i.plate" %}
 <article class="entry">
-  <div class="narrow">
-    <p class="entry-head"><span class="org">{% if e.url %}<a href="{{ e.url }}">{{ e.org }}</a>{% else %}{{ e.org }}{% endif %}</span><span class="when">{{ e.when }}</span></p>
-    {% if e.lead %}<div class="lead">{{ e.lead | markdownify }}</div>{% endif %}
+  <h3 class="entry-head"><span class="org">{% if e.url %}<a href="{{ e.url }}">{{ e.org }}</a>{% else %}{{ e.org }}{% endif %}</span><span class="when">{{ e.when }}</span></h3>
+  <div class="entry-body{% if figs.size > 0 %} with-figs{% endif %}">
+    <div class="items">
+      {% if e.lead %}<div class="lead">{{ e.lead | markdownify }}</div>{% endif %}
+      {% for it in e.items %}{% include item.html item=it %}{% endfor %}
+    </div>
+    {% if figs.size > 0 %}<div class="figs">{% for it in figs %}{% include figure.html item=it %}{% endfor %}</div>{% endif %}
   </div>
-  {% for it in e.items %}{% include item.html item=it %}{% endfor %}
 </article>

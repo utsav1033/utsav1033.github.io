@@ -26,8 +26,8 @@
         dropped, and every send or delete is checked first. **Fastest task 27 s → 19 s.**
       plate: sync
       fig: 2
-      title: Two models, one screen
-      caption: The fast model acts at once; the sync layer skips steps already done, drops a stale plan, and checks the send before it runs.
+      title: Fast hands, slow plan
+      caption: The fast model acts at once; steps it already did are skipped, and every send is checked first.
     - name: Runs that explain themselves
       text: >-
         A failed run used to leave a warning on one tester’s Mac and nothing else. Now every

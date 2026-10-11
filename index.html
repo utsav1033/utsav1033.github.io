@@ -11,7 +11,7 @@ layout: default
 
 <section>
 {% include section-title.html id="projects" title="Projects" %}
-{% for e in site.data.projects %}{% include entry.html entry=e %}{% endfor %}
+<div class="projects">{% for e in site.data.projects %}{% include project.html entry=e %}{% endfor %}</div>
 </section>
 
 <section>

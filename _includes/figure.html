@@ -1,0 +1,6 @@
+{% assign it = include.item %}
+<figure id="fig-{{ it.fig }}">
+  <p class="fig-title"><span class="n">Fig. {{ it.fig }}</span>{{ it.title }}</p>
+  {% include plates/{{ it.plate }}.svg %}
+  <figcaption>{{ it.caption }}</figcaption>
+</figure>

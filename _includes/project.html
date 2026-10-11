@@ -1,0 +1,9 @@
+{% comment %} A project card: heading, text, then its figure underneath. {% endcomment %}
+{% assign e = include.entry %}
+<article class="project">
+  <h3 class="entry-head"><span class="org"><a href="{{ e.url }}">{{ e.org }}</a></span><span class="when">{{ e.when }}</span></h3>
+  {% for it in e.items %}
+    {{ it.text | markdownify }}
+    {% if it.plate %}{% include figure.html item=it %}{% endif %}
+  {% endfor %}
+</article>
