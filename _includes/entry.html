@@ -1,7 +1,6 @@
 {% comment %}
-A job. Each item is a card: heading, its figure, then its paragraph, two to a row. An item
-with points instead gets a boxed list in the figure's place. An item marked wide takes a
-whole row, heading and paragraph on the left, figure on the right.
+A job. Each item is a card: heading, its figure, then its paragraph, two to a row. A wide
+item takes a whole row: figure on the left; heading, paragraph and a short list on the right.
 {% endcomment %}
 {% assign e = include.entry %}
 <article class="entry">
@@ -11,10 +10,11 @@ whole row, heading and paragraph on the left, figure on the right.
   <div class="cards">
   {% for it in e.items %}
     <div class="card{% if it.wide %} wide{% endif %}">
+      {% if it.wide and it.plate %}{% include figure.html item=it bare=true %}{% endif %}
       <h4>{{ it.name }}</h4>
-      {% if it.plate %}{% include figure.html item=it bare=true %}{% endif %}
-      {% if it.points %}<div class="box"><ul class="ornate">{% for x in it.points %}<li>{{ x }}</li>{% endfor %}</ul></div>{% endif %}
+      {% unless it.wide %}{% if it.plate %}{% include figure.html item=it bare=true %}{% endif %}{% endunless %}
       {% if it.text %}<div class="card-text">{{ it.text | markdownify }}</div>{% endif %}
+      {% if it.points %}<div class="aside">{% if it.aside %}<p class="aside-head">{{ it.aside }}</p>{% endif %}<ul class="ornate">{% for x in it.points %}<li>{{ x }}</li>{% endfor %}</ul></div>{% endif %}
     </div>
   {% endfor %}
   </div>

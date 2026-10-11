@@ -33,7 +33,8 @@
       plate: tracing
       fig: 3
       title: Tracing a failed run
-    - name: Along the way
+      wide: true
+      aside: Along the way
       points:
         - Took ownership of 14 automated workflows.
         - Made the decision layer faster by capping its token usage, with no loss in accuracy.
