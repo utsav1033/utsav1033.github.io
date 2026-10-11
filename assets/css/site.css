@@ -77,8 +77,8 @@ section{margin-top:2.6em}
 .card.wide{grid-column:1/-1;grid-row:auto;grid-template-rows:none;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:2.8em;align-items:start}
 .card.wide figure{grid-column:1;grid-row:1/span 9;margin:0}
 .card.wide>:not(figure){grid-column:2}
-.card .pts{grid-row:span 2;margin:.6em 0 0;line-height:1.5}
-.card .pts li{margin:0 0 1em}
+.card .pts{grid-row:span 2;margin:0;padding-top:12px;line-height:1.5}
+.card .pts li{margin:0 0 1.1em}
 
 /* a paragraph and its figure, set side by side and ruled off */
 .pair{display:grid;grid-template-columns:minmax(0,26em) minmax(0,1fr);column-gap:3.2em;align-items:center;
