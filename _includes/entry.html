@@ -1,6 +1,6 @@
 {% comment %}
 A job. Each item is a card: heading, its figure, then its paragraph, two to a row. An item
-with points gets a list in place of a figure. A wide item takes a whole row, figure left.
+with points is set as a list on a sheet of old paper. A wide item takes a whole row, figure left.
 {% endcomment %}
 {% assign e = include.entry %}
 <article class="entry">
@@ -9,13 +9,20 @@ with points gets a list in place of a figure. A wide item takes a whole row, fig
   {% if e.items %}
   <div class="cards">
   {% for it in e.items %}
+    {% if it.points %}
+    <div class="card paper">
+      {% include paper.svg %}
+      <h4>{{ it.name }}</h4>
+      <ul class="ornate">{% for x in it.points %}<li>{{ x }}</li>{% endfor %}</ul>
+    </div>
+    {% else %}
     <div class="card{% if it.wide %} wide{% endif %}">
       {% if it.wide and it.plate %}{% include figure.html item=it bare=true %}{% endif %}
       <h4>{{ it.name }}</h4>
       {% unless it.wide %}{% if it.plate %}{% include figure.html item=it bare=true %}{% endif %}{% endunless %}
       {% if it.text %}<div class="card-text">{{ it.text | markdownify }}</div>{% endif %}
-      {% if it.points %}<ul class="ornate pts">{% for x in it.points %}<li>{{ x }}</li>{% endfor %}</ul>{% endif %}
     </div>
+    {% endif %}
   {% endfor %}
   </div>
   {% endif %}
