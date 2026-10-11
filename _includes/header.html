@@ -4,4 +4,5 @@
   <p class="city">{{ p.city }}</p>
   <p class="links">{% for l in p.links %}<a href="{{ l.url }}">{{ l.label }}</a>{% endfor %}</p>
   <div class="about">{{ p.about | markdownify }}</div>
+  {% if p.quote %}<blockquote class="epigraph"><p>{{ p.quote.text }}</p><footer>— {{ p.quote.by }}, <cite>{{ p.quote.work }}</cite></footer></blockquote>{% endif %}
 </header>

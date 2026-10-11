@@ -45,6 +45,10 @@ strong{font-weight:700}
 .links{margin:0 0 1.3em}
 .links a{margin-right:1em}
 .intro{max-width:none}
+.epigraph{margin:1.6em 0 0;padding:0 0 0 1.1em;border-left:2px solid var(--red);max-width:36em}
+.epigraph p{font-family:var(--fell);font-size:21px;line-height:1.45;margin:0 0 .35em}
+.epigraph footer{color:var(--muted);font-size:17px;margin:0;text-align:left}
+.epigraph cite{font-style:normal;font-family:var(--fellsc);letter-spacing:.03em}
 .ornament{display:flex;align-items:center;gap:1em;color:var(--red);margin:1.8em 0 0}
 .ornament::before,.ornament::after{content:"";flex:1;border-top:1px solid var(--rule)}
 .ornament span{font-size:19px;line-height:1}
