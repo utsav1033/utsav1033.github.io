@@ -37,7 +37,7 @@
       points:
         - Took ownership of 14 automated workflows.
         - Made the decision layer faster by capping its token usage, with no loss in accuracy.
-        - Shipped the command-line version of Alma.
+        - Shipped the command-line version of the beta.
 
 - org: Reliance Industries
   when: Dec 2025 – Mar 2026
