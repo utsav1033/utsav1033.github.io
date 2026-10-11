@@ -12,8 +12,8 @@
         and step 500**, and going back to an earlier step is a load, not a replay.
       plate: memory
       fig: 1
-      title: Long-horizon memory
-      caption: Every proven change is kept on disk; only the present picture of the app is held in context.
+      title: Ledger and belief state
+      caption: Each verified change is appended to a ledger on disk; context holds only a small belief state, and going back loads it from the ledger.
     - name: One pass to decide
       text: >-
         The planner was a 72,000-character prompt the model reread every turn. I replaced it
@@ -26,8 +26,8 @@
         dropped, and every send or delete is checked first. **Fastest task 27 s → 19 s.**
       plate: sync
       fig: 2
-      title: Two models in sync
-      caption: The fast model acts while the plan is still arriving; the sync layer decides what survives.
+      title: Two models, one screen
+      caption: The fast model acts at once; the sync layer skips steps already done, drops a stale plan, and checks the send before it runs.
     - name: Runs that explain themselves
       text: >-
         A failed run used to leave a warning on one tester’s Mac and nothing else. Now every
@@ -35,8 +35,8 @@
         opens any run, on any machine, at the step that broke.**
       plate: tracing
       fig: 3
-      title: Run tracing
-      caption: Every Mac reports to one place; one command opens any run at the step that broke.
+      title: Tracing a failed run
+      caption: Every Mac reports counts and error words, and what the user said only with consent; one command turns any run into a timeline of where it broke.
     - name: Voice workflows
       text: >-
         Shipped **14 workflows that start from a single spoken word** and carry a task across

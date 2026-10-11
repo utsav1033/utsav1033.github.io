@@ -10,8 +10,8 @@
         one-shape check caught 40.
       plate: carmen
       fig: 4
-      title: The judge
-      caption: The model writes, the judge grades, and only kernels that survive unseen inputs get timed.
+      title: Seven gates, one secret
+      caption: The model writes kernels but never grades them. Failures go back with where and why; the hidden draw is never shown to it.
 
 - org: FlowGap
   url: https://github.com/utsav1033/flowgap
@@ -23,8 +23,8 @@
         missing. In 298 real calls, **49% asked for something the flow couldn’t handle.**
       plate: flowgap
       fig: 5
-      title: Finding the gap
-      caption: What callers wanted, set against what the flow was built for. The leftover is the gap.
+      title: Where calls leak
+      caption: Intents clustered from 298 calls, matched to the flow’s nodes. The cluster with no match becomes a drafted node.
 
 - org: Agent-Mark
   url: https://github.com/utsav1033/agent-mark

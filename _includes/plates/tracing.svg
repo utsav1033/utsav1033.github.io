@@ -1,28 +1,103 @@
-<svg class="plate-tracing" viewBox="-46 0 586 172" role="img" aria-label="Records from three Macs converge on the diagnostics store, pass through one command, and show on a screen: steps, model calls, tokens and timings, the reason it stopped, failed at step five.">
-<circle class="hollow" cx="40" cy="40" r="5"/><text x="28" y="44" text-anchor="end">Mac A</text>
-<path class="ray" id="r0" d="M 45 40 L 183 96"/>
-<circle class="hollow" cx="40" cy="96" r="5"/><text x="28" y="100" text-anchor="end">Mac B</text>
-<path class="ray" id="r1" d="M 45 96 L 183 96"/>
-<circle class="hollow" cx="40" cy="152" r="5"/><text x="28" y="156" text-anchor="end">Mac C</text>
-<path class="ray" id="r2" d="M 45 152 L 183 96"/>
-<path class="consent" d="M 45 46 Q 110 30 184 87"/>
-<text class="sm" x="96" y="26">words: only with consent</text>
-<circle class="ring" cx="190" cy="96" r="11"/><circle class="body" cx="190" cy="96" r="3"/>
-<path class="leader" d="M 190 110 V 150"/><text x="190" y="164" text-anchor="middle">diagnostics</text>
-<path class="ray" d="M 201 96 L 294 96"/>
-<ellipse class="lens" cx="300" cy="96" rx="7" ry="44"/>
-<path class="leader" d="M 300 144 V 150"/><text x="300" y="164" text-anchor="middle">one command</text>
-<path class="ray" d="M 307 96 L 430 56"/>
-<path class="ray" d="M 307 96 L 430 76"/>
-<path class="ray" d="M 307 96 L 430 96"/>
-<path class="ray" d="M 307 96 L 430 116"/>
-<path class="screen" d="M 430 40 V 152"/>
-<text x="438" y="60">steps</text>
-<text x="438" y="80">model calls</text>
-<text x="438" y="100">tokens, timings</text>
-<text x="438" y="120">reason it stopped</text>
-<text class="red" x="438" y="140">failed at step v</text>
-<circle class="body photon" style="offset-path:path('M 45 40 L 183 96 L 300 96 L 430 116');animation-delay:0.0s" r="2.6"/>
-<circle class="body photon" style="offset-path:path('M 45 96 L 183 96 L 300 96 L 430 116');animation-delay:1.4s" r="2.6"/>
-<circle class="body photon" style="offset-path:path('M 45 152 L 183 96 L 300 96 L 430 116');animation-delay:2.8s" r="2.6"/>
+<svg class="plate-tracing" viewBox="0 0 540 280" role="img" aria-label="Run records from many Macs leave each machine as counts and fixed error words, with spoken words only by consent, gather in one store, and one command prints a single run as a timeline of model turns and steps, the failed step marked in red.">
+<style>
+.plate-tracing .fr{fill:none;stroke:var(--hair);stroke-width:.8}
+.plate-tracing .st{fill:none;stroke:var(--ink);stroke-width:.9}
+.plate-tracing .wd{fill:none;stroke:var(--ink);stroke-width:.9;stroke-dasharray:1.4 2.6}
+.plate-tracing .stp{fill:none;stroke:var(--ink);stroke-width:2.2}
+.plate-tracing .stp-r{fill:none;stroke:var(--red);stroke-width:2.2}
+.plate-tracing .cap{fill:none;stroke:var(--ink);stroke-width:1}
+.plate-tracing .cap-r{fill:none;stroke:var(--red);stroke-width:1}
+.plate-tracing .wait{fill:var(--card);stroke:var(--ink);stroke-width:.9}
+.plate-tracing .strm{fill:var(--ink)}
+.plate-tracing .ph{stroke:var(--muted);stroke-width:.8;opacity:0;animation:tr-ph 7s linear infinite}
+@keyframes tr-ph{0%{transform:translateX(0);opacity:0}6%{opacity:.9}70%{transform:translateX(348px);opacity:.9}88%{transform:translateX(348px);opacity:.9}100%{transform:translateX(348px);opacity:0}}
+@media (prefers-reduced-motion:reduce){.plate-tracing .ph{animation:none;opacity:0}}
+</style>
+<rect class="bx" x="18" y="17" width="22" height="14"/><path class="cap" d="M 13 33.5 H 45"/>
+<path class="leader" d="M 48 25 H 58"/>
+<path class="bx" d="M 61 18 H 68 L 72 22 V 32 H 61 Z"/><path class="leader" d="M 68 18 V 22 H 72"/>
+<rect class="bx" x="18" y="41" width="22" height="14"/><path class="cap" d="M 13 57.5 H 45"/>
+<path class="leader" d="M 48 49 H 58"/>
+<path class="bx" d="M 61 42 H 68 L 72 46 V 56 H 61 Z"/><path class="leader" d="M 68 42 V 46 H 72"/>
+<rect class="bx" x="18" y="65" width="22" height="14"/><path class="cap" d="M 13 81.5 H 45"/>
+<path class="leader" d="M 48 73 H 58"/>
+<path class="bx" d="M 61 66 H 68 L 72 70 V 80 H 61 Z"/><path class="leader" d="M 68 66 V 70 H 72"/>
+<text class="sm" x="29" y="98" text-anchor="middle">Macs</text>
+<text class="sm" x="70" y="98" text-anchor="middle">day file</text>
+<path class="guide" d="M 118 12 V 86"/>
+<text class="sm" x="118" y="98" text-anchor="middle">uploader</text>
+<path class="st" d="M 76 27 C 140 27, 190 52, 268 52"/>
+<circle class="body" cx="76" cy="27" r="1.6"/>
+<path class="st" d="M 76 55 C 140 55, 190 52, 268 52"/>
+<circle class="body" cx="76" cy="55" r="1.6"/>
+<path class="st" d="M 76 83 C 140 83, 190 52, 268 52"/>
+<circle class="body" cx="76" cy="83" r="1.6"/>
+<text class="sm" x="158" y="84">counts, error words</text>
+<path class="wd" d="M 76 19 H 126"/>
+<text class="sm" x="130" y="23">words, if consented</text>
+<path class="wd" d="M 240 19 H 282 Q 286 19 286 25 V 31"/>
+<circle class="hollow" cx="118" cy="19" r="3"/>
+<path class="bx" d="M 268 36 V 66 A 18 5 0 0 0 304 66 V 36"/><ellipse class="bx" cx="286" cy="36" rx="18" ry="5"/>
+<path class="leader" d="M 268 46 A 18 5 0 0 0 304 46"/>
+<text class="sm" x="286" y="88" text-anchor="middle">store</text>
+<path class="st" d="M 306 52 H 332"/>
+<rect class="bx" x="334" y="41" width="58" height="22"/>
+<text x="341" y="56.5">$ trace</text>
+<text class="sm" x="363" y="88" text-anchor="middle">one command</text>
+<path class="leader" d="M 394 52 C 410 52, 414 20, 434 20"/>
+<text class="sm" x="440" y="24">per shortcut</text>
+<path class="leader" d="M 394 52 C 410 52, 414 48, 434 48"/>
+<text class="sm" x="440" y="52">failed runs</text>
+<path class="st" d="M 394 52 C 410 52, 414 76, 434 76"/>
+<text x="440" y="80">one run</text>
+<path class="st" d="M 462 85 V 104"/><path class="cap" d="M 459 100 L 462 104 L 465 100"/>
+<rect class="fr" x="16" y="104" width="508" height="166"/>
+<text x="28" y="123">run 4f2a <tspan class="sm" dx="4">file expense, 11.6 s</tspan></text>
+<rect class="wait" x="226" y="115" width="9" height="7"/><rect class="strm" x="235" y="115" width="9" height="7"/>
+<text class="sm" x="249" y="123">model call</text>
+<path class="stp" d="M 320 118.5 H 338"/><path class="cap" d="M 320 115 V 122 M 338 115 V 122"/>
+<text class="sm" x="343" y="123">step</text>
+<text x="512" y="123" text-anchor="end"><tspan class="name">Verdict</tspan><tspan class="red" dx="6">step_failed</tspan></text>
+<path class="leader" d="M 16 131 H 524"/>
+<path class="grid" d="M 140 136 V 246"/>
+<path class="tick" d="M 140 249 V 253"/>
+<text class="sm" x="140" y="264" text-anchor="middle">0</text>
+<path class="grid" d="M 200 136 V 246"/>
+<path class="tick" d="M 200 249 V 253"/>
+<text class="sm" x="200" y="264" text-anchor="middle">2</text>
+<path class="grid" d="M 260 136 V 246"/>
+<path class="tick" d="M 260 249 V 253"/>
+<text class="sm" x="260" y="264" text-anchor="middle">4</text>
+<path class="grid" d="M 320 136 V 246"/>
+<path class="tick" d="M 320 249 V 253"/>
+<text class="sm" x="320" y="264" text-anchor="middle">6</text>
+<path class="grid" d="M 380 136 V 246"/>
+<path class="tick" d="M 380 249 V 253"/>
+<text class="sm" x="380" y="264" text-anchor="middle">8</text>
+<path class="grid" d="M 440 136 V 246"/>
+<path class="tick" d="M 440 249 V 253"/>
+<text class="sm" x="440" y="264" text-anchor="middle">10</text>
+<path class="grid" d="M 500 136 V 246"/>
+<path class="tick" d="M 500 249 V 253"/>
+<text class="sm" x="500" y="264" text-anchor="middle">12 s</text>
+<path class="leader" d="M 140 249 H 500"/>
+<text x="128" y="150.5" text-anchor="end">turn 1</text>
+<rect class="wait" x="140.0" y="142" width="24.0" height="8"/>
+<rect class="strm" x="164.0" y="142" width="24.0" height="8"/>
+<text x="128" y="168.5" text-anchor="end">open app</text>
+<path class="stp" d="M 191.0 164 H 212.0"/><path class="cap" d="M 191.0 160 V 168 M 212.0 160 V 168"/>
+<text x="128" y="186.5" text-anchor="end">turn 2</text>
+<rect class="wait" x="215.0" y="178" width="26.999999999999996" height="8"/>
+<rect class="strm" x="242.0" y="178" width="26.999999999999996" height="8"/>
+<text x="128" y="204.5" text-anchor="end">click Send</text>
+<path class="stp" d="M 272.0 200 H 284.0"/><path class="cap" d="M 272.0 196 V 204 M 284.0 196 V 204"/>
+<text x="128" y="222.5" text-anchor="end">turn 3</text>
+<rect class="wait" x="287.0" y="214" width="20.99999999999998" height="8"/>
+<rect class="strm" x="308.0" y="214" width="24.00000000000002" height="8"/>
+<text class="red" x="128" y="240.5" text-anchor="end">upload file</text>
+<path class="stp-r" d="M 335.0 236 H 373.5 M 449.5 236 H 484.0"/>
+<path class="cap-r" d="M 335.0 232 V 240"/>
+<text class="red" x="411.5" y="240.5" text-anchor="middle">timeout</text>
+<path class="xmark" d="M 484.0 232 l 8 8 M 484.0 240 l 8 -8"/>
+<path class="ph" d="M 140 136 V 246"/>
 </svg>

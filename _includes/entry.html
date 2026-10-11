@@ -2,7 +2,7 @@
 <article class="entry">
   <div class="narrow">
     <p class="entry-head"><span class="org">{% if e.url %}<a href="{{ e.url }}">{{ e.org }}</a>{% else %}{{ e.org }}{% endif %}</span><span class="when">{{ e.when }}</span></p>
-    {% if e.lead %}<p class="lead">{{ e.lead }}</p>{% endif %}
+    {% if e.lead %}<div class="lead">{{ e.lead | markdownify }}</div>{% endif %}
   </div>
   {% for it in e.items %}{% include item.html item=it %}{% endfor %}
 </article>
