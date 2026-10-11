@@ -17,7 +17,7 @@
       plate: memory
       fig: 1
       title: Long-horizon memory
-    - name: A symphony of smart (but slow) and dumb (but fast) agents
+    - name: Symphony of smart (slow) and dumb (fast) agents
       text: >-
         The smart model takes seconds to think. A small, fast model starts acting the moment you
         ask, and the smart one takes over from the first step it hasn’t done. **The fastest task
