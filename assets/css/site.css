@@ -70,7 +70,7 @@ section{margin-top:2.6em}
 .card h4{font-family:var(--fell);font-weight:400;font-size:25px;margin:0 0 .45em;line-height:1.2}
 .card figure{margin:0 0 .8em;display:flex;flex-direction:column}
 .card figure svg{margin:auto 0}
-.card .box{margin:0 0 .8em;border:1px solid var(--hair);padding:20px 24px;display:flex;align-items:center}
+.card .box{grid-row:span 2;align-self:start;margin:0;border:1px solid var(--hair);padding:18px 22px}
 .card .box ul{margin:0;position:relative}
 .card .box li+li{margin-top:.7em}
 .card-text p{margin:0}
