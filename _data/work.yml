@@ -21,14 +21,14 @@
         388 ms, accuracy 94% → 97%, and 5,000 fewer tokens a turn.
     - name: Handing off to a faster model
       text: >-
-        The main model starts a task; once a fast model can carry it, the main one stops and
-        hands over. My sync layer makes that handoff safe: steps already done are skipped,
-        stale plans are dropped, and every send or delete is checked before it runs.
-        **Fastest task 27 s → 19 s.**
+        The main model starts a task, then hands it to a fast model and stops. The fast one
+        thinks once and then acts in under 450 ms a step. My sync layer makes the handover safe:
+        it skips steps already done, drops plans gone stale, and checks every send or delete
+        before it runs. **Fastest task 27 s → 19 s.**
       plate: sync
       fig: 2
       title: Slow start, fast finish
-      caption: The slow model starts the task; once the fast model takes over, the slow one stops and their lines merge.
+      caption: The slow model hands over and stops; the fast model thinks, then acts in under 450 ms a step and finishes 8 s sooner.
     - name: Runs that explain themselves
       text: >-
         A failed run used to leave a warning on one tester’s Mac and nothing else. Now every
