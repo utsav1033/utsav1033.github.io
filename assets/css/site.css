@@ -168,7 +168,7 @@ footer p{margin:.2em 0}
 .post-body code{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.82em;background:var(--card);border:1px solid var(--rule);border-radius:3px;padding:.05em .3em}
 .post-body pre{background:var(--card);border:1px solid var(--hair);padding:1em 1.1em;overflow-x:auto;font-size:15px;line-height:1.5;margin:1.2em 0}
 .post-body pre code{background:none;border:0;padding:0;font-size:inherit}
-.post-body img{max-width:100%;height:auto;display:block;margin:0 auto}
+.post-body img{max-width:100%;height:auto;display:block;margin:1.8em auto;border:1px solid var(--hair);box-shadow:0 1px 0 var(--rule)}
 .post-body figure{margin:1.6em 0}
 .post-body .footnotes{margin-top:2.6em;padding-top:1em;border-top:1px solid var(--rule);font-size:16.5px;color:var(--muted)}
 .post-body .footnotes p{text-align:left;margin:0 0 .4em}

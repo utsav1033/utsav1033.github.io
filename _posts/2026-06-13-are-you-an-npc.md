@@ -2,6 +2,8 @@
 title: are you an npc?
 description: what separates mediocre masses from the people who aspire to be great
 ---
+![Steve Jobs in his office, leaning back in a chair beside an early Macintosh](/images/are-you-an-npc/jobs-1.jpg)
+
 i still remember borrowing the biography of Steve Jobs written by Walter Isaacson from a friend of mine and not returning it for a year. not because it took me a year to finish it, but because my faculty confiscated it after catching me reading during her lecture. once i got it back, i stayed up all night and finished it in one sitting.
 
 the book was compelling enough for a fourteen year to pull this off.
@@ -16,6 +18,8 @@ Jobs’ emphasis on taste didn’t make sense to me when i read about it through
 
 such obsession over tiny details won’t make sense to a person whose biggest feat is changing a number in excel sheet. if u truly love creating things: paintings, music, code, products or even anything simple like a knitted scarf, you would relate to this obsession very well. it is less about perfectionism and more about translating the vision you have in your head and meeting with a million tiny hurdles which asymptote you towards the ideal image of your creation. all those tiny iterations and finetuning just don’t seem to be enough. Jobs dealt with the same. he focused more on the product and pushed engineers to extreme limits just to execute that vision, even if it meant innovating out of necessity. that’s one of the reason why he wasn’t particularly liked by his team as he would simple barge in, look at their progress, call it shit, and leave without an explanation.
 
+![Steve Jobs writing on a whiteboard](/images/are-you-an-npc/jobs-2.jpg)
+
 but where does this obsession stem from? maybe from the ambitious little dream crafted by the tinkerers of your taste. but where does taste come from? it isn’t innate or implanted, but rather a symphony of both. every piece of content you consume, from books to texts to places you visit, to people you have conversations with, to the uncomfortable situations you witness helplessly are a fodder to your taste. but what’s more important is what you make from theses arrays of stimuluses. and that’s what makes you stand apart from someone who measures achievements with money.
 
 unfortunately, taste can’t be manufactured, it simply reflects the canvas of your *self*. the interests you choose to have with some agency against the regular, bleak stream of people, and being quietly unapologetic about them. taste matters more than the skills you train your brain to move in a desired direction of life, as it shapes your daily moments, which eventually compound into a creation of yours.
@@ -29,3 +33,5 @@ with the advancement of AI, things have become a lot cheaper, code, design, info
 even in code, taste matters. a problem can be approached in several ways. A tasteful programmer resists adding the clever abstraction, the extra config option, the premature generalization. they write the simplest thing that solves the real problem, and no more. bad taste tends toward over-engineering, building a framework when a function would do. the engineer who developed the video game Roller Coaster Tycoon entirely in assembly had a particular vision and it’s execution warranted a fail proof architecture which he found possible in assembly.
 
 having read about the shifting importance from skill to taste in this age of AI made me recollect Steve Jobs’ life and his philosophy, which surprisingly stays relevant even after fifteen years of his death and in this new age of humanity. such timeless figures are worth studying and admiring, a small incident of his life can inspire you to do much more than you find yourself capable of.
+
+![Steve Jobs leaning back at a desk, hands behind his head](/images/are-you-an-npc/jobs-3.jpg)
