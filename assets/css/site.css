@@ -204,6 +204,9 @@ footer p{margin:.2em 0}
 .post-nav .older{text-align:right}
 .tailpiece{text-align:center}
 
+/* ---------- everything a touch smaller on desktop ---------- */
+@media (min-width:1081px){body{zoom:.85}}
+
 /* ---------- one column below desktop width ---------- */
 @media (max-width:1080px){
   .pair,.projects{grid-template-columns:minmax(0,1fr)}
