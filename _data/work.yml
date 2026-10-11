@@ -44,9 +44,9 @@
 - org: Reliance Industries
   when: Dec 2025 – Mar 2026
   points:
-    - Built the document-parsing service behind an internal letter-of-credit tool.
+    - Built the document-parsing microservice behind an internal letter-of-credit tool.
     - "Cut it from **72 s to 23 s a document**, across 3,000+ documents a day for 230 sales executives."
-    - Forecast salt production across six regions, 27% more accurate than the old baseline.
+    - Trained a model to forecast salt production yield across six regions, 27% more accurate than the old baseline.
 
 - org: Brydgework
   when: Apr – May 2026
