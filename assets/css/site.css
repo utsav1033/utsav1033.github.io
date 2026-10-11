@@ -151,7 +151,7 @@ footer p{margin:.2em 0}
 /* ---------- a post: one narrow column, set like a book ---------- */
 .post{max-width:34em;margin:0 auto}
 .post-head{text-align:center;margin:0 0 2.4em;padding-bottom:1.6em;border-bottom:1px solid var(--rule)}
-.post-head h1{font-family:var(--fellsc);font-weight:400;font-size:42px;line-height:1.12;letter-spacing:.02em;margin:0 0 .35em}
+.post-head h1{font-family:var(--fell);font-weight:400;font-size:46px;line-height:1.12;margin:0 0 .35em}
 .post-meta{color:var(--muted);font-size:16.5px;margin:0}
 .post-desc{font-family:var(--fell);font-size:21px;line-height:1.4;margin:.9em auto 0;max-width:26em}
 .post-body{font-size:20px;line-height:1.65}
