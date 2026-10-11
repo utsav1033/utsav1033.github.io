@@ -75,9 +75,13 @@ section{margin-top:2.6em}
 
 .also{padding:1.3em 0 .4em;max-width:var(--text)}
 .also-head{font-family:var(--fellsc);font-size:19px;letter-spacing:.05em;margin:0 0 .4em}
-.also ul{list-style:none;margin:0;padding:0}
-.also li{margin:0 0 .55em;padding-left:1.1em;position:relative}
-.also li::before{content:"·";position:absolute;left:.2em;color:var(--red);font-weight:700}
+
+
+/* lists with a printer's fleuron for a bullet */
+ul.ornate{list-style:none;margin:0 0 1em;padding:0}
+ul.ornate li{position:relative;padding-left:1.55em;margin:0 0 .5em}
+ul.ornate li::before{content:"❧";position:absolute;left:0;top:.02em;color:var(--red);font-size:.95em}
+ul.ornate strong{font-weight:700;color:var(--ink)}
 
 /* projects: cards side by side */
 .projects{display:grid;grid-template-columns:1fr 1fr;gap:1.6em 3em;padding-top:.5em}

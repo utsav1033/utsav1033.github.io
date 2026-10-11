@@ -19,7 +19,7 @@ the right, ruled off from the next pair. Smaller wins go in a short "Also" list 
   {% if e.also %}
   <div class="also">
     <p class="also-head">Also</p>
-    <ul>{% for a in e.also %}<li><strong>{{ a.name }}.</strong> {{ a.text }}</li>{% endfor %}</ul>
+    <ul class="ornate">{% for a in e.also %}<li><strong>{{ a.name }}.</strong> {{ a.text }}</li>{% endfor %}</ul>
   </div>
   {% endif %}
 </article>

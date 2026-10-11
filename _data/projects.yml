@@ -2,12 +2,11 @@
   url: https://github.com/utsav1033/carmen
   when: GPU kernels
   items:
-    - text: >-
-        A model writes Metal kernels for Apple Silicon but never grades them. A judge does,
-        on hundreds of inputs including ones the model never sees, and only then times them.
-        The survivors fused **8 MLX kernels into 2 per layer** of Qwen 2.5, decoding **3%
-        faster** with identical output. The judge caught **75 of 75** planted bugs; a
-        one-shape check caught 40.
+    - points:
+        - A model writes Metal kernels for Apple Silicon, but never grades its own work.
+        - A judge tests each one on hundreds of inputs, including some the model never sees, and only then times it.
+        - The survivors fused **8 MLX kernels into 2** per layer of Qwen 2.5, decoding **3% faster** with identical output.
+        - The judge caught **all 75** bugs I planted; a one-shape check caught 40.
       plate: carmen
       fig: 4
       title: Seven gates, one secret
@@ -17,10 +16,11 @@
   url: https://github.com/utsav1033/flowgap
   when: voice agents
   items:
-    - text: >-
-        A voice agent can only handle what someone wrote a node for. FlowGap reads its call
-        transcripts, finds what callers actually wanted, and drafts the nodes the flow is
-        missing. In 298 real calls, **49% asked for something the flow couldn’t handle.**
+    - points:
+        - A voice agent can only handle what someone wrote a node for.
+        - FlowGap reads its call transcripts and finds what callers actually wanted.
+        - It drafts the nodes the flow is missing.
+        - In 298 real calls, **49% asked for something the flow couldn’t handle.**
       plate: flowgap
       fig: 5
       title: Where calls leak
