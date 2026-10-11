@@ -2,51 +2,35 @@
   url: https://alma.inc
   when: June 2026 – present
   lead: >-
-    Alma lets you use your Mac by saying what you want. It works in any app the way you
-    would, by looking at the screen, clicking and typing. I work on the agents behind it.
+    Alma lets you use your Mac by saying what you want. I’ve learnt a lot here about
+    harnesses, context management and moving quickly.
   items:
     - name: Memory that lasts a whole project
       text: >-
-        Agents fall apart on long jobs. A real session in Blender or AutoCAD runs to hundreds
-        of steps, and a model’s memory fills up long before the work is done.
-      text2: >-
-        I built a memory that doesn’t grow with the task. The agent always works from a short
-        picture of where things stand, everything it has verified is kept, and it can go back to
-        any earlier point without redoing the work.
+        A real job in Blender or AutoCAD runs to hundreds of steps, far more than a model can
+        hold. I built a memory that stays small: the agent works from a short picture of where
+        things stand, keeps everything it has verified, and can go back to any point without
+        redoing the work.
       plate: memory
       fig: 1
       title: Long-horizon memory
-      caption: Each verified change is written to disk; the agent keeps only a small picture of the app in mind, and going back reloads it.
     - name: Not waiting on the big model
       text: >-
-        The smart model needs a few seconds to think before it acts, and you feel every one of
-        them.
-      text2: >-
-        So a small, fast model starts working the moment you ask. When the smart model is ready
-        it takes over from the first step the fast one hasn’t done. **The fastest task went from
-        27 s to 19 s.**
+        The smart model takes seconds to think. A small, fast model starts acting the moment you
+        ask, and the smart one takes over from the first step it hasn’t done. **The fastest task
+        went from 27 s to 19 s.**
       plate: sync
       fig: 2
       title: The fast model covers
-      caption: Both start at once. The fast model works while the slow one thinks; the slow one takes over at step 5.
     - name: Knowing why a run failed
       text: >-
-        When a run broke on a tester’s laptop, all we had was “it didn’t work”.
-      text2: >-
-        Now every run leaves a trace of each step and model call, with a plain reason when it
-        stops, and one command opens any run from any machine at the step that broke. What
-        people say stays on their Mac unless they opt in.
+        Every run leaves a trace of each step and model call, with a plain reason when it stops.
+        One command opens any run, from any machine, at the step that broke. What people say
+        stays on their Mac unless they opt in.
       plate: tracing
       fig: 3
       title: Tracing a failed run
-      caption: Every Mac reports to one place; one command turns any run into a timeline of where it broke.
-  also:
-    - name: Quicker decisions
-      text: The agent used to reread a 72,000-character instruction sheet before every move. A small classifier now picks the right tool in one go, and tasks finish in 19 s instead of 33 s.
-    - name: Voice shortcuts
-      text: Fourteen workflows you start with a single word, across the browser, office and creative apps.
-    - name: Alma outside the app
-      text: The agent’s command-line version, out in November 2026, and the agent, built on the pi agent, running inside a dictation app as a small Rust program.
+      wide: true
 
 - org: Reliance Industries
   when: Dec 2025 – Mar 2026

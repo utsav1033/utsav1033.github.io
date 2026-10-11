@@ -64,6 +64,18 @@ section{margin-top:2.6em}
 .lead{margin:0 0 .4em;max-width:var(--text)}
 .lead p{margin:0}
 
+/* a job's work as cards: figure in a box, paragraph under it, two to a row */
+.cards{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 2.8em;margin:1.3em 0 .8em}
+.card{display:grid;grid-row:span 2;grid-template-rows:subgrid;row-gap:0}
+.card figure{margin:0 0 .9em;display:flex;flex-direction:column}
+.card figure svg{margin:auto 0}
+.card.wide{grid-column:1/-1;grid-row:auto;grid-template-rows:none;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:2.8em;align-items:center}
+.card.wide{margin-top:2.2em}
+.card.wide figure{margin:0}
+.card-text h4{font-family:var(--fell);font-weight:400;font-size:25px;margin:0 0 .3em;line-height:1.2}
+.card-text p{margin:0}
+.card-text strong{font-weight:700;color:var(--ink)}
+
 /* a paragraph and its figure, set side by side and ruled off */
 .pair{display:grid;grid-template-columns:minmax(0,26em) minmax(0,1fr);column-gap:3.2em;align-items:center;
   padding:1.6em 0;border-bottom:1px solid var(--rule)}
@@ -209,7 +221,9 @@ footer p{margin:.2em 0}
 
 /* ---------- one column below desktop width ---------- */
 @media (max-width:1080px){
-  .pair,.projects{grid-template-columns:minmax(0,1fr)}
+  .pair,.projects,.cards,.card.wide{grid-template-columns:minmax(0,1fr)}
+  .card.wide figure{margin:0 0 .9em}
+  .card+.card{margin-top:1.8em}
   .pair figure{margin-top:1em}
   .project+.project{border-top:1px solid var(--rule);padding-top:1.3em}
   .page{max-width:42em}
