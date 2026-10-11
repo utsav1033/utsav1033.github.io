@@ -48,6 +48,15 @@ strong{font-weight:700}
 .ornament{display:flex;align-items:center;gap:1em;color:var(--red);margin:1.8em 0 0;max-width:var(--text)}
 .ornament::before,.ornament::after{content:"";flex:1;border-top:1px solid var(--rule)}
 .ornament span{font-size:19px;line-height:1}
+/* desktop: name and links on the left, the about on the right, lined up with the cards below */
+@media (min-width:1081px){
+  .intro{max-width:none;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:2.8em;align-items:end}
+  .about{padding-right:56px}
+  .intro .links{margin:0}
+  .about p:last-child{margin:0}
+  .ornament{max-width:none}
+  .theme-toggle{left:auto;right:2.5em;top:3.5em}
+}
 
 /* ---------- sections ---------- */
 section{margin-top:2.6em}
