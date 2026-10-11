@@ -10,10 +10,12 @@ with points is set as a list on a sheet of old paper. A wide item takes a whole 
   <div class="cards">
   {% for it in e.items %}
     {% if it.points %}
-    <div class="card paper">
-      {% include paper.svg %}
-      <h4>{{ it.name }}</h4>
-      <ul class="ornate">{% for x in it.points %}<li>{{ x }}</li>{% endfor %}</ul>
+    <div class="card paper-card">
+      <div class="paper">
+        {% include paper.svg %}
+        <h4>{{ it.name }}</h4>
+        <ul class="ornate">{% for x in it.points %}<li>{{ x }}</li>{% endfor %}</ul>
+      </div>
     </div>
     {% else %}
     <div class="card{% if it.wide %} wide{% endif %}">

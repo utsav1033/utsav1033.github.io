@@ -33,13 +33,13 @@
       plate: tracing
       fig: 3
       title: Tracing a failed run
-    - name: Along the way
+    - name: along the way...
       points:
-        - Took ownership of 14 automated workflows, like saving or visualising content with a single trigger word.
-        - Designed robust CLIs for various apps for v0 of the agent.
-        - Built demos to turn the tech into a product.
-        - Made the agent’s decision layer faster by capping its token usage, with no loss in accuracy.
-        - Shipped the command-line version of the beta.
+        - took ownership of 14 automated workflows, like saving or visualising content with a single trigger word.
+        - designed robust CLIs for various apps for v0 of the agent.
+        - built demos to turn the tech into a product.
+        - made the agent’s decision layer faster by capping its token usage, with no loss in accuracy.
+        - shipped the command-line version of the beta.
 
 - org: Reliance Industries
   when: Dec 2025 – Mar 2026
