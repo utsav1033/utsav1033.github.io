@@ -19,15 +19,16 @@
         The planner was a 72,000-character prompt the model reread every turn. I replaced it
         with a one-pass classifier over 27 tools: **tasks 33 s → 19 s**, decisions 765 →
         388 ms, accuracy 94% → 97%, and 5,000 fewer tokens a turn.
-    - name: Two models, one screen
+    - name: Handing off to a faster model
       text: >-
-        A fast model acts while the main one is still writing the plan. My sync layer lets
-        them share the screen: steps already done are skipped, plans broken by a wrong move are
-        dropped, and every send or delete is checked first. **Fastest task 27 s → 19 s.**
+        The main model starts a task; once a fast model can carry it, the main one stops and
+        hands over. My sync layer makes that handoff safe: steps already done are skipped,
+        stale plans are dropped, and every send or delete is checked before it runs.
+        **Fastest task 27 s → 19 s.**
       plate: sync
       fig: 2
-      title: Fast hands, slow plan
-      caption: The fast model acts at once; steps it already did are skipped, and every send is checked first.
+      title: Slow start, fast finish
+      caption: The slow model starts the task; once the fast model takes over, the slow one stops and their lines merge.
     - name: Runs that explain themselves
       text: >-
         A failed run used to leave a warning on one tester’s Mac and nothing else. Now every
