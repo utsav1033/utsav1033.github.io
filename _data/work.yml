@@ -2,8 +2,11 @@
   url: https://alma.inc
   when: June 2026 – present
   lead: >-
-    Alma lets you use your Mac by saying what you want. I’ve learnt a lot here about
-    harnesses, context management and moving quickly.
+    I work on multi-agent harnesses for pure computer use that is cheap, robust and reliable.
+    I’ve learnt a lot about how harnesses should be designed, how to handle context cleverly,
+    and how to choose between open-source and frontier models based on where each one works
+    best. I’ve met some really great people here, and it’s my first hands-on look at how a
+    startup works. A few things I worked on:
   items:
     - name: Memory that lasts a whole project
       text: >-
@@ -14,7 +17,7 @@
       plate: memory
       fig: 1
       title: Long-horizon memory
-    - name: Not waiting on the big model
+    - name: A symphony of smart (but slow) and dumb (but fast) agents
       text: >-
         The smart model takes seconds to think. A small, fast model starts acting the moment you
         ask, and the smart one takes over from the first step it hasn’t done. **The fastest task
@@ -30,7 +33,11 @@
       plate: tracing
       fig: 3
       title: Tracing a failed run
-      wide: true
+    - name: Along the way
+      points:
+        - Took ownership of 14 automated workflows.
+        - Made the decision layer faster.
+        - Capped token usage while speeding things up, with no loss in accuracy.
 
 - org: Reliance Industries
   when: Dec 2025 – Mar 2026

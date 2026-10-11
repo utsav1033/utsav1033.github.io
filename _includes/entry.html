@@ -1,6 +1,7 @@
 {% comment %}
 A job. Each item is a card: heading, its figure, then its paragraph, two to a row. An item
-marked wide takes a whole row, heading and paragraph on the left, figure on the right.
+with points instead gets a boxed list in the figure's place. An item marked wide takes a
+whole row, heading and paragraph on the left, figure on the right.
 {% endcomment %}
 {% assign e = include.entry %}
 <article class="entry">
@@ -12,7 +13,8 @@ marked wide takes a whole row, heading and paragraph on the left, figure on the 
     <div class="card{% if it.wide %} wide{% endif %}">
       <h4>{{ it.name }}</h4>
       {% if it.plate %}{% include figure.html item=it bare=true %}{% endif %}
-      <div class="card-text">{{ it.text | markdownify }}</div>
+      {% if it.points %}<div class="box"><ul class="ornate">{% for x in it.points %}<li>{{ x }}</li>{% endfor %}</ul></div>{% endif %}
+      {% if it.text %}<div class="card-text">{{ it.text | markdownify }}</div>{% endif %}
     </div>
   {% endfor %}
   </div>
