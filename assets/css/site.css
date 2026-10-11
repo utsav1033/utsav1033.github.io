@@ -63,6 +63,7 @@ section{margin-top:2.6em}
 .when{color:var(--muted);white-space:nowrap;font-size:18px}
 .lead{margin:0 0 .4em}
 .lead p{margin:0}
+.job-points{margin:.2em 0 0}
 
 /* a job's work as cards: heading, figure, paragraph; two to a row */
 .cards{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.6em 2.8em;margin:1em 0 .6em}

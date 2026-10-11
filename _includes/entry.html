@@ -6,6 +6,7 @@ with points is set as a list on a sheet of old paper. A wide item takes a whole 
 <article class="entry">
   <h3 class="entry-head"><span class="org">{% if e.url %}<a href="{{ e.url }}">{{ e.org }}</a>{% else %}{{ e.org }}{% endif %}</span><span class="when">{{ e.when }}</span></h3>
   {% if e.lead %}<div class="lead">{{ e.lead | markdownify }}</div>{% endif %}
+  {% if e.points %}<ul class="ornate job-points">{% for x in e.points %}<li>{{ x | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>{% endfor %}</ul>{% endif %}
   {% if e.items %}
   <div class="cards">
   {% for it in e.items %}
