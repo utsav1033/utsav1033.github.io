@@ -1,0 +1,6 @@
+{% comment %} Smaller things: one line each. {% endcomment %}
+<ul class="things">
+{% for t in site.data.things %}
+  <li><span class="t-name">{% if t.url %}<a href="{{ t.url }}">{{ t.name }}</a>{% else %}{{ t.name }}{% endif %}</span><span class="t-kind">{{ t.kind }}</span><span class="t-text">{{ t.text }}</span></li>
+{% endfor %}
+</ul>

@@ -1,0 +1,16 @@
+# Smaller things: one line each. kind is a short tag shown beside the name.
+- name: Agent-Mark
+  url: https://github.com/utsav1033/agent-mark
+  kind: evals
+  text: Scores agents you can’t see inside by tracing every tool call; one adapter runs Composio’s Trustclaw against a live inbox.
+- name: tokenpati
+  url: https://github.com/utsav1033/jalad-local
+  kind: Rust CLI
+  text: A game show where your machine is in the hot seat. One command works out which local LLMs it can run, at what quant and how fast.
+- name: Feynman, Vol. III
+  url: https://utsav1033.github.io/feynman-vol3/
+  kind: web
+  text: Feynman’s lectures on quantum mechanics with a live demo for every chapter that follows you as you read.
+- name: Uptime Teesko
+  kind: internal CLI
+  text: One terminal screen that pings every model and key our agent depends on, and says which are down and why.

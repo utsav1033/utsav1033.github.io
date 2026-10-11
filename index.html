@@ -5,17 +5,22 @@ layout: default
 {% include ornament.html %}
 
 <section>
-{% include section-title.html id="work" title="Work" %}
+{% include section-title.html id="work" title="Work" icon="hourglass" %}
 {% for e in site.data.work %}{% include entry.html entry=e %}{% endfor %}
 </section>
 
 <section>
-{% include section-title.html id="projects" title="Projects" %}
+{% include section-title.html id="projects" title="Projects" icon="dividers" %}
 <div class="projects">{% for e in site.data.projects %}{% include project.html entry=e %}{% endfor %}</div>
 </section>
 
 <section>
-{% include section-title.html id="writing" title="Writing" %}
+{% include section-title.html id="things" title="Smaller things" icon="lamp" %}
+{% include things.html %}
+</section>
+
+<section>
+{% include section-title.html id="writing" title="Writing" icon="quill" %}
 {% assign posts = site.posts | where_exp: "p", "p.draft != true" %}
 {% if posts.size > 0 %}
 <ul class="list">{% for post in posts %}<li><div class="head"><a href="{{ post.url | relative_url }}">{{ post.title }}</a><span class="when">{{ post.date | date: "%b %Y" }}</span></div></li>{% endfor %}</ul>
@@ -25,11 +30,11 @@ layout: default
 </section>
 
 <section>
-{% include section-title.html id="publications" title="Publications" %}
+{% include section-title.html id="publications" title="Publications" icon="book" %}
 <ul class="list">{% for x in site.data.publications.publications %}<li><div class="head"><a href="{{ x.url }}">{{ x.title }}</a><span class="when">{{ x.venue }}</span></div><p class="sub">{{ x.text }}</p></li>{% endfor %}</ul>
 </section>
 
 <section>
-{% include section-title.html id="education" title="Education" %}
+{% include section-title.html id="education" title="Education" icon="cap" %}
 <ul class="list">{% for x in site.data.publications.education %}<li><div class="head"><span>{{ x.title }}</span><span class="when">{{ x.venue }}</span></div></li>{% endfor %}</ul>
 </section>

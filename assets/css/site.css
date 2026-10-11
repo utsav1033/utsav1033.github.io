@@ -1,6 +1,6 @@
 /* ---------- paper and ink ---------- */
 :root{
-  --paper:#f4eedf; --card:#f8f3e6; --ink:#211c16; --muted:#665c4d; --hair:#ac9f84; --rule:#d2c7ad; --red:#962a1c;
+  --paper:#e9dfc8; --card:#f0e8d5; --ink:#211c16; --muted:#665c4d; --hair:#a2947a; --rule:#cbbfa4; --red:#962a1c;
   --body:"EB Garamond",Garamond,"Times New Roman",serif;
   --fell:"IM Fell English","EB Garamond",Garamond,serif;
   --fellsc:"IM Fell English SC","IM Fell English",Garamond,serif;
@@ -11,7 +11,9 @@
 
 *{box-sizing:border-box}
 html{background:var(--paper)}
-body{margin:0;background:var(--paper);color:var(--ink);font:500 20px/1.55 var(--body);
+body{margin:0;background-color:var(--paper);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35  0 0 0 0 .27  0 0 0 0 .16  0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  color:var(--ink);font:500 20px/1.55 var(--body);
   font-variant-numeric:oldstyle-nums proportional-nums;font-kerning:normal;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:underline;text-decoration-color:var(--hair);text-decoration-thickness:1px;text-underline-offset:.18em}
 a:hover{color:var(--red);text-decoration-color:var(--red)}
@@ -38,7 +40,9 @@ strong{font-weight:700}
 /* ---------- sections ---------- */
 section{margin-top:2.6em}
 .section-title{font-family:var(--fellsc);font-weight:400;font-size:30px;letter-spacing:.04em;margin:0 0 .5em;
-  padding-bottom:.25em;border-bottom:1px solid var(--hair)}
+  padding-bottom:.25em;border-bottom:1px solid var(--hair);display:flex;align-items:center;gap:.4em}
+.vignette{width:26px;height:26px;flex:none;fill:none;stroke:var(--red);stroke-width:1.15;stroke-linecap:round;stroke-linejoin:round;margin-top:-2px}
+.vignette .fill{fill:var(--red);stroke:none}
 .entry{padding:1.3em 0 .4em;border-top:1px solid var(--rule)}
 .section-title+.entry{border-top:0;padding-top:.5em}
 .entry-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:.15em .8em;margin:0 0 .45em;font-weight:400}
@@ -109,7 +113,18 @@ svg .lnr{fill:none;stroke:var(--red);stroke-width:1.1}
 .list .head{display:flex;justify-content:space-between;align-items:baseline;gap:1em}
 .list .sub{color:var(--muted);font-size:18px;margin:.05em 0 0}
 .empty{color:var(--muted)}
-footer{color:var(--muted);font-size:17px;margin-top:4em;max-width:var(--text)}
+/* smaller things */
+.things{list-style:none;margin:0;padding:0;max-width:44em}
+.things li{display:grid;grid-template-columns:11em 7.5em 1fr;gap:0 1em;align-items:baseline;padding:.45em 0;border-bottom:1px dotted var(--hair)}
+.things li:last-child{border-bottom:0}
+.t-name{font-family:var(--fell);font-size:21px}
+.t-kind{color:var(--muted);font-size:15px;font-variant:small-caps;letter-spacing:.05em}
+.t-text{font-size:18.5px}
+
+footer{color:var(--muted);font-size:17px;margin-top:4em;text-align:center}
+footer p{margin:.2em 0}
+.tailpiece{color:var(--red);font-size:26px;line-height:1}
+.finis{font-family:var(--fellsc);font-size:20px;letter-spacing:.2em;color:var(--ink)}
 
 /* ---------- posts ---------- */
 .post{max-width:var(--text)}
@@ -129,6 +144,7 @@ footer{color:var(--muted);font-size:17px;margin-top:4em;max-width:var(--text)}
   .page{padding:2.6em 1.2em 3em}
   .name{font-size:38px}
   .list .head{flex-direction:column;gap:0}
+  .things li{grid-template-columns:1fr;gap:0}
   figure{padding:10px 10px 10px;overflow-x:auto}
   figure svg{min-width:500px}
 }

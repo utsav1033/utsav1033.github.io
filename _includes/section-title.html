@@ -1,1 +1,1 @@
-<h2 class="section-title" id="{{ include.id }}">{{ include.title }}</h2>
+<h2 class="section-title" id="{{ include.id }}">{% if include.icon %}{% include icons/{{ include.icon }}.svg %}{% endif %}{{ include.title }}</h2>

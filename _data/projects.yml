@@ -25,12 +25,3 @@
       fig: 5
       title: Where calls leak
       caption: Intents clustered from 298 calls, matched to the flow’s nodes. The cluster with no match becomes a drafted node.
-
-- org: Agent-Mark
-  url: https://github.com/utsav1033/agent-mark
-  when: agent evals
-  items:
-    - text: >-
-        Benchmarks agents you can’t see inside. It traces every tool call and scores the run
-        on success, tool use, efficiency, speed and cost; one adapter runs Composio’s Trustclaw
-        against a live Gmail inbox.
