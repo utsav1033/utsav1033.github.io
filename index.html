@@ -104,6 +104,19 @@ h4{font-family:"Pixelify Sans","Courier New",monospace;font-weight:600;font-size
 #cbox a{display:block;min-height:44px;line-height:44px;font-family:"Pixelify Sans","Courier New",monospace;font-size:19px;overflow-wrap:anywhere}
 footer{color:var(--dim);font-size:15px;padding:18px 32px 40px;max-width:960px;margin:0 auto}
 
+/* desktop: use the width instead of one long column */
+.cols-4{grid-template-columns:1fr 1fr}
+@media (min-width:1000px){
+  .wrap{max-width:1180px;padding:64px 48px 24px}
+  footer{max-width:1180px;padding:18px 48px 40px}
+  .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:20px 44px;align-items:start;margin:0 0 18px}
+  .split .scene{margin-top:4px}
+  .split .stats{margin-bottom:0}
+  .cols-4{grid-template-columns:repeat(4,1fr);max-width:none}
+  .cols-4 .big{font-size:42px}
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:4px 44px;max-width:none}
+  .duo>.card,.duo>.row{margin-bottom:22px}
+}
 @media (max-width:640px){
   body{font-size:17px}
   .wrap{padding:28px 18px 20px}
@@ -115,7 +128,7 @@ footer{color:var(--dim);font-size:15px;padding:18px 32px 40px;max-width:960px;ma
   .head{flex-direction:column;gap:2px}
   .card{grid-template-columns:40px 1fr;gap:14px}
   .card .sprite{width:40px}
-  .cols-2{grid-template-columns:1fr}
+  .cols-2,.cols-4{grid-template-columns:1fr}
   .big{font-size:42px}
   #cbox{display:block}
 }
@@ -146,25 +159,31 @@ footer{color:var(--dim);font-size:15px;padding:18px 32px 40px;max-width:960px;ma
   <section aria-labelledby="carmen" style="--acc:var(--coral)">
     <h2 id="carmen">Featured: carmen</h2>
     <div class="head"><h3><a href="https://github.com/utsav1033/carmen">carmen: AI-written GPU kernels, proven by a judge</a></h3><span class="when">solo · 6 days to a real-model result</span></div>
-    <p class="pitch">An LLM writes Metal kernels for Apple Silicon. A deterministic judge proves each one against a float64 answer key on hundreds of inputs, including secret ones it never sees, then races it against MLX. The winners go into a real model.</p>
-    <div class="scene"><canvas id="judge" class="pix" role="img" aria-label="Animation: three AI drafts of a kernel go through the judge's gates. Draft A fails the fresh fuzz with a tail bug at length 257 and is sent back. Draft B fails the hidden draw with an fp16 rounding error. Draft C passes every gate, races MLX and wins 1.82 times faster, and one model layer goes from 8 MLX kernels to 2 fused carmen kernels."></canvas></div>
-    <p class="scene-cap">The model writes; it never grades. Every failure comes back with where and why, and only kernels that survive the secret inputs get timed.</p>
-    <div class="stats cols-2">
-      <div class="stat" style="--acc:var(--coral)">
-        <p class="big">1.03×</p><p class="what">faster decode on Qwen 2.5 0.5B (4-bit, M4) with identical output. 95% range 1.02–1.05× over 30 paired runs; <code>mx.compile</code> alone gives 1.00×.</p>
+    <div class="split">
+      <div>
+        <p class="pitch">An LLM writes Metal kernels for Apple Silicon. A deterministic judge proves each one against a float64 answer key on hundreds of inputs, including secret ones it never sees, then races it against MLX. The winners go into a real model.</p>
+        <div class="stats cols-2">
+          <div class="stat" style="--acc:var(--coral)">
+            <p class="big">1.03×</p><p class="what">faster decode on Qwen 2.5 0.5B (4-bit, M4) with identical output. 95% range 1.02–1.05× over 30 paired runs; <code>mx.compile</code> alone gives 1.00×.</p>
+          </div>
+          <div class="stat" style="--acc:var(--yellow)">
+            <p class="big">75/75</p><p class="what">planted bugs caught across 7 kernels. A KernelBench-style one-shape check let 35 of them through.</p>
+          </div>
+          <div class="stat" style="--acc:var(--mint)">
+            <p class="big">1.82×</p><p class="what">faster than MLX on a fused masked softmax, and 1.38× even against <code>mx.compile</code>.</p>
+          </div>
+          <div class="stat" style="--acc:var(--lilac)">
+            <p class="big">8 → 2</p><p class="what">kernels per layer of Qwen 2.5 0.5B, written by the AI and proven correct by the judge.</p>
+          </div>
+        </div>
       </div>
-      <div class="stat" style="--acc:var(--yellow)">
-        <p class="big">75/75</p><p class="what">planted bugs caught across 7 kernels. A KernelBench-style one-shape check let 35 of them through.</p>
-      </div>
-      <div class="stat" style="--acc:var(--mint)">
-        <p class="big">1.82×</p><p class="what">faster than MLX on a fused masked softmax, and 1.38× even against <code>mx.compile</code>.</p>
-      </div>
-      <div class="stat" style="--acc:var(--lilac)">
-        <p class="big">8 → 2</p><p class="what">kernels per layer of Qwen 2.5 0.5B, written by the AI and proven correct by the judge.</p>
+      <div>
+        <div class="scene"><canvas id="judge" class="pix" role="img" aria-label="Animation: three AI drafts of a kernel go through the judge's gates. Draft A fails the fresh fuzz with a tail bug at length 257 and is sent back. Draft B fails the hidden draw with an fp16 rounding error. Draft C passes every gate, races MLX and wins 1.82 times faster, and one model layer goes from 8 MLX kernels to 2 fused carmen kernels."></canvas></div>
+        <p class="scene-cap">The model writes; it never grades. Every failure comes back with where and why, and only kernels that survive the secret inputs get timed.</p>
       </div>
     </div>
     <h4>What I learned</h4>
-    <ul>
+    <ul class="duo">
       <li><b>AI kernels don't beat hand-tuned code. They beat code nobody fused.</b> Wins come where MLX runs several kernels; where Apple wrote one tuned kernel, it ties or loses.</li>
       <li><b>A kernel that wins alone can lose inside a model.</b> One scored 1.15× in the judge and made Qwen 18% slower: wrong shapes, weak baseline, one launch at a time. Now the judge runs at the model's real shapes against <code>mx.compile</code>.</li>
       <li><b>Measuring honestly was harder than writing kernels.</b> Running versions back to back instead of taking turns produced two wins that weren't real (+40% prefill, 1.09× decode). A browser in the background swung speed by ±27%.</li>
@@ -181,7 +200,7 @@ footer{color:var(--dim);font-size:15px;padding:18px 32px 40px;max-width:960px;ma
     <ul>
       <li>Replaced the agent's planner, a 72,000-character prompt the model re-read every turn, with a one-pass classifier over 27 tools. More accurate and nearly twice as fast.</li>
     </ul>
-    <div class="stats cols-2">
+    <div class="stats cols-4">
       <div class="stat" style="--acc:var(--yellow)" data-before="33.2" data-after="19.2" data-unit=" s">
         <p class="big">−14 s</p><p class="what">per task, from asking to done</p>
       </div>
@@ -195,13 +214,26 @@ footer{color:var(--dim);font-size:15px;padding:18px 32px 40px;max-width:960px;ma
         <p class="big">−5k</p><p class="what">tokens on every turn</p>
       </div>
     </div>
-    <ul>
+    <div class="split">
+      <ul>
+        <li><b>Long-horizon memory</b> for multi-step tasks in creative and CAD apps. Every step that checks out is written to disk; only the current state stays in memory. Context stays small, and the agent can jump back to any earlier step without replaying the session.</li>
+      </ul>
+      <div>
+        <div class="scene"><canvas id="taskmaster" class="pix" role="img" aria-label="Animation: a satellite is built step by step on a pixel monitor; each finished step is saved to a strip of snapshots on disk, memory holds only the current step, and the agent jumps back and forth between saved steps"></canvas></div>
+        <p class="scene-cap">Each step is saved once it checks out. Memory only holds where you are now, so going back is just loading a frame.</p>
+      </div>
+    </div>
+    <div class="split">
+      <ul>
+        <li><b>Run tracing for the agent (logan).</b> When a shortcut failed on a tester's Mac, the only trace was a warning in that machine's own log, so "it didn't work" left nothing to look at. Now every run records each step, model call, token count and timing, with a fixed list of error words, into the diagnostics pipeline we already had: no new server. One terminal command pulls any day, device or run and shows where it broke. What the user said is uploaded only if they opt in to full diagnostics.</li>
+      </ul>
+      <div>
+        <div class="scene"><canvas id="logan" class="pix" role="img" aria-label="Animation: three Macs run shortcuts step by step and send each run's record to a diagnostics store; one run on Mac B fails at its last step. In a terminal, logan lists runs and failures per shortcut, then opens the failed run, showing verdict step_failed and a pipeline of model and tool calls where the final operate call timed out"></canvas></div>
+        <p class="scene-cap">Every run says what each step did and why it stopped. The error words come from a fixed list, so failures stay searchable even when no user text leaves the Mac.</p>
+      </div>
+    </div>
+    <ul class="duo">
       <li><b>Fast/slow model sync.</b> A fast model acts on screen while the main model is still writing its plan. I built the sync layer between them: it skips plan steps the fast model already did, drops plans made stale by its wrong steps, and checks every irreversible action (send, delete) against the task before it runs. Fastest end-to-end task went from 27 s to 19 s.</li>
-      <li><b>Long-horizon memory</b> for multi-step tasks in creative and CAD apps. Every step that checks out is written to disk; only the current state stays in memory. Context stays small, and the agent can jump back to any earlier step without replaying the session.</li>
-    </ul>
-    <div class="scene"><canvas id="taskmaster" class="pix" role="img" aria-label="Animation: a satellite is built step by step on a pixel monitor; each finished step is saved to a strip of snapshots on disk, memory holds only the current step, and the agent jumps back and forth between saved steps"></canvas></div>
-    <p class="scene-cap">Each step is saved once it checks out. Memory only holds where you are now, so going back is just loading a frame.</p>
-    <ul>
       <li><b>The agent's CLI</b>, launching publicly in November 2026.</li>
       <li><b>Ported the multi-agent layer</b> into a dictation app as a standalone Rust binary, tuned for speed and disk footprint.</li>
       <li>First weeks: shipped 14 voice-triggered computer-use workflows across browser, productivity and creative apps.</li>
@@ -210,39 +242,43 @@ footer{color:var(--dim);font-size:15px;padding:18px 32px 40px;max-width:960px;ma
 
   <section aria-labelledby="built" style="--acc:var(--mint)">
     <h2 id="built">Also built</h2>
-    <article class="card" style="--acc:var(--lilac)">
-      <div data-sprite="flow"></div>
-      <div>
-        <h3><a href="https://github.com/utsav1033/flowgap">FlowGap</a></h3>
-        <p>Finds what callers wanted that a voice agent's flow has no node for, the calls that quietly end in a transfer to a human, and drafts the missing node. MiniLM, UMAP and HDBSCAN, offline. On 298 real calls, 49% hit an unhandled intent; UMAP cut cluster noise from 54.7% to 3.7%; gap intents came back at 90–100% purity.</p>
-      </div>
-    </article>
-    <article class="card" style="--acc:var(--mint)">
-      <div data-sprite="check"></div>
-      <div>
-        <h3><a href="https://github.com/utsav1033/agent-mark">Agent-Mark</a></h3>
-        <p>Evaluation harness for agents you can't see inside: traces every tool call and scores the run on success, tool correctness, efficiency, latency and cost. Adapters for Composio's open-source Trustclaw on a live Gmail inbox, and for Claude with Composio tools.</p>
-      </div>
-    </article>
+    <div class="duo">
+      <article class="card" style="--acc:var(--lilac)">
+        <div data-sprite="flow"></div>
+        <div>
+          <h3><a href="https://github.com/utsav1033/flowgap">FlowGap</a></h3>
+          <p>Finds what callers wanted that a voice agent's flow has no node for, the calls that quietly end in a transfer to a human, and drafts the missing node. MiniLM, UMAP and HDBSCAN, offline. On 298 real calls, 49% hit an unhandled intent; UMAP cut cluster noise from 54.7% to 3.7%; gap intents came back at 90–100% purity.</p>
+        </div>
+      </article>
+      <article class="card" style="--acc:var(--mint)">
+        <div data-sprite="check"></div>
+        <div>
+          <h3><a href="https://github.com/utsav1033/agent-mark">Agent-Mark</a></h3>
+          <p>Evaluation harness for agents you can't see inside: traces every tool call and scores the run on success, tool correctness, efficiency, latency and cost. Adapters for Composio's open-source Trustclaw on a live Gmail inbox, and for Claude with Composio tools.</p>
+        </div>
+      </article>
+    </div>
   </section>
 
   <section aria-labelledby="earlier" style="--acc:var(--orange)">
     <h2 id="earlier">Earlier</h2>
-    <div class="row">
-      <div class="head"><h3>ML Engineer Intern, Reliance Industries</h3><span class="when">Dec 2025 – Mar 2026</span></div>
-      <p>Letter-of-Credit document parsing (OCR plus a local LLM): 72 s → 23 s per document, 3,000+ documents a day for 230 sales executives. XGBoost salt forecasts across 6 regions, 27% more accurate than the baseline.</p>
-    </div>
-    <div class="row">
-      <div class="head"><h3>Full-stack developer, Brydgework (freelance)</h3><span class="when">Apr – May 2026</span></div>
-      <p>Co-built a donation platform in Next.js sized for 4k monthly users; owned deployment on Docker, Nginx and SSL.</p>
-    </div>
-    <div class="row">
-      <div class="head"><h3><a href="https://ieeexplore.ieee.org/document/11437445">Akshara, IEEE ICNTE 2026</a></h3><span class="when">Jan 2026</span></div>
-      <p>Paper: reading Brahmi inscriptions into Devanagari and English with OCR, a transliterator trained on 22,000+ samples of 272 characters, and a Bi-LSTM translator.</p>
-    </div>
-    <div class="row">
-      <div class="head"><h3>B.Tech, Computer Engineering</h3><span class="when">2022 – 2026</span></div>
-      <p>Pillai College of Engineering, University of Mumbai</p>
+    <div class="duo">
+      <div class="row">
+        <div class="head"><h3>ML Engineer Intern, Reliance Industries</h3><span class="when">Dec 2025 – Mar 2026</span></div>
+        <p>Letter-of-Credit document parsing (OCR plus a local LLM): 72 s → 23 s per document, 3,000+ documents a day for 230 sales executives. XGBoost salt forecasts across 6 regions, 27% more accurate than the baseline.</p>
+      </div>
+      <div class="row">
+        <div class="head"><h3>Full-stack developer, Brydgework (freelance)</h3><span class="when">Apr – May 2026</span></div>
+        <p>Co-built a donation platform in Next.js sized for 4k monthly users; owned deployment on Docker, Nginx and SSL.</p>
+      </div>
+      <div class="row">
+        <div class="head"><h3><a href="https://ieeexplore.ieee.org/document/11437445">Akshara, IEEE ICNTE 2026</a></h3><span class="when">Jan 2026</span></div>
+        <p>Paper: reading Brahmi inscriptions into Devanagari and English with OCR, a transliterator trained on 22,000+ samples of 272 characters, and a Bi-LSTM translator.</p>
+      </div>
+      <div class="row">
+        <div class="head"><h3>B.Tech, Computer Engineering</h3><span class="when">2022 – 2026</span></div>
+        <p>Pillai College of Engineering, University of Mumbai</p>
+      </div>
     </div>
   </section>
 
@@ -448,6 +484,68 @@ function lerp(a,b,f){return a+(b-a)*f;}
         if(k<st.saved)sat(g,x+1,y+1,k,1,0);
         g.t(String(k+1),x+5,y+13,hd?'#f8d878':'#3c5ad8');}
       if(a[0]==='save'&&st.tm<8){var f=st.tm/8;g.px(Math.round(13+(21+a[1]*14-13)*f),Math.round(9+44*f),12,9,'#f878f8');}
+    }});
+})();
+
+
+/* ============ logan: run tracing ============ */
+(function(){
+  var P=480,MAC=['MAC A','MAC B','MAC C'],TX=80,OK='#7ee0a1',BAD='#ff7a6b',DIM='#4a5890',TXT='#b8bfd9';
+  /* three runs per Mac; f = index of the step that fails, -1 = done */
+  var RUNS=[[{s:0,f:-1},{s:50,f:-1},{s:100,f:-1}],
+            [{s:15,f:-1},{s:65,f:3},{s:115,f:-1}],
+            [{s:30,f:-1},{s:80,f:-1},{s:130,f:-1}]];
+  var TABLE=[['COMPARE',3,1],['SUMMARIZE',3,0],['RECALL',3,0]];
+  var PIPE=[['MODEL',9,'1.2S'],['OPERATE',4,'0.4S'],['SEARCH',7,'0.9S'],['MODEL',6,'0.8S'],['OPERATE',18,'TIMEOUT']];
+  scene(document.getElementById('logan'),{cols:136,rows:70,rmTicks:470,fs:3.8,
+    draw:function(g,t){
+      var p=t%P,i,j,y,arrived=0,arrivedBad=[];
+      g.px(0,0,136,70,'#111c4b');
+      g.t('SHORTCUT RUNS',3,3,TXT,0.8);
+      /* Macs running shortcuts, step by step */
+      for(i=0;i<3;i++){y=12+i*17;
+        g.px(3,y,9,7,'#bcbcbc');g.px(4,y+1,7,5,'#050a24');g.px(6,y+7,3,1,'#bcbcbc');
+        g.t(MAC[i],15,y,TXT,0.7);
+        var cur=-1;for(j=0;j<3;j++)if(p>=RUNS[i][j].s)cur=j;
+        g.t('RUN '+(cur+1),46,y,DIM,0.7,'right');
+        for(var s=0;s<4;s++){var bx=15+s*6,by=y+6,c='#22347a';
+          if(cur>=0){var r=RUNS[i][cur],e=p-r.s;
+            if(e>=s*6&&!(r.f>=0&&s>r.f)){var done=e>=(s+1)*6;
+              c=done?(r.f===s?BAD:OK):(t%6<3?'#f4d06f':'#8a7a40');}}
+          g.px(bx,by,5,3,c);}
+        /* each finished run sends one record */
+        RUNS[i].forEach(function(r){var q=p-(r.s+(r.f>=0?(r.f+1)*6:24));
+          if(q>=0&&q<12)g.px(lerp(41,59,q/12),lerp(y+6,29,q/12),2,2,r.f>=0?BAD:OK);
+          if(q>=12)arrivedBad.push(r.f>=0);});
+      }
+      /* diagnostics store */
+      g.px(51,19,20,2,'#bcbcbc');g.px(52,21,18,20,'#0c1535');g.px(53,22,16,18,'#050a24');
+      arrivedBad.forEach(function(b,k){g.px(54,38-k*2,14,1,b?BAD:OK);});
+      g.t('DIAGNOSTICS',61,44,TXT,0.6,'center');
+      g.t('NO USER TEXT',61,51,DIM,0.6,'center');g.t('UNLESS OPTED IN',61,56,DIM,0.6,'center');
+      /* terminal */
+      g.px(76,2,58,66,'#bcbcbc');g.px(77,7,56,60,'#050a24');g.t('TERMINAL',79,2.8,'#0c1535',0.6);
+      function type(str,start,yy){var n=Math.max(0,Math.min(str.length,Math.floor((p-start)/2)));
+        if(n)g.t(str.slice(0,n),TX,yy,'#ece7d8',0.7);return n===str.length;}
+      var cursorY=10;
+      if(p<276){
+        if(p>=168&&type('$ LOGAN',168,10))cursorY=-1;
+        for(j=0;j<3;j++){var q=p-186-j*5;if(q>=0&&q<12)g.px(lerp(70,79,q/12),lerp(28,12,q/12),2,2,'#f878f8');}
+        if(p>=212){g.t('NAME',TX,18,DIM,0.7);g.t('RUNS',118,18,DIM,0.7,'right');g.t('FAIL',131,18,DIM,0.7,'right');}
+        for(j=0;j<3;j++)if(p>=218+j*7){y=25+j*6;var bad=TABLE[j][2]>0;
+          g.t(TABLE[j][0],TX,y,'#ece7d8',0.7);g.t(TABLE[j][1],118,y,'#ece7d8',0.7,'right');g.t(TABLE[j][2],131,y,bad?BAD:OK,0.7,'right');}
+        if(p>=246){g.t('FAILED:',TX,46,BAD,0.7);g.t('COMPARE  RUN C9F1',TX,52,t%20<14?BAD:'#7a3b3b',0.7);cursorY=59;}
+      }else{
+        if(type('$ LOGAN --RUN C9F1',276,10))cursorY=-1;
+        if(p>=316)g.t('COMPARE  ON MAC B',TX,18,TXT,0.7);
+        if(p>=322){g.t('VERDICT',TX,25,TXT,0.7);g.t('STEP_FAILED',131,25,BAD,0.7,'right');}
+        for(j=0;j<PIPE.length;j++)if(p>=330+j*12){y=34+j*6;var last=j===PIPE.length-1;
+          var w=last?Math.min(PIPE[j][1],Math.floor((p-330-j*12)/1.2)):PIPE[j][1];
+          g.t(PIPE[j][0],TX,y,'#ece7d8',0.7);g.px(100,y+0.5,20,2,'#22347a');g.px(100,y+0.5,w,2,last?BAD:OK);
+          if(!last||w>=PIPE[j][1])g.t(PIPE[j][2],132,y,last?BAD:TXT,0.6,'right');}
+        if(p>=410)cursorY=62;
+      }
+      if(cursorY>0&&t%16<8)g.px(TX,cursorY,2,3,'#ece7d8');
     }});
 })();
 
