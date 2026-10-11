@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M26.0 8.0 L38.0 8.0 L56.0 26.0 L56.0 38.0 L38.0 56.0 L26.0 56.0 L8.0 38.0 L8.0 26.0 Z" fill="#f1e7cf" stroke="#9a2a1c" stroke-width="2.4" stroke-linejoin="round"/><path d="M32 10 L54 32 L32 54 L10 32 Z" fill="none" stroke="#241d16" stroke-width="1" opacity=".55"/><path d="M26.0 8.0 L32.0 14.0 L38.0 8.0 Z" fill="#d8c8a4" stroke="#9a2a1c" stroke-width="1.6" stroke-linejoin="round"/><path d="M56.0 26.0 L50.0 32.0 L56.0 38.0 Z" fill="#d8c8a4" stroke="#9a2a1c" stroke-width="1.6" stroke-linejoin="round"/><path d="M38.0 56.0 L32.0 50.0 L26.0 56.0 Z" fill="#d8c8a4" stroke="#9a2a1c" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.0 38.0 L14.0 32.0 L8.0 26.0 Z" fill="#d8c8a4" stroke="#9a2a1c" stroke-width="1.6" stroke-linejoin="round"/><path d="M44 16C36 20 29 28 25 44" stroke="#241d16" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M44 16c-1.5 9-8 15.5-17 19c3-9 9-15.5 17-19z" fill="#9a2a1c"/><path d="M25 44l-2.5 4.5 4.5-2.5z" fill="#241d16"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <path d="M14 3h36a4 4 0 0 1 4 4v44a3 3 0 0 1-3 3H13a3 3 0 0 1-3-3V7a4 4 0 0 1 4-4z" fill="#9a2a1c"/>
+  <path d="M15 56h34v3a2 2 0 0 1-2 2H17a2 2 0 0 1-2-2z" fill="#9a2a1c"/>
+  <rect x="17" y="9" width="30" height="23" rx="3" fill="#f1e7cf"/>
+  <rect x="34" y="42" width="12" height="2.6" rx="1.3" fill="#f1e7cf"/>
+  <rect x="17" y="46" width="5" height="2" rx="1" fill="#f1e7cf" opacity=".7"/>
+</svg>
