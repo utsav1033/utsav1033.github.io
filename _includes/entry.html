@@ -1,0 +1,9 @@
+{% assign e = include.entry %}
+<article class="entry">
+  <div class="row"><div class="text">
+    <p class="entry-head"><span class="org">{% if e.url %}<a href="{{ e.url }}">{{ e.org }}</a>{% else %}{{ e.org }}{% endif %}</span><span class="sep">·</span><span class="when">{{ e.when }}</span></p>
+    {% if e.lead %}<p class="lead">{{ e.lead }}</p>{% endif %}
+  </div></div>
+  {% for it in e.items %}{% include item.html item=it %}{% endfor %}
+  {% if e.note %}<div class="row"><div class="text"><p class="note">{{ e.note }}</p></div></div>{% endif %}
+</article>

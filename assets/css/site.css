@@ -1,0 +1,136 @@
+/* ---------- paper and ink ---------- */
+:root{
+  --paper:#f4eedf; --ink:#26211b; --muted:#6e6454; --hair:#b3a68b; --rule:#d3c8af; --red:#962a1c;
+  --body:"EB Garamond",Garamond,"Times New Roman",serif;
+  --title:"IM Fell English SC","IM Fell English",Garamond,serif;
+  --text:31em;        /* the reading column */
+  --margin:1fr;       /* the plate column beside it on wide screens */
+}
+@media (prefers-color-scheme:dark){:root{
+  --paper:#1a1713; --ink:#e9dfc9; --muted:#a69a84; --hair:#5e5546; --rule:#3a342b; --red:#e08a6e;}}
+
+*{box-sizing:border-box}
+html{background:var(--paper)}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 20px/1.55 var(--body);
+  font-variant-numeric:oldstyle-nums proportional-nums;font-kerning:normal;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:underline;text-decoration-color:var(--hair);text-decoration-thickness:1px;text-underline-offset:.18em}
+a:hover{color:var(--red);text-decoration-color:var(--red)}
+p{margin:0 0 .75em}
+strong{font-weight:600}
+
+/* ---------- page grid: text on the left, plates in the margin ---------- */
+.page{max-width:1300px;margin:0 auto;padding:4.5em 2.5em 4em}
+.row{display:grid;grid-template-columns:minmax(0,var(--text)) minmax(0,var(--margin));column-gap:2.6em;align-items:start}
+.row>.text{grid-column:1}
+.row>figure{grid-column:2}
+
+/* ---------- title leaf ---------- */
+.name{font-family:var(--title);font-weight:400;font-size:44px;letter-spacing:.04em;line-height:1.1;margin:0 0 .25em}
+.city{color:var(--muted);margin:0 0 .3em}
+.links{margin:0 0 1.4em}
+.links a{margin-right:1em}
+.about p{max-width:var(--text)}
+
+/* ornamental rule: two hairlines and a fleuron */
+.ornament{display:flex;align-items:center;gap:1em;color:var(--red);margin:3em 0 2.8em;max-width:var(--text)}
+.ornament::before,.ornament::after{content:"";flex:1;border-top:1px solid var(--rule)}
+.ornament span{font-size:20px;line-height:1}
+
+/* ---------- sections ---------- */
+.section-title{font-family:var(--title);font-weight:400;font-size:26px;letter-spacing:.12em;
+  text-align:center;margin:0 0 1.6em;max-width:var(--text)}
+.entry{margin:0 0 2.4em}
+.entry-head{margin:0 0 .5em;font-size:20px}
+.entry-head .org{font-family:var(--title);font-size:23px;letter-spacing:.03em}
+.entry-head .sep{color:var(--hair);margin:0 .4em}
+.entry-head .when{color:var(--muted)}
+.lead{margin:0 0 .9em}
+.item{margin:0 0 1.1em}
+.item .text p{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.run{font-weight:600}
+.note{color:var(--muted);font-size:18px}
+.empty{color:var(--muted)}
+
+/* ---------- plates, set like figures in an old journal ---------- */
+figure{margin:.2em 0 1.4em}
+figure svg{display:block;width:100%;height:auto}
+figcaption{font-size:15.5px;line-height:1.4;color:var(--muted);margin:.5em 0 0}
+figcaption .fig{color:var(--ink);font-variant:small-caps;letter-spacing:.05em}
+svg text{font-family:var(--body);font-size:14px;fill:var(--ink)}
+svg .sm{font-size:12.5px;fill:var(--muted)}
+svg .red{fill:var(--red)}
+svg .name{font-family:var(--title);font-size:14.5px;letter-spacing:.06em}
+svg .guide{fill:none;stroke:var(--hair);stroke-width:.9;stroke-dasharray:1.5 3}
+svg .hollow{fill:var(--paper);stroke:var(--ink);stroke-width:1}
+svg .body{fill:var(--ink)}
+svg .ring{fill:none;stroke:var(--ink);stroke-width:.7;stroke-dasharray:1.2 2.2}
+svg .leader{fill:none;stroke:var(--hair);stroke-width:.7}
+svg .leader-r{fill:none;stroke:var(--red);stroke-width:.7}
+svg .ret{fill:none;stroke:var(--red);stroke-width:1;stroke-dasharray:4 3}
+svg .ray{fill:none;stroke:var(--ink);stroke-width:.65}
+svg .consent{fill:none;stroke:var(--hair);stroke-width:.7;stroke-dasharray:1.5 2.5}
+svg .lens{fill:none;stroke:var(--ink);stroke-width:1}
+svg .screen{fill:none;stroke:var(--ink);stroke-width:1.5}
+svg .grid{fill:none;stroke:var(--rule);stroke-width:.7;stroke-dasharray:1 3}
+svg .faint{fill:var(--hair)}
+svg .star{fill:var(--ink)} svg .red-f{fill:var(--red)}
+svg .cons{fill:none;stroke:var(--ink);stroke-width:.7}
+svg .gapring{fill:none;stroke:var(--red);stroke-width:.9;stroke-dasharray:3 3}
+svg .orbit{fill:none;stroke:var(--ink);stroke-width:.65}
+svg .tick{stroke:var(--hair);stroke-width:.7}
+svg .track{fill:none;stroke:var(--ink);stroke-width:1.2}
+svg .track-r{fill:none;stroke:var(--red);stroke-width:1}
+svg .xmark{fill:none;stroke:var(--red);stroke-width:1.2}
+
+/* motion: slow and quiet, off when the reader asks */
+.plate-taskmaster .present{animation:present 12s steps(1) infinite}
+.plate-tracing .photon{opacity:0;animation:photon 4.2s ease-in infinite}
+@keyframes photon{0%{offset-distance:0%;opacity:0}6%{opacity:1}92%{offset-distance:100%;opacity:1}100%{offset-distance:100%;opacity:0}}
+.plate-flowgap .tw{animation:tw 6s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:1}50%{opacity:.25}}
+.plate-flowgap .draw{stroke-dasharray:60;stroke-dashoffset:60;animation:draw 9s ease-out infinite}
+@keyframes draw{0%,5%{stroke-dashoffset:60}25%,92%{stroke-dashoffset:0}100%{stroke-dashoffset:60}}
+.plate-flowgap .gapmark{animation:gapm 9s ease-in-out infinite}
+@keyframes gapm{0%,38%{opacity:0}48%,92%{opacity:1}100%{opacity:0}}
+.plate-carmen .draw2{stroke-dasharray:240;stroke-dashoffset:240;animation:draw2 8s ease-out infinite}
+@keyframes draw2{0%{stroke-dashoffset:240}18%,90%{stroke-dashoffset:0}100%{stroke-dashoffset:240}}
+.plate-carmen .xmark{opacity:0;animation:xm 8s steps(1) infinite}
+@keyframes xm{0%{opacity:0}20%,90%{opacity:1}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){
+  .plate-tracing .photon{animation:none;opacity:0}
+  .plate-flowgap .tw,.plate-flowgap .draw,.plate-flowgap .gapmark,.plate-carmen .draw2,.plate-carmen .xmark{animation:none;stroke-dashoffset:0;opacity:1}
+}
+
+/* ---------- writing and publications ---------- */
+.list{list-style:none;margin:0;padding:0;max-width:var(--text)}
+.list li{display:flex;justify-content:space-between;gap:1em;margin:0 0 .5em}
+.list .when{color:var(--muted);white-space:nowrap}
+.pub{max-width:var(--text);margin:0 0 1em}
+.pub .head{display:flex;justify-content:space-between;gap:1em}
+.pub .when{color:var(--muted);white-space:nowrap}
+.pub p{margin:.1em 0 0;color:var(--muted)}
+
+footer{color:var(--muted);font-size:17px;margin-top:3.5em;max-width:var(--text);text-align:center}
+
+/* ---------- posts ---------- */
+.post{max-width:var(--text)}
+.post h1{font-family:var(--title);font-weight:400;font-size:36px;line-height:1.15;margin:0 0 .2em}
+.post .when{color:var(--muted);margin:0 0 2em}
+.post p{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.back{display:inline-block;margin:0 0 3em;color:var(--muted)}
+
+/* ---------- narrower screens: one column, plates follow their text ---------- */
+@media (max-width:1080px){
+  .row{grid-template-columns:minmax(0,1fr)}
+  .row>figure{grid-column:1}
+  .page{max-width:42em}
+}
+@media (max-width:560px){
+  body{font-size:18.5px}
+  .page{padding:2.4em 1.2em 3em}
+  .name{font-size:35px}
+  .item .text p,.post p{text-align:left;hyphens:manual}
+  figure{overflow-x:auto;margin-left:-.4em;margin-right:-.4em}
+  figure svg{min-width:500px}
+  .list li,.pub .head{flex-direction:column;gap:0}
+}

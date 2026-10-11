@@ -1,0 +1,42 @@
+- org: Alma
+  url: https://alma.inc
+  when: June 2026 – present
+  lead: "I work on Alma’s multi-agent harness. Of what I designed and built:"
+  items:
+    - name: Taskmaster.
+      text: >-
+        Sessions in Photoshop, AutoCAD or Blender run to hundreds of steps. Taskmaster saves
+        each step to disk once it checks out and keeps only the present one in context, so a
+        long task costs no more than a short one, and going back is loading a step, not
+        replaying the session.
+      plate: taskmaster
+      fig: 1
+      caption: The course of a long task. Only the dark body is held in context; going back is a load, not a replay.
+    - name: Agent run tracing.
+      text: >-
+        A failed run used to leave a warning on one tester’s Mac and nothing else. Now every
+        run records its steps, model calls, tokens, timings and a reason from a fixed list,
+        and one command opens any run, on any device, at the step that broke. What the user
+        said leaves the Mac only if they agreed to it.
+      plate: tracing
+      fig: 2
+      caption: Runs from every Mac gather in one place; a single command brings any one of them into focus.
+    - name: The planner.
+      text: >-
+        A 72,000-character prompt, reread every turn, replaced by a one-pass classifier over
+        27 tools: right 97% of the time where it was 94%, deciding in 388 ms instead of 765,
+        and every task 14 s sooner.
+    - name: Two models in step.
+      text: >-
+        A fast model acts while the main one still plans. The layer between them skips steps
+        already taken, drops plans gone stale, and checks anything irreversible against the
+        task first. The quickest task went from 27 s to 19 s.
+  note: >-
+    Also the agent’s command line, out in November 2026; the multi-agent layer as a
+    standalone Rust binary; and 14 voice workflows in my first weeks.
+
+- org: Reliance Industries
+  when: Dec 2025 – Mar 2026
+  lead: >-
+    Letter-of-credit parsing with OCR and a local model, 72 s to 23 s a document at 3,000
+    documents a day; demand forecasts for six regions, 27% more accurate.

@@ -1,0 +1,28 @@
+<svg class="plate-tracing" viewBox="-46 0 586 172" role="img" aria-label="Records from three Macs converge on the diagnostics store, pass through one command, and show on a screen: steps, model calls, tokens and timings, the reason it stopped, failed at step five.">
+<circle class="hollow" cx="40" cy="40" r="5"/><text x="28" y="44" text-anchor="end">Mac A</text>
+<path class="ray" id="r0" d="M 45 40 L 183 96"/>
+<circle class="hollow" cx="40" cy="96" r="5"/><text x="28" y="100" text-anchor="end">Mac B</text>
+<path class="ray" id="r1" d="M 45 96 L 183 96"/>
+<circle class="hollow" cx="40" cy="152" r="5"/><text x="28" y="156" text-anchor="end">Mac C</text>
+<path class="ray" id="r2" d="M 45 152 L 183 96"/>
+<path class="consent" d="M 45 46 Q 110 30 184 87"/>
+<text class="sm" x="96" y="26">words: only with consent</text>
+<circle class="ring" cx="190" cy="96" r="11"/><circle class="body" cx="190" cy="96" r="3"/>
+<path class="leader" d="M 190 110 V 150"/><text x="190" y="164" text-anchor="middle">diagnostics</text>
+<path class="ray" d="M 201 96 L 294 96"/>
+<ellipse class="lens" cx="300" cy="96" rx="7" ry="44"/>
+<path class="leader" d="M 300 144 V 150"/><text x="300" y="164" text-anchor="middle">one command</text>
+<path class="ray" d="M 307 96 L 430 56"/>
+<path class="ray" d="M 307 96 L 430 76"/>
+<path class="ray" d="M 307 96 L 430 96"/>
+<path class="ray" d="M 307 96 L 430 116"/>
+<path class="screen" d="M 430 40 V 152"/>
+<text x="438" y="60">steps</text>
+<text x="438" y="80">model calls</text>
+<text x="438" y="100">tokens, timings</text>
+<text x="438" y="120">reason it stopped</text>
+<text class="red" x="438" y="140">failed at step v</text>
+<circle class="body photon" style="offset-path:path('M 45 40 L 183 96 L 300 96 L 430 116');animation-delay:0.0s" r="2.6"/>
+<circle class="body photon" style="offset-path:path('M 45 96 L 183 96 L 300 96 L 430 116');animation-delay:1.4s" r="2.6"/>
+<circle class="body photon" style="offset-path:path('M 45 152 L 183 96 L 300 96 L 430 116');animation-delay:2.8s" r="2.6"/>
+</svg>

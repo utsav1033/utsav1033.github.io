@@ -1,0 +1,31 @@
+- org: FlowGap
+  url: https://github.com/utsav1033/flowgap
+  when: voice agents
+  items:
+    - text: >-
+        A voice agent’s flow handles only what someone wrote a node for. FlowGap reads the
+        transcripts, finds what callers actually wanted, and drafts a node for every want the
+        flow can’t handle. In 298 real calls, that was 49% of them.
+      plate: flowgap
+      fig: 3
+      caption: Calls as stars, intents as constellations. The one without a name is the gap.
+
+- org: carmen
+  url: https://github.com/utsav1033/carmen
+  when: GPU kernels
+  items:
+    - text: >-
+        A model writes GPU kernels; a judge it can’t fool decides what’s real, testing each on
+        inputs the model never sees before timing it. The survivors made Qwen 2.5 decode 3%
+        faster with identical output, and the judge caught all 75 bugs I planted.
+      plate: carmen
+      fig: 4
+      caption: Five gates around the model. Of three drafts, only one reaches the centre.
+
+- org: Agent-Mark
+  url: https://github.com/utsav1033/agent-mark
+  when: agent evals
+  items:
+    - text: >-
+        Grades agents you can’t see inside, by tracing every tool call: success, correctness,
+        efficiency, speed and cost.

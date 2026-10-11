@@ -1,0 +1,58 @@
+<svg class="plate-carmen" viewBox="0 0 540 248" role="img" aria-label="Five concentric gates around the model. Draft A stops at the fresh random inputs ring, draft B at the secret inputs ring, and draft C passes every ring to reach the model.">
+<path class="tick" d="M 307.0 124.0 L 312.0 124.0"/>
+<path class="tick" d="M 305.4 142.6 L 307.3 142.9"/>
+<path class="tick" d="M 300.5 160.6 L 302.4 161.3"/>
+<path class="tick" d="M 292.7 177.5 L 297.0 180.0"/>
+<path class="tick" d="M 282.0 192.8 L 283.5 194.1"/>
+<path class="tick" d="M 268.8 206.0 L 270.1 207.5"/>
+<path class="tick" d="M 253.5 216.7 L 256.0 221.0"/>
+<path class="tick" d="M 236.6 224.5 L 237.3 226.4"/>
+<path class="tick" d="M 218.6 229.4 L 218.9 231.3"/>
+<path class="tick" d="M 200.0 231.0 L 200.0 236.0"/>
+<path class="tick" d="M 181.4 229.4 L 181.1 231.3"/>
+<path class="tick" d="M 163.4 224.5 L 162.7 226.4"/>
+<path class="tick" d="M 146.5 216.7 L 144.0 221.0"/>
+<path class="tick" d="M 131.2 206.0 L 129.9 207.5"/>
+<path class="tick" d="M 118.0 192.8 L 116.5 194.1"/>
+<path class="tick" d="M 107.3 177.5 L 103.0 180.0"/>
+<path class="tick" d="M 99.5 160.6 L 97.6 161.3"/>
+<path class="tick" d="M 94.6 142.6 L 92.7 142.9"/>
+<path class="tick" d="M 93.0 124.0 L 88.0 124.0"/>
+<path class="tick" d="M 94.6 105.4 L 92.7 105.1"/>
+<path class="tick" d="M 99.5 87.4 L 97.6 86.7"/>
+<path class="tick" d="M 107.3 70.5 L 103.0 68.0"/>
+<path class="tick" d="M 118.0 55.2 L 116.5 53.9"/>
+<path class="tick" d="M 131.2 42.0 L 129.9 40.5"/>
+<path class="tick" d="M 146.5 31.3 L 144.0 27.0"/>
+<path class="tick" d="M 163.4 23.5 L 162.7 21.6"/>
+<path class="tick" d="M 181.4 18.6 L 181.1 16.7"/>
+<path class="tick" d="M 200.0 17.0 L 200.0 12.0"/>
+<path class="tick" d="M 218.6 18.6 L 218.9 16.7"/>
+<path class="tick" d="M 236.6 23.5 L 237.3 21.6"/>
+<path class="tick" d="M 253.5 31.3 L 256.0 27.0"/>
+<path class="tick" d="M 268.8 42.0 L 270.1 40.5"/>
+<path class="tick" d="M 282.0 55.2 L 283.5 53.9"/>
+<path class="tick" d="M 292.7 70.5 L 297.0 68.0"/>
+<path class="tick" d="M 300.5 87.4 L 302.4 86.7"/>
+<path class="tick" d="M 305.4 105.4 L 307.3 105.1"/>
+<circle class="orbit" cx="200" cy="124" r="104"/>
+<circle class="body" cx="232.1" cy="25.1" r="1.6"/><path class="leader" d="M 232.1 25.1 L 338 30"/><text x="344" y="34">compiles</text>
+<circle class="orbit" cx="200" cy="124" r="84"/>
+<circle class="body" cx="247.0" cy="54.4" r="1.6"/><path class="leader" d="M 247.0 54.4 L 338 54"/><text x="344" y="58">matches the answer key</text>
+<circle class="orbit" cx="200" cy="124" r="64"/>
+<circle class="body" cx="249.0" cy="82.9" r="1.6"/><path class="leader" d="M 249.0 82.9 L 338 78"/><text x="344" y="82">fresh random inputs</text>
+<circle class="orbit" cx="200" cy="124" r="44"/>
+<circle class="body" cx="240.2" cy="106.1" r="1.6"/><path class="leader" d="M 240.2 106.1 L 338 102"/><text x="344" y="106">secret inputs</text>
+<circle class="orbit" cx="200" cy="124" r="24"/>
+<circle class="body" cx="223.8" cy="120.7" r="1.6"/><path class="leader" d="M 223.8 120.7 L 338 126"/><text x="344" y="130">timed against MLX</text>
+<circle class="body" cx="200" cy="124" r="5"/><text class="sm" x="200" y="114" text-anchor="middle">model</text>
+<path class="track-r draw2" style="animation-delay:0.0s" d="M 28 30 Q 96 22 143.5 94.0"/>
+<text x="24" y="34" text-anchor="end">A</text>
+<path class="xmark" style="animation-delay:1.2s" d="M 139.5 90.0 L 147.5 98.0 M 147.5 90.0 L 139.5 98.0"/>
+<path class="track-r draw2" style="animation-delay:1.6s" d="M 28 222 Q 100 236 163.5 148.6"/>
+<text x="24" y="226" text-anchor="end">B</text>
+<path class="xmark" style="animation-delay:2.8s" d="M 159.5 144.6 L 167.5 152.6 M 167.5 144.6 L 159.5 152.6"/>
+<path class="track draw2" style="animation-delay:3.2s" d="M 20 128 Q 110 176 195.0 124.0"/>
+<text x="16" y="132" text-anchor="end">C</text>
+<text class="sm" x="344" y="176">A: a bug at length 257</text><text class="sm" x="344" y="192">B: fp16 rounding</text><text class="sm" x="344" y="208">C: 1.82× faster, into Qwen</text>
+</svg>
