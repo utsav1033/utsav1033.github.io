@@ -1,13 +1,25 @@
-{% comment %} A job: heading, lead, then its items on the left and their figures stacked on the right. {% endcomment %}
+{% comment %}
+A job. Items that have a figure are set as pairs: the paragraph on the left, its figure on
+the right, ruled off from the next pair. Smaller wins go in a short "Also" list after them.
+{% endcomment %}
 {% assign e = include.entry %}
-{% assign figs = e.items | where_exp: "i", "i.plate" %}
 <article class="entry">
   <h3 class="entry-head"><span class="org">{% if e.url %}<a href="{{ e.url }}">{{ e.org }}</a>{% else %}{{ e.org }}{% endif %}</span><span class="when">{{ e.when }}</span></h3>
-  <div class="entry-body{% if figs.size > 0 %} with-figs{% endif %}">
-    <div class="items">
-      {% if e.lead %}<div class="lead">{{ e.lead | markdownify }}</div>{% endif %}
-      {% for it in e.items %}{% include item.html item=it %}{% endfor %}
+  {% if e.lead %}<div class="lead">{{ e.lead | markdownify }}</div>{% endif %}
+  {% for it in e.items %}
+  <div class="pair{% if it.plate %} has-fig{% endif %}">
+    <div class="pair-text">
+      <h4>{{ it.name }}</h4>
+      {{ it.text | markdownify }}
+      {% if it.text2 %}{{ it.text2 | markdownify }}{% endif %}
     </div>
-    {% if figs.size > 0 %}<div class="figs">{% for it in figs %}{% include figure.html item=it %}{% endfor %}</div>{% endif %}
+    {% if it.plate %}{% include figure.html item=it %}{% endif %}
   </div>
+  {% endfor %}
+  {% if e.also %}
+  <div class="also">
+    <p class="also-head">Also</p>
+    <ul>{% for a in e.also %}<li><strong>{{ a.name }}.</strong> {{ a.text }}</li>{% endfor %}</ul>
+  </div>
+  {% endif %}
 </article>

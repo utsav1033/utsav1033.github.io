@@ -1,5 +1,0 @@
-{% assign it = include.item %}
-<div class="item">
-  {% if it.name %}<h4>{{ it.name }}{% if it.plate %} <a class="figref" href="#fig-{{ it.fig }}">Fig. {{ it.fig }}</a>{% endif %}</h4>{% endif %}
-  {{ it.text | markdownify }}
-</div>

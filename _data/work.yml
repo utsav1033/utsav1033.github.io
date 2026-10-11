@@ -2,51 +2,51 @@
   url: https://alma.inc
   when: June 2026 – present
   lead: >-
-    Alma is a computer-use interface for macOS: say what you want, and it gets done in
-    whatever app it takes. I work on the multi-agent harness underneath.
+    Alma lets you use your Mac by saying what you want. It works in any app the way you
+    would, by looking at the screen, clicking and typing. I work on the agents behind it.
   items:
-    - name: Memory for long sessions
+    - name: Memory that lasts a whole project
       text: >-
-        A real job in Blender, AutoCAD or Photoshop outlasts any context window. I built the
-        memory that lets the agent see it through: **context stays the same size at step 5
-        and step 500**, and going back to an earlier step is a load, not a replay.
+        Agents fall apart on long jobs. A real session in Blender or AutoCAD runs to hundreds
+        of steps, and a model’s memory fills up long before the work is done.
+      text2: >-
+        I built a memory that doesn’t grow with the task. The agent always works from a short
+        picture of where things stand, everything it has verified is kept, and it can go back to
+        any earlier point without redoing the work.
       plate: memory
       fig: 1
-      title: Ledger and belief state
-      caption: Each verified change is appended to a ledger on disk; context holds only a small belief state, and going back loads it from the ledger.
-    - name: One pass to decide
+      title: Long-horizon memory
+      caption: Each verified change is written to disk; the agent keeps only a small picture of the app in mind, and going back reloads it.
+    - name: Not waiting on the big model
       text: >-
-        The planner was a 72,000-character prompt the model reread every turn. I replaced it
-        with a one-pass classifier over 27 tools: **tasks 33 s → 19 s**, decisions 765 →
-        388 ms, accuracy 94% → 97%, and 5,000 fewer tokens a turn.
-    - name: Handing off to a faster model
-      text: >-
-        The main model starts a task, then hands it to a fast model and stops. The fast one
-        thinks once and then acts in under 450 ms a step. My sync layer makes the handover safe:
-        it skips steps already done, drops plans gone stale, and checks every send or delete
-        before it runs. **Fastest task 27 s → 19 s.**
+        The smart model needs a few seconds to think before it acts, and you feel every one of
+        them.
+      text2: >-
+        So a small, fast model starts working the moment you ask. When the smart model is ready
+        it takes over from the first step the fast one hasn’t done. **The fastest task went from
+        27 s to 19 s.**
       plate: sync
       fig: 2
-      title: Slow start, fast finish
-      caption: The slow model hands over and stops; the fast model thinks, then acts in under 450 ms a step and finishes 8 s sooner.
-    - name: Runs that explain themselves
+      title: The fast model covers
+      caption: Both start at once. The fast model works while the slow one thinks; the slow one takes over at step 5.
+    - name: Knowing why a run failed
       text: >-
-        A failed run used to leave a warning on one tester’s Mac and nothing else. Now every
-        run records its steps, model calls, tokens and the reason it stopped, and **one command
-        opens any run, on any machine, at the step that broke.**
+        When a run broke on a tester’s laptop, all we had was “it didn’t work”.
+      text2: >-
+        Now every run leaves a trace of each step and model call, with a plain reason when it
+        stops, and one command opens any run from any machine at the step that broke. What
+        people say stays on their Mac unless they opt in.
       plate: tracing
       fig: 3
       title: Tracing a failed run
-      caption: Every Mac reports counts and error words, and what the user said only with consent; one command turns any run into a timeline of where it broke.
-    - name: Voice workflows
-      text: >-
-        Shipped **14 workflows that start from a single spoken word** and carry a task across
-        the browser, productivity and creative apps.
-    - name: The agent, beyond the app
-      text: >-
-        Built the agent’s CLI, **launching publicly in November 2026**, and ported the
-        multi-agent layer, built around the pi agent, into a dictation app as a standalone Rust
-        binary tuned for speed and disk size.
+      caption: Every Mac reports to one place; one command turns any run into a timeline of where it broke.
+  also:
+    - name: Quicker decisions
+      text: The agent used to reread a 72,000-character instruction sheet before every move. A small classifier now picks the right tool in one go, and tasks finish in 19 s instead of 33 s.
+    - name: Voice shortcuts
+      text: Fourteen workflows you start with a single word, across the browser, office and creative apps.
+    - name: Alma outside the app
+      text: The agent’s command-line version, out in November 2026, and the agent, built on the pi agent, running inside a dictation app as a small Rust program.
 
 - org: Reliance Industries
   when: Dec 2025 – Mar 2026
