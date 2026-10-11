@@ -24,10 +24,10 @@ p{margin:0 0 .7em}
 strong{font-weight:700}
 
 /* ---------- light / dark switch, top left ---------- */
-.theme-toggle{position:absolute;top:1.1em;right:calc(2.5em - 5px);width:30px;height:30px;padding:5px;border:0;background:none;color:var(--muted);cursor:pointer;border-radius:50%}
+.theme-toggle{font:inherit;position:absolute;top:calc(3.5em + 4px);left:calc(2.5em + var(--text) - 40px);width:40px;height:40px;padding:6px;border:0;background:none;color:var(--muted);cursor:pointer;border-radius:50%}
 .theme-toggle:hover{color:var(--red)}
 .theme-toggle:focus-visible{outline:1px solid var(--red);outline-offset:2px}
-.theme-toggle svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round;display:block}
+.theme-toggle svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round;display:block}
 .theme-toggle .moon{display:none}
 :root[data-theme="dark"] .theme-toggle .sun{display:none} :root[data-theme="dark"] .theme-toggle .moon{display:block}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .theme-toggle .sun{display:none}:root:not([data-theme="light"]) .theme-toggle .moon{display:block}}
@@ -184,8 +184,7 @@ footer p{margin:.2em 0}
 .post-body code{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.82em;background:var(--card);border:1px solid var(--rule);border-radius:3px;padding:.05em .3em}
 .post-body pre{background:var(--card);border:1px solid var(--hair);padding:1em 1.1em;overflow-x:auto;font-size:15px;line-height:1.5;margin:1.2em 0}
 .post-body pre code{background:none;border:0;padding:0;font-size:inherit}
-.post-body img{max-width:100%;height:auto;display:block;margin:1.8em auto;border:1px solid var(--hair);box-shadow:0 1px 0 var(--rule);
-  filter:grayscale(1) sepia(.5) contrast(.95)}
+.post-body img{max-width:100%;height:auto;display:block;margin:1.8em auto;border:1px solid var(--hair);box-shadow:0 1px 0 var(--rule)}
 
 .post-body figure{margin:1.6em 0}
 .post-body .footnotes{margin-top:2.6em;padding-top:1em;border-top:1px solid var(--rule);font-size:16.5px;color:var(--muted)}
@@ -207,7 +206,7 @@ footer p{margin:.2em 0}
 @media (max-width:560px){
   body{font-size:18.5px}
   .page{padding:2.6em 1.2em 3em}
-  .theme-toggle{top:.6em;right:calc(1.2em - 5px)}
+  .theme-toggle{top:calc(2.6em - 2px);left:auto;right:1.2em}
   .name{font-size:38px}
   .list .head{flex-direction:column;gap:0}
   .post-head h1{font-size:33px}
