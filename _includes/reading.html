@@ -1,0 +1,6 @@
+{% comment %} Reading list: title and author, with what's on the desk right now marked. {% endcomment %}
+<ul class="reading">
+{% for b in site.data.reading %}
+  <li><span class="r-title">{{ b.title }}</span><span class="r-author">{{ b.author }}</span>{% if b.now %}<span class="r-now">reading now</span>{% endif %}</li>
+{% endfor %}
+</ul>

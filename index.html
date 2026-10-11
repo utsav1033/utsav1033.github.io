@@ -39,3 +39,8 @@ layout: default
 {% include section-title.html id="education" title="Education" icon="cap" %}
 <ul class="list">{% for x in site.data.publications.education %}<li><div class="head"><span>{{ x.title }}</span><span class="when">{{ x.venue }}</span></div></li>{% endfor %}</ul>
 </section>
+
+<section>
+{% include section-title.html id="reading" title="Reading" icon="spectacles" %}
+{% include reading.html %}
+</section>
