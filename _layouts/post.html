@@ -1,9 +1,23 @@
 ---
 layout: default
 ---
-<a class="back" href="{{ '/' | relative_url }}">← {{ site.title }}</a>
+<a class="back" href="{{ '/writing/' | relative_url }}">← Writing</a>
 <article class="post">
-  <h1>{{ page.title }}</h1>
-  <p class="when">{{ page.date | date: "%-d %B %Y" }}</p>
-  {{ content }}
+  <header class="post-head">
+    <h1>{{ page.title }}</h1>
+    <p class="post-meta">{{ page.date | date: "%-d %B %Y" }}{% assign words = content | number_of_words %} · {{ words | divided_by: 220 | plus: 1 }} min read</p>
+    {% if page.description %}<p class="post-desc">{{ page.description }}</p>{% endif %}
+  </header>
+  <div class="post-body">
+{{ content }}
+  </div>
 </article>
+{% assign posts = site.posts | where_exp: "p", "p.draft != true" %}
+{% for p in posts %}{% if p.url == page.url %}{% assign i = forloop.index0 %}{% endif %}{% endfor %}
+{% if i %}{% assign newer = i | minus: 1 %}{% assign older = i | plus: 1 %}{% endif %}
+{% if i > 0 or posts[older] %}
+<nav class="post-nav" aria-label="More writing">
+  {% if i > 0 %}<a class="newer" href="{{ posts[newer].url | relative_url }}"><span>Newer</span>{{ posts[newer].title }}</a>{% else %}<span></span>{% endif %}
+  {% if posts[older] %}<a class="older" href="{{ posts[older].url | relative_url }}"><span>Older</span>{{ posts[older].title }}</a>{% endif %}
+</nav>
+{% endif %}

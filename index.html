@@ -23,9 +23,10 @@ layout: default
 {% include section-title.html id="writing" title="Writing" icon="quill" %}
 {% assign posts = site.posts | where_exp: "p", "p.draft != true" %}
 {% if posts.size > 0 %}
-<ul class="list">{% for post in posts %}<li><div class="head"><a href="{{ post.url | relative_url }}">{{ post.title }}</a><span class="when">{{ post.date | date: "%b %Y" }}</span></div></li>{% endfor %}</ul>
+<ul class="list">{% for post in posts limit:3 %}<li><div class="head"><a href="{{ post.url | relative_url }}">{{ post.title }}</a><span class="when">{{ post.date | date: "%b %Y" }}</span></div>{% if post.description %}<p class="sub">{{ post.description }}</p>{% endif %}</li>{% endfor %}</ul>
+<p class="more"><a href="{{ '/writing/' | relative_url }}">All writing →</a></p>
 {% else %}
-<p class="empty narrow">Essays to come.</p>
+<p class="empty narrow">The first essay is on its way. <a href="{{ '/writing/' | relative_url }}">Writing →</a></p>
 {% endif %}
 </section>
 
