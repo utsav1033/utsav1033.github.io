@@ -47,7 +47,7 @@ strong{font-weight:700}
 .intro{max-width:none}
 .epigraph{margin:1.6em 0 0;padding:0;max-width:56em}
 .epigraph p{text-indent:2.5em;font-family:var(--fell);font-style:italic;font-size:21px;line-height:1.45;margin:0 0 .35em}
-.epigraph footer{color:var(--muted);font-size:17px;font-style:italic;margin:0;text-align:left}
+.epigraph footer{color:var(--muted);font-size:17px;font-style:italic;margin:0;text-align:right}
 .epigraph cite{font-style:italic}
 .ornament{display:flex;align-items:center;gap:1em;color:var(--red);margin:1.8em 0 0}
 .ornament::before,.ornament::after{content:"";flex:1;border-top:1px solid var(--rule)}
