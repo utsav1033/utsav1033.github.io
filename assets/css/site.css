@@ -80,8 +80,7 @@ section{margin-top:2.6em}
 .card.paper-card{border-top-color:transparent}
 .paper{grid-row:2/4;display:flex;flex-direction:column;justify-content:space-between;position:relative;isolation:isolate;padding:20px 26px 10px}
 .paper h4{margin:0 0 1em}
-.paper ul{margin:0;line-height:1.5}
-.paper ul.ornate li{margin:0 0 1em}
+.paper ul{margin:0}
 /* a sheet with a crumpled, smoothed-out edge */
 .paper-bg{position:absolute;inset:0;width:100%;height:100%;z-index:-1;overflow:visible}
 .paper-bg .sheet{fill:none;stroke:var(--red);stroke-opacity:.45;stroke-width:1.2;vector-effect:non-scaling-stroke}
