@@ -1,8 +1,8 @@
 publications:
-  - title: Akshara
+  - title: "Akshara: contextual transliteration of Brahmi"
     url: https://ieeexplore.ieee.org/document/11437445
     venue: IEEE ICNTE 2026
-    text: Reading Brahmi inscriptions into Devanagari and English.
+    text: Reads Brahmi inscriptions into Devanagari and English, with a transliterator trained on 22,000 samples.
 education:
   - title: Computer Engineering, University of Mumbai
     venue: 2022 – 26

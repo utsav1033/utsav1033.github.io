@@ -7,7 +7,7 @@ links:
   - { label: Resume,   url: "/resume.pdf" }
 about: >-
   Engineering intern at [Alma](https://alma.inc), working on making computer use a reality.
-  I build the parts of an agent that let it get through long, messy work in real software:
-  what it remembers, how its models stay in step, and what it leaves behind when a run goes
-  wrong. On the side, I build judges that AI-written code can’t fool.
+  Most days that means long tasks: keeping an agent oriented across hundreds of steps,
+  keeping two models from stepping on each other, and making every run explain itself
+  when it fails. Outside work I build judges that AI-written code can’t fool.
 footer: Grew up on Windows XP and Tekken.

@@ -3,32 +3,34 @@
   when: GPU kernels
   items:
     - text: >-
-        A model writes GPU kernels; a judge it can’t fool decides which ones are real, testing
-        each on inputs the model never sees before timing it. The survivors made Qwen 2.5 decode
-        3% faster with identical output, and the judge caught all 75 bugs I planted, where a
-        one-shape test missed 35.
+        A model writes Metal kernels for Apple Silicon but never grades them. A judge does,
+        on hundreds of inputs including ones the model never sees, and only then times them.
+        The survivors fused **8 MLX kernels into 2 per layer** of Qwen 2.5, decoding **3%
+        faster** with identical output. The judge caught **75 of 75** planted bugs; a
+        one-shape check caught 40.
       plate: carmen
       fig: 4
-      title: The judge’s gates
-      caption: Five gates around the model. A and B are sent back with the reason; only C reaches the centre, 1.82× faster than MLX.
+      title: The judge
+      caption: The model writes, the judge grades, and only kernels that survive unseen inputs get timed.
 
 - org: FlowGap
   url: https://github.com/utsav1033/flowgap
   when: voice agents
   items:
     - text: >-
-        A voice agent’s flow handles only what someone wrote a node for. FlowGap reads the call
-        transcripts, finds what callers actually wanted, and drafts a node for each want the
-        flow can’t handle. In 298 real calls, that was 49% of them.
+        A voice agent can only handle what someone wrote a node for. FlowGap reads its call
+        transcripts, finds what callers actually wanted, and drafts the nodes the flow is
+        missing. In 298 real calls, **49% asked for something the flow couldn’t handle.**
       plate: flowgap
       fig: 5
       title: Finding the gap
-      caption: Calls as stars, intents as constellations. Three are in the flow; the unnamed one is the gap.
+      caption: What callers wanted, set against what the flow was built for. The leftover is the gap.
 
 - org: Agent-Mark
   url: https://github.com/utsav1033/agent-mark
   when: agent evals
   items:
     - text: >-
-        Grades agents you can’t see inside by tracing every tool call: did it succeed, were the
-        tools right, how fast, how much did it cost.
+        Benchmarks agents you can’t see inside. It traces every tool call and scores the run
+        on success, tool use, efficiency, speed and cost; one adapter runs Composio’s Trustclaw
+        against a live Gmail inbox.
