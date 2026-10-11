@@ -1,10 +1,14 @@
 {% assign it = include.item %}
-<div class="item row">
-  <div class="text">{% capture md %}{% if it.name %}<strong class="run">{{ it.name }}</strong> {% endif %}{{ it.text }}{% endcapture %}{{ md | markdownify }}</div>
+<div class="item row{% if it.plate %} has-plate{% endif %}">
+  <div class="text">
+    {% if it.name %}<h4>{{ it.name }}</h4>{% endif %}
+    {{ it.text | markdownify }}
+  </div>
   {% if it.plate %}
   <figure>
+    <p class="fig-title"><span class="n">Fig. {{ it.fig }}</span>{{ it.title }}</p>
     {% include plates/{{ it.plate }}.svg %}
-    <figcaption><span class="fig">Fig. {{ it.fig }}.</span> {{ it.caption }}</figcaption>
+    <figcaption>{{ it.caption }}</figcaption>
   </figure>
   {% endif %}
 </div>

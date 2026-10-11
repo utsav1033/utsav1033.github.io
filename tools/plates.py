@@ -111,6 +111,34 @@ for i,(n,s,c,e,kind) in enumerate(tracks):
 cm.append('<text class="sm" x="344" y="176">A: a bug at length 257</text><text class="sm" x="344" y="192">B: fp16 rounding</text><text class="sm" x="344" y="208">C: 1.82× faster, into Qwen</text>')
 plate4='\n'.join(cm)
 
+
+# ---------- two models in sync: a small system diagram ----------
+sy=[]
+LX=96
+sy.append('<text x="0" y="36">slow model</text><text class="sm" x="0" y="52">plans</text>')
+sy.append('<text x="0" y="176">fast model</text><text class="sm" x="0" y="192">acts</text>')
+sy.append(f'<path class="leader" d="M {LX} 40 H 532"/><path class="leader" d="M {LX} 180 H 532"/>')
+plans=[(112,'done'),(196,'stale'),(280,'keep'),(364,'keep'),(448,'keep')]
+for i,(x,st) in enumerate(plans):
+    cls='bx-r' if st=='stale' else 'bx'
+    sy.append(f'<rect class="{cls}" x="{x}" y="28" width="66" height="24" rx="2"/>')
+    lab={'done':'step 1','stale':'step 2','keep':f'step {i+1}'}[st]
+    sy.append(f'<text class="{"red" if st=="stale" else ""}" x="{x+33}" y="45" text-anchor="middle">{lab}</text>')
+    if st=='stale': sy.append(f'<path class="lnr" d="M {x+6} 40 H {x+60}"/>')
+    if st=='done': sy.append(f'<path class="leader" d="M {x+6} 40 H {x+60}"/>')
+    sy.append(f'<path class="ray" d="M {x+33} 52 V 86"/>')
+sy.append(f'<rect class="bx" x="{LX}" y="86" width="436" height="40" rx="3"/>')
+sy.append(f'<text x="{LX+12}" y="111">sync layer</text>')
+rules=[(206,'skips what’s done'),(318,'drops what’s stale'),(430,'checks what’s final')]
+for x,t in rules: sy.append(f'<text class="sm" x="{x}" y="111">{t}</text>')
+acts=[130,206,282]
+for x in acts:
+    sy.append(f'<path class="ray" d="M {x} 126 V 174"/><circle class="body" cx="{x}" cy="180" r="4"/>')
+sy.append('<path class="xmark" d="M 446 170 V 190 M 458 170 V 190"/><text class="red" x="452" y="202" text-anchor="middle">send or delete waits</text>')
+sy.append('<path class="ray" d="M 452 126 V 164"/>')
+sy.append('<circle class="body photon" style="offset-path:path(\'M 130 180 L 446 180\')" r="3"/>')
+plate5='\n'.join(sy)
+
 import os
 ROOT=os.path.join(os.path.dirname(os.path.abspath(__file__)),'..')
 OUT=os.path.join(ROOT,'_includes','plates')
@@ -119,6 +147,7 @@ SVG={
  'taskmaster':('0 0 520 214','Seven steps along a course, each saved to disk. A dark body marks the one step held in context; it moves forward step by step, then returns to step three by loading it.',plate1),
  'tracing':('-46 0 586 172','Records from three Macs converge on the diagnostics store, pass through one command, and show on a screen: steps, model calls, tokens and timings, the reason it stopped, failed at step five.',plate2),
  'flowgap':('0 0 520 220','A star chart of calls. Three constellations are named Reschedule, Billing and Cancel and exist in the flow. A fourth, in red, has no name: no node in the flow, where 49 percent of calls went.',plate3),
+ 'sync':('0 0 540 210','Two lanes: the slow model plans steps along the top, the fast model acts along the bottom. Between them a sync layer skips steps already done, drops a stale plan, and holds irreversible actions like send or delete at a gate until checked against the task.',plate5),
  'carmen':('0 0 540 248','Five concentric gates around the model. Draft A stops at the fresh random inputs ring, draft B at the secret inputs ring, and draft C passes every ring to reach the model.',plate4)}
 for name,(vb,label,body) in SVG.items():
     with open(os.path.join(OUT,name+'.svg'),'w') as fh:

@@ -6,9 +6,8 @@ links:
   - { label: LinkedIn, url: "https://linkedin.com/in/utsav-khairnar" }
   - { label: Resume,   url: "/resume.pdf" }
 about: >-
-  I’m an engineering intern at [Alma](https://alma.inc), working on making computer use
-  a reality: an agent that operates your Mac’s apps the way you would. Most of my time goes
-  into the parts of an agent nobody sees: what it remembers, how its models stay in step,
-  and what it leaves behind when a run fails. On my own I build tools that find where agents
-  go wrong, and judges that AI-written code can’t fool.
+  Engineering intern at [Alma](https://alma.inc), working on making computer use a reality.
+  I build the parts of an agent that let it get through long, messy work in real software:
+  what it remembers, how its models stay in step, and what it leaves behind when a run goes
+  wrong. On the side, I build judges that AI-written code can’t fool.
 footer: Grew up on Windows XP and Tekken.

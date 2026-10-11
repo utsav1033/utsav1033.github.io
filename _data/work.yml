@@ -1,42 +1,53 @@
 - org: Alma
   url: https://alma.inc
   when: June 2026 – present
-  lead: "I work on Alma’s multi-agent harness. Of what I designed and built:"
+  lead: Alma is an agent that uses your Mac’s apps for you. I work on its multi-agent harness.
   items:
-    - name: Taskmaster.
+    - name: Long-horizon memory for CAD and creative apps
       text: >-
-        Sessions in Photoshop, AutoCAD or Blender run to hundreds of steps. Taskmaster saves
-        each step to disk once it checks out and keeps only the present one in context, so a
-        long task costs no more than a short one, and going back is loading a step, not
-        replaying the session.
+        Photoshop, AutoCAD and Blender tasks run far longer than a model’s context can hold.
+        I built the memory that lets the agent work in them at all: every step that checks out
+        is saved to disk, only the current one stays in context, and going back to an earlier
+        step is a load, not a replay.
       plate: taskmaster
       fig: 1
-      caption: The course of a long task. Only the dark body is held in context; going back is a load, not a replay.
-    - name: Agent run tracing.
+      title: Long-horizon memory
+      caption: The course of a long task. Only the dark step is held in context; the dashed arc is a return to step iii by loading it.
+    - name: Fourteen workflows, one word each
       text: >-
-        A failed run used to leave a warning on one tester’s Mac and nothing else. Now every
-        run records its steps, model calls, tokens, timings and a reason from a fixed list,
-        and one command opens any run, on any device, at the step that broke. What the user
-        said leaves the Mac only if they agreed to it.
-      plate: tracing
+        Cross-application workflows that start from a single spoken word and carry a task
+        across the browser, productivity and creative apps.
+    - name: One decision layer
+      text: >-
+        Replaced a 72,000-character planning prompt with a single classifier over 27 tools.
+        Each turn uses 5,000 fewer tokens, a workflow fires in half the time (765 ms to 388 ms),
+        and it picks the right tool more often (97%, up from 94%).
+    - name: A fast model and a smart one, in sync
+      text: >-
+        A fast model acts on screen while a slower, smarter one is still planning. I built the
+        layer that keeps them from tripping over each other: it skips steps already done, drops
+        plans the fast model made stale, and checks anything irreversible, a send or a delete,
+        against the task first. The quickest task fell from 27 s to 19 s.
+      plate: sync
       fig: 2
-      caption: Runs from every Mac gather in one place; a single command brings any one of them into focus.
-    - name: The planner.
+      title: Two models in sync
+      caption: The slow model plans along the top, the fast one acts along the bottom. Step 1 is already done, step 2 has gone stale, and a send waits at the gate.
+    - name: Run tracing
       text: >-
-        A 72,000-character prompt, reread every turn, replaced by a one-pass classifier over
-        27 tools: right 97% of the time where it was 94%, deciding in 388 ms instead of 765,
-        and every task 14 s sooner.
-    - name: Two models in step.
+        Every run now records its steps, model calls, tokens and timings, and why it stopped,
+        so one command shows any run on any machine down to the step that broke. What a user
+        said leaves their Mac only if they agreed to it.
+      plate: tracing
+      fig: 3
+      title: Run tracing
+      caption: Runs from every Mac gather in one place; one command brings any of them into focus.
+    - name: Around the pi agent
       text: >-
-        A fast model acts while the main one still plans. The layer between them skips steps
-        already taken, drops plans gone stale, and checks anything irreversible against the
-        task first. The quickest task went from 27 s to 19 s.
-  note: >-
-    Also the agent’s command line, out in November 2026; the multi-agent layer as a
-    standalone Rust binary; and 14 voice workflows in my first weeks.
+        Built our multi-agent layer around the pi agent and shipped it as a standalone Rust
+        binary, small and quick to start.
 
 - org: Reliance Industries
   when: Dec 2025 – Mar 2026
   lead: >-
-    Letter-of-credit parsing with OCR and a local model, 72 s to 23 s a document at 3,000
-    documents a day; demand forecasts for six regions, 27% more accurate.
+    Letter-of-credit parsing with OCR and a local model, 72 s down to 23 s a document at
+    3,000 documents a day; demand forecasts for six regions, 27% more accurate.

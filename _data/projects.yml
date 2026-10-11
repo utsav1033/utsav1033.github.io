@@ -1,31 +1,34 @@
-- org: FlowGap
-  url: https://github.com/utsav1033/flowgap
-  when: voice agents
-  items:
-    - text: >-
-        A voice agent’s flow handles only what someone wrote a node for. FlowGap reads the
-        transcripts, finds what callers actually wanted, and drafts a node for every want the
-        flow can’t handle. In 298 real calls, that was 49% of them.
-      plate: flowgap
-      fig: 3
-      caption: Calls as stars, intents as constellations. The one without a name is the gap.
-
 - org: carmen
   url: https://github.com/utsav1033/carmen
   when: GPU kernels
   items:
     - text: >-
-        A model writes GPU kernels; a judge it can’t fool decides what’s real, testing each on
-        inputs the model never sees before timing it. The survivors made Qwen 2.5 decode 3%
-        faster with identical output, and the judge caught all 75 bugs I planted.
+        A model writes GPU kernels; a judge it can’t fool decides which ones are real, testing
+        each on inputs the model never sees before timing it. The survivors made Qwen 2.5 decode
+        3% faster with identical output, and the judge caught all 75 bugs I planted, where a
+        one-shape test missed 35.
       plate: carmen
       fig: 4
-      caption: Five gates around the model. Of three drafts, only one reaches the centre.
+      title: The judge’s gates
+      caption: Five gates around the model. A and B are sent back with the reason; only C reaches the centre, 1.82× faster than MLX.
+
+- org: FlowGap
+  url: https://github.com/utsav1033/flowgap
+  when: voice agents
+  items:
+    - text: >-
+        A voice agent’s flow handles only what someone wrote a node for. FlowGap reads the call
+        transcripts, finds what callers actually wanted, and drafts a node for each want the
+        flow can’t handle. In 298 real calls, that was 49% of them.
+      plate: flowgap
+      fig: 5
+      title: Finding the gap
+      caption: Calls as stars, intents as constellations. Three are in the flow; the unnamed one is the gap.
 
 - org: Agent-Mark
   url: https://github.com/utsav1033/agent-mark
   when: agent evals
   items:
     - text: >-
-        Grades agents you can’t see inside, by tracing every tool call: success, correctness,
-        efficiency, speed and cost.
+        Grades agents you can’t see inside by tracing every tool call: did it succeed, were the
+        tools right, how fast, how much did it cost.
