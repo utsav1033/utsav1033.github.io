@@ -1,6 +1,6 @@
 {% assign it = include.item %}
 <figure id="fig-{{ it.fig }}">
-  <p class="fig-title"><span class="n">Fig. {{ it.fig }}</span>{{ it.title }}</p>
+  <p class="fig-title"><span class="n">Fig. {{ it.fig }}</span>{% unless include.bare %}{{ it.title }}{% endunless %}</p>
   {% include plates/{{ it.plate }}.svg %}
   {% if it.caption %}<figcaption>{{ it.caption }}</figcaption>{% endif %}
 </figure>

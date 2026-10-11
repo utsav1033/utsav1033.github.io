@@ -1,9 +1,7 @@
 {% assign p = site.data.profile %}
 <header class="intro">
-  <div class="id">
-    <h1 class="name">{{ p.name }}</h1>
-    <p class="city">{{ p.city }}</p>
-    <p class="links">{% for l in p.links %}<a href="{{ l.url }}">{{ l.label }}</a>{% endfor %}</p>
-  </div>
+  <h1 class="name">{{ p.name }}</h1>
+  <p class="city">{{ p.city }}</p>
+  <p class="links">{% for l in p.links %}<a href="{{ l.url }}">{{ l.label }}</a>{% endfor %}</p>
   <div class="about">{{ p.about | markdownify }}</div>
 </header>

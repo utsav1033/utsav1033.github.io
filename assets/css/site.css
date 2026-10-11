@@ -24,7 +24,7 @@ p{margin:0 0 .7em}
 strong{font-weight:700}
 
 /* ---------- light / dark switch, top left ---------- */
-.theme-toggle{font:inherit;position:absolute;top:calc(3.5em + 4px);left:calc(2.5em + var(--text) - 40px);width:40px;height:40px;padding:6px;border:0;background:none;color:var(--muted);cursor:pointer;border-radius:50%}
+.theme-toggle{font:inherit;position:absolute;top:calc(3.5em + 4px);right:2.5em;width:40px;height:40px;padding:6px;border:0;background:none;color:var(--muted);cursor:pointer;border-radius:50%}
 .theme-toggle:hover{color:var(--red)}
 .theme-toggle:focus-visible{outline:1px solid var(--red);outline-offset:2px}
 .theme-toggle svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round;display:block}
@@ -44,19 +44,10 @@ strong{font-weight:700}
 .city{color:var(--muted);margin:0 0 .25em}
 .links{margin:0 0 1.3em}
 .links a{margin-right:1em}
-.intro{max-width:var(--text)}
-.ornament{display:flex;align-items:center;gap:1em;color:var(--red);margin:1.8em 0 0;max-width:var(--text)}
+.intro{max-width:none}
+.ornament{display:flex;align-items:center;gap:1em;color:var(--red);margin:1.8em 0 0}
 .ornament::before,.ornament::after{content:"";flex:1;border-top:1px solid var(--rule)}
 .ornament span{font-size:19px;line-height:1}
-/* desktop: name and links on the left, the about on the right, lined up with the cards below */
-@media (min-width:1081px){
-  .intro{max-width:none;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:2.8em;align-items:end}
-  .about{padding-right:56px}
-  .intro .links{margin:0}
-  .about p:last-child{margin:0}
-  .ornament{max-width:none}
-  .theme-toggle{left:auto;right:2.5em;top:3.5em}
-}
 
 /* ---------- sections ---------- */
 section{margin-top:2.6em}
@@ -70,20 +61,21 @@ section{margin-top:2.6em}
 .org{font-family:var(--fell);font-size:27px;line-height:1.2}
 .org a{text-decoration-color:var(--rule)}
 .when{color:var(--muted);white-space:nowrap;font-size:18px}
-.lead{margin:0 0 .4em;max-width:var(--text)}
+.lead{margin:0 0 .4em}
 .lead p{margin:0}
 
-/* a job's work as cards: figure in a box, paragraph under it, two to a row */
-.cards{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 2.8em;margin:1.3em 0 .8em}
-.card{display:grid;grid-row:span 2;grid-template-rows:subgrid;row-gap:0}
-.card figure{margin:0 0 .9em;display:flex;flex-direction:column}
+/* a job's work as cards: heading, figure, paragraph; two to a row */
+.cards{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 2.8em;margin:1.4em 0 .8em}
+.card{display:grid;grid-row:span 3;grid-template-rows:subgrid;row-gap:0;padding-top:1.2em;border-top:1px solid var(--rule)}
+.card h4{font-family:var(--fell);font-weight:400;font-size:25px;margin:0 0 .45em;line-height:1.2}
+.card figure{margin:0 0 .8em;display:flex;flex-direction:column}
 .card figure svg{margin:auto 0}
-.card.wide{grid-column:1/-1;grid-row:auto;grid-template-rows:none;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:2.8em;align-items:center}
-.card.wide{margin-top:2.2em}
-.card.wide figure{margin:0}
-.card-text h4{font-family:var(--fell);font-weight:400;font-size:25px;margin:0 0 .3em;line-height:1.2}
 .card-text p{margin:0}
 .card-text strong{font-weight:700;color:var(--ink)}
+.card.wide{grid-column:1/-1;grid-row:auto;grid-template-rows:1fr auto auto 1fr;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:2.8em;margin-top:2em}
+.card.wide h4{grid-column:1;grid-row:2}
+.card.wide .card-text{grid-column:1;grid-row:3}
+.card.wide figure{grid-column:2;grid-row:1/5;margin:0}
 
 /* a paragraph and its figure, set side by side and ruled off */
 .pair{display:grid;grid-template-columns:minmax(0,26em) minmax(0,1fr);column-gap:3.2em;align-items:center;
@@ -231,8 +223,8 @@ footer p{margin:.2em 0}
 /* ---------- one column below desktop width ---------- */
 @media (max-width:1080px){
   .pair,.projects,.cards,.card.wide{grid-template-columns:minmax(0,1fr)}
-  .card.wide figure{margin:0 0 .9em}
-  .card+.card{margin-top:1.8em}
+  .card,.card.wide{display:block;margin-top:1.6em}
+  .card.wide figure{margin:0 0 .8em}
   .pair figure{margin-top:1em}
   .project+.project{border-top:1px solid var(--rule);padding-top:1.3em}
   .page{max-width:42em}
@@ -240,7 +232,7 @@ footer p{margin:.2em 0}
 @media (max-width:560px){
   body{font-size:18.5px}
   .page{padding:2.6em 1.2em 3em}
-  .theme-toggle{top:calc(2.6em - 2px);left:auto;right:1.2em}
+  .theme-toggle{top:calc(2.6em - 2px);right:1.2em}
   .name{font-size:38px}
   .list .head{flex-direction:column;gap:0}
   .post-head h1{font-size:33px}

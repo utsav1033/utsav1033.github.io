@@ -1,6 +1,6 @@
 {% comment %}
-A job. Items with a figure are set as cards: the figure in a box, its paragraph under it,
-two to a row. An item marked wide takes a whole row, with its paragraph beside the figure.
+A job. Each item is a card: heading, its figure, then its paragraph, two to a row. An item
+marked wide takes a whole row, heading and paragraph on the left, figure on the right.
 {% endcomment %}
 {% assign e = include.entry %}
 <article class="entry">
@@ -10,11 +10,9 @@ two to a row. An item marked wide takes a whole row, with its paragraph beside t
   <div class="cards">
   {% for it in e.items %}
     <div class="card{% if it.wide %} wide{% endif %}">
-      {% if it.plate %}{% include figure.html item=it %}{% endif %}
-      <div class="card-text">
-        <h4>{{ it.name }}</h4>
-        {{ it.text | markdownify }}
-      </div>
+      <h4>{{ it.name }}</h4>
+      {% if it.plate %}{% include figure.html item=it bare=true %}{% endif %}
+      <div class="card-text">{{ it.text | markdownify }}</div>
     </div>
   {% endfor %}
   </div>
