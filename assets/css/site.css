@@ -1,7 +1,9 @@
 /* ---------- paper and ink ---------- */
 :root{
   --paper:#e9dfc8; --card:#f0e8d5; --ink:#211c16; --muted:#665c4d; --hair:#a2947a; --rule:#cbbfa4; --red:#962a1c;
-  --body:"EB Garamond",Garamond,"Times New Roman",serif;
+  --body:"Libre Caslon Text","EB Garamond",Georgia,serif;
+  --sans:"Alegreya Sans","Gill Sans",sans-serif;
+  --sanssc:"Alegreya Sans SC","Alegreya Sans",sans-serif;
   --fell:"IM Fell English","EB Garamond",Garamond,serif;
   --fellsc:"IM Fell English SC","IM Fell English",Garamond,serif;
   --canon:"IM Fell French Canon SC","IM Fell English SC",Garamond,serif;
@@ -14,9 +16,9 @@
 html{background:var(--paper)}
 body{margin:0;background-color:var(--paper);
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35  0 0 0 0 .27  0 0 0 0 .16  0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  color:var(--ink);font:500 20px/1.55 var(--body);
+  color:var(--ink);font:400 17.5px/1.7 var(--body);
   font-variant-numeric:oldstyle-nums proportional-nums;font-kerning:normal;
-  font-feature-settings:"onum","pnum","liga","dlig";-webkit-font-smoothing:antialiased}
+  font-feature-settings:"onum","pnum","liga";-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:underline;text-decoration-color:var(--hair);text-decoration-thickness:1px;text-underline-offset:.18em}
 a:hover{color:var(--red);text-decoration-color:var(--red)}
 p{margin:0 0 .7em}
@@ -31,10 +33,10 @@ strong{font-weight:700}
 
 /* ---------- header ---------- */
 .name{font-family:var(--canon);font-weight:400;font-size:54px;letter-spacing:.03em;line-height:1.05;margin:0 0 .25em}
-.running-head{display:flex;justify-content:space-between;font-family:var(--fellsc);font-size:14px;letter-spacing:.14em;
+.running-head{display:flex;justify-content:space-between;font-family:var(--sanssc);font-weight:500;font-size:13.5px;letter-spacing:.16em;
   color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:.35em;margin:-1.4em 0 2.6em}
-.city{color:var(--muted);margin:0 0 .25em}
-.links{margin:0 0 1.3em}
+.city{color:var(--muted);margin:0 0 .3em;font-family:var(--sans);font-size:17px;letter-spacing:.02em}
+.links{margin:0 0 1.3em;font-family:var(--sans);font-size:17px}
 .links a{margin-right:1em}
 .intro{max-width:var(--text)}
 .ornament{display:flex;align-items:center;gap:1em;color:var(--red);margin:1.8em 0 0;max-width:var(--text)}
@@ -52,7 +54,7 @@ section{margin-top:2.6em}
 .entry-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:.15em .8em;margin:0 0 .45em;font-weight:400}
 .org{font-family:var(--fell);font-size:27px;line-height:1.2}
 .org a{text-decoration-color:var(--rule)}
-.when{color:var(--muted);white-space:nowrap;font-size:19px;font-family:var(--fell);font-style:italic}
+.when{color:var(--muted);white-space:nowrap;font-size:16px;font-style:italic}
 .lead{margin:0 0 .4em;max-width:var(--text)}
 .lead p{margin:0}
 
@@ -61,7 +63,7 @@ section{margin-top:2.6em}
   padding:1.6em 0;border-bottom:1px solid var(--rule)}
 .pair:not(.has-fig){grid-template-columns:minmax(0,var(--text))}
 .pair-text h4{font-family:var(--fell);font-weight:400;font-size:25px;margin:0 0 .3em;line-height:1.2}
-.pair-text h4+p::first-line,.lead p:first-child::first-line,.project>p:first-of-type::first-line{font-variant:small-caps;font-feature-settings:"smcp","onum";letter-spacing:.045em}
+.pair-text h4+p::first-line,.lead p:first-child::first-line,.project>p:first-of-type::first-line{font-family:var(--sanssc);font-weight:500;letter-spacing:.06em;font-size:1.04em}
 .pair-text p{margin:0 0 .6em}
 .pair-text p:last-child{margin-bottom:0}
 .pair-text strong,.lead strong,.project strong,.also strong{font-weight:700;color:var(--ink)}
@@ -84,9 +86,9 @@ figure::before{content:"";position:absolute;inset:4px;border:1px solid var(--rul
 .fig-title{font-family:var(--fellsc);font-size:16px;letter-spacing:.05em;margin:0 0 8px;color:var(--ink);position:relative}
 .fig-title .n{color:var(--red);margin-right:.35em}
 figure svg{display:block;width:100%;height:auto;position:relative}
-figcaption{font-size:15.5px;font-weight:400;line-height:1.4;color:var(--muted);margin:8px 0 0;position:relative}
+figcaption{font-family:var(--sans);font-size:15.5px;line-height:1.4;color:var(--muted);margin:8px 0 0;position:relative}
 
-svg text{font-family:var(--body);font-weight:500;font-size:14px;fill:var(--ink)}
+svg text{font-family:var(--sans);font-weight:500;font-size:14px;fill:var(--ink)}
 svg .sm{font-size:12.5px;fill:var(--muted)}
 svg .red{fill:var(--red)}
 svg .name{font-family:var(--fellsc);font-weight:400;font-size:15px;letter-spacing:.05em}
@@ -121,17 +123,17 @@ svg .lnr{fill:none;stroke:var(--red);stroke-width:1.1}
 .list{list-style:none;margin:0;padding:0;max-width:var(--text)}
 .list li{margin:0 0 .9em}
 .list .head{display:flex;justify-content:space-between;align-items:baseline;gap:1em}
-.list .sub{color:var(--muted);font-size:18px;margin:.05em 0 0}
+.list .sub{color:var(--muted);font-size:16px;margin:.05em 0 0}
 .empty{color:var(--muted)}
 /* smaller things */
 .things{list-style:none;margin:0;padding:0;max-width:44em}
 .things li{display:grid;grid-template-columns:11em 7.5em 1fr;gap:0 1em;align-items:baseline;padding:.45em 0;border-bottom:1px dotted var(--hair)}
 .things li:last-child{border-bottom:0}
 .t-name{font-family:var(--fell);font-size:21px}
-.t-kind{color:var(--muted);font-size:15px;font-variant:small-caps;letter-spacing:.05em}
-.t-text{font-size:18.5px}
+.t-kind{color:var(--muted);font-family:var(--sanssc);font-weight:500;font-size:14px;letter-spacing:.07em}
+.t-text{font-size:17px}
 
-footer{color:var(--muted);font-size:17px;margin-top:4em;text-align:center}
+footer{color:var(--muted);font-size:15.5px;margin-top:4em;text-align:center}
 footer p{margin:.2em 0}
 .tailpiece{color:var(--red);font-size:26px;line-height:1}
 .finis{font-family:var(--fell);font-size:22px;letter-spacing:.12em;color:var(--ink)}
@@ -150,7 +152,7 @@ footer p{margin:.2em 0}
   .page{max-width:42em}
 }
 @media (max-width:560px){
-  body{font-size:18.5px}
+  body{font-size:16.5px}
   .page{padding:2.6em 1.2em 3em}
   .name{font-size:38px}
   .list .head{flex-direction:column;gap:0}
