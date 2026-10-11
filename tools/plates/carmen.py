@@ -39,7 +39,7 @@ A('''<style>
 .plate-carmen .pip{fill:var(--ink);opacity:0;animation:carmen-run 10s linear infinite;
   offset-path:path('M 60 86 H 252 V 134 H 38 V 112 V 86 H 60 H 448')}
 @keyframes carmen-run{0%{offset-distance:0%;opacity:0}3%{opacity:1}96%{offset-distance:100%;opacity:1}100%{offset-distance:100%;opacity:0}}
-@media (prefers-reduced-motion:reduce){.plate-carmen .pip{animation:none;opacity:0}}
+@media all{.plate-carmen .pip{animation:none;opacity:0}}
 </style>''')
 
 # ---- Carmy: three stacked drafts

@@ -6,8 +6,11 @@
   --fellsc:"IM Fell English SC","IM Fell English",Garamond,serif;
   --text:32em;
 }
-@media (prefers-color-scheme:dark){:root{
+:root[data-theme="dark"]{
+  --paper:#1a1713; --card:#201c17; --ink:#ebe1cb; --muted:#a89c86; --hair:#615848; --rule:#3a342b; --red:#e08a6e;}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --paper:#1a1713; --card:#201c17; --ink:#ebe1cb; --muted:#a89c86; --hair:#615848; --rule:#3a342b; --red:#e08a6e;}}
+:root[data-theme="light"]{color-scheme:light} :root[data-theme="dark"]{color-scheme:dark}
 
 *{box-sizing:border-box}
 html{background:var(--paper)}
@@ -19,6 +22,15 @@ a{color:inherit;text-decoration:underline;text-decoration-color:var(--hair);text
 a:hover{color:var(--red);text-decoration-color:var(--red)}
 p{margin:0 0 .7em}
 strong{font-weight:700}
+
+/* ---------- light / dark switch, top left ---------- */
+.theme-toggle{position:absolute;top:14px;left:14px;width:30px;height:30px;padding:5px;border:0;background:none;color:var(--muted);cursor:pointer;border-radius:50%}
+.theme-toggle:hover{color:var(--red)}
+.theme-toggle:focus-visible{outline:1px solid var(--red);outline-offset:2px}
+.theme-toggle svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round;display:block}
+.theme-toggle .moon{display:none}
+:root[data-theme="dark"] .theme-toggle .sun{display:none} :root[data-theme="dark"] .theme-toggle .moon{display:block}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .theme-toggle .sun{display:none}:root:not([data-theme="light"]) .theme-toggle .moon{display:block}}
 
 /* ---------- page: text on the left, figures beside it on wide screens ---------- */
 .page{max-width:1300px;margin:0 auto;padding:3.5em 2.5em 3em}
@@ -168,7 +180,10 @@ footer p{margin:.2em 0}
 .post-body code{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.82em;background:var(--card);border:1px solid var(--rule);border-radius:3px;padding:.05em .3em}
 .post-body pre{background:var(--card);border:1px solid var(--hair);padding:1em 1.1em;overflow-x:auto;font-size:15px;line-height:1.5;margin:1.2em 0}
 .post-body pre code{background:none;border:0;padding:0;font-size:inherit}
-.post-body img{max-width:100%;height:auto;display:block;margin:1.8em auto;border:1px solid var(--hair);box-shadow:0 1px 0 var(--rule)}
+.post-body img{max-width:100%;height:auto;display:block;margin:1.8em auto;border:1px solid var(--hair);box-shadow:0 1px 0 var(--rule);
+  filter:grayscale(1) sepia(.5) contrast(.95);mix-blend-mode:multiply}
+:root[data-theme="dark"] .post-body img{filter:grayscale(1) sepia(.35) brightness(.85);mix-blend-mode:normal}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .post-body img{filter:grayscale(1) sepia(.35) brightness(.85);mix-blend-mode:normal}}
 .post-body figure{margin:1.6em 0}
 .post-body .footnotes{margin-top:2.6em;padding-top:1em;border-top:1px solid var(--rule);font-size:16.5px;color:var(--muted)}
 .post-body .footnotes p{text-align:left;margin:0 0 .4em}

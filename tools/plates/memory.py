@@ -31,7 +31,7 @@ a('<style>.plate-memory .mk{fill:none;stroke:var(--muted);stroke-width:.8}'
   '.plate-memory .dot{fill:var(--ink);offset-rotate:0deg;animation:mdot 7s linear infinite}'
   '@keyframes mdot{0%{offset-distance:0%;opacity:0}5%{opacity:1}70%{offset-distance:100%;opacity:1}74%,100%{offset-distance:100%;opacity:0}}'
   '@keyframes mhead{0%,70%{opacity:0}76%,96%{opacity:1}100%{opacity:0}}'
-  '@media (prefers-reduced-motion:reduce){.plate-memory .dot{display:none}.plate-memory .head{animation:none;opacity:1}}'
+  '@media all{.plate-memory .dot{display:none}.plate-memory .head{animation:none;opacity:1}}'
   '</style>')
 
 # ---- context region

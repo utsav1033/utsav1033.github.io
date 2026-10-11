@@ -11,7 +11,7 @@
 .plate-tracing .strm{fill:var(--ink)}
 .plate-tracing .ph{stroke:var(--muted);stroke-width:.8;opacity:0;animation:tr-ph 7s linear infinite}
 @keyframes tr-ph{0%{transform:translateX(0);opacity:0}6%{opacity:.9}70%{transform:translateX(348px);opacity:.9}88%{transform:translateX(348px);opacity:.9}100%{transform:translateX(348px);opacity:0}}
-@media (prefers-reduced-motion:reduce){.plate-tracing .ph{animation:none;opacity:0}}
+@media all{.plate-tracing .ph{animation:none;opacity:0}}
 </style>
 <rect class="bx" x="18" y="17" width="22" height="14"/><path class="cap" d="M 13 33.5 H 45"/>
 <path class="leader" d="M 48 25 H 58"/>

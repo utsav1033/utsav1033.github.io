@@ -51,7 +51,7 @@ style='''<style>
 .plate-flowgap .m{stroke:var(--muted);stroke-width:.8;stroke-dasharray:1.2 2.6}
 .plate-flowgap .flow{animation:fgmarch 6s linear infinite}
 @keyframes fgmarch{to{stroke-dashoffset:-42}}
-@media (prefers-reduced-motion:reduce){.plate-flowgap .flow{animation:none}}
+@media all{.plate-flowgap .flow{animation:none}}
 </style>'''
 aria=("Left: 298 call transcripts embedded and clustered into intent clouds. Six clouds map by dotted lines onto the six nodes of the declared flow under Classify intent. "
       "A seventh cloud, in red, matches no node (13 calls) and is wired in as a dashed, drafted node: Lab reports.")

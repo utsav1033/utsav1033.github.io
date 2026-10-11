@@ -26,7 +26,7 @@ A('''<style>
 .plate-tracing .strm{fill:var(--ink)}
 .plate-tracing .ph{stroke:var(--muted);stroke-width:.8;opacity:0;animation:tr-ph 7s linear infinite}
 @keyframes tr-ph{0%{transform:translateX(0);opacity:0}6%{opacity:.9}70%{transform:translateX(348px);opacity:.9}88%{transform:translateX(348px);opacity:.9}100%{transform:translateX(348px);opacity:0}}
-@media (prefers-reduced-motion:reduce){.plate-tracing .ph{animation:none;opacity:0}}
+@media all{.plate-tracing .ph{animation:none;opacity:0}}
 </style>''')
 # --- Macs and day files
 for c in (26,50,74):
