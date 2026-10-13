@@ -17,21 +17,13 @@
       plate: memory
       fig: 1
       title: Long-horizon memory
-    - name: Symphony of smart (slow) and dumb (fast) agents
-      text: >-
-        The smart model takes seconds to think. A small, fast model starts acting the moment you
-        ask, and the smart one takes over from the first step it hasn’t done. **The fastest task
-        went from 27 s to 19 s.**
-      plate: sync
-      fig: 2
-      title: The fast model covers
     - name: Knowing why a run failed
       text: >-
         Every run leaves a trace of each step and model call, with a plain reason when it stops.
         One command opens any run, from any machine, at the step that broke. What people say
         stays on their Mac unless they opt in.
       plate: tracing
-      fig: 3
+      fig: 2
       title: Tracing a failed run
     - name: along the way...
       points:
