@@ -1,21 +1,7 @@
-# Open source: PRs I opened and reviews I gave. status is shown as-is, so keep it honest.
-- repo: KernelBench
-  title: Draw new inputs for every timed call
-  url: https://github.com/ScalingIntelligence/KernelBench/pulls?q=is%3Apr+author%3Autsav1033
-  status: open PR
-  text: Timing reused the same input tensors on every call, so a kernel could memoize its result and look fast. Fixes issue 171.
-- repo: MLX
-  title: Use gemv_wide for fp32 matmuls with 2–3 rows
-  url: https://github.com/ml-explore/mlx/pulls?q=is%3Apr+author%3Autsav1033
-  status: open PR
-  text: Routes small-batch fp32 matmuls to the wide matrix-vector kernel on Metal.
-- repo: MLX
-  title: Reviews on Metal kernels
-  url: https://github.com/ml-explore/mlx/pulls?q=is%3Apr+reviewed-by%3Autsav1033
-  status: 2 reviews
-  text: New quantized matrix-vector kernels for 6–16 rows, and a fix for the cross-entropy gradient on non-contiguous inputs.
-- repo: mem0
-  title: Give the reranker the full candidate pool
-  url: https://github.com/mem0ai/mem0/pulls?q=is%3Apr+reviewed-by%3Autsav1033
-  status: review
-  text: Reviewed a fix so memory search reranks every candidate, not the already-truncated top-k.
+# Open source: repos I've contributed to (pull requests and reviews).
+- name: MLX
+  url: https://github.com/ml-explore/mlx
+- name: KernelBench
+  url: https://github.com/ScalingIntelligence/KernelBench
+- name: mem0
+  url: https://github.com/mem0ai/mem0
