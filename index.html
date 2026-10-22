@@ -15,7 +15,7 @@ layout: default
 
 <section>
 {% include section-title.html id="open-source" title="Open source" icon="branch" %}
-<ul class="list">{% for x in site.data.oss %}<li><div class="head"><span><span class="oss-repo">{{ x.repo }}</span> · <a href="{{ x.url }}">{{ x.title }}</a></span><span class="when">{{ x.status }}</span></div><p class="sub">{{ x.text }}</p></li>{% endfor %}</ul>
+<p class="oss">Pull requests and reviews in {% for x in site.data.oss %}{% if forloop.last %} and {% elsif forloop.index > 1 %}, {% endif %}<a class="oss-repo" href="{{ x.url }}">{{ x.name }}</a>{% endfor %}.</p>
 </section>
 
 <section>
