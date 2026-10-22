@@ -28,6 +28,7 @@
 
 - org: FlowGap
   url: https://github.com/utsav1033/flowgap
+  wide: true
   when: voice agents
   items:
     - points:

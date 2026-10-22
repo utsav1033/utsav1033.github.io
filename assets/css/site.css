@@ -114,6 +114,10 @@ ul.ornate strong{font-weight:700;color:var(--ink)}
 .project{min-width:0}
 .project>p{margin:0 0 .9em}
 .project+.project:nth-child(n+3){border-top:1px solid var(--rule);padding-top:1.3em}
+/* wide: words left, figure right, across both columns */
+.project.wide{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:3em;align-items:start}
+.project.wide>:not(figure){grid-column:1}
+.project.wide>figure{grid-column:2;grid-row:1/span 9;margin:0}
 
 /* ---------- figures, framed ---------- */
 figure{margin:.15em 0 0;background:var(--card);border:1px solid var(--hair);padding:14px 16px 12px;position:relative}
@@ -244,6 +248,8 @@ footer p{margin:.2em 0}
   .card.wide figure{margin:0 0 .8em}
   .pair figure{margin-top:1em}
   .project+.project{border-top:1px solid var(--rule);padding-top:1.3em}
+  .project.wide{display:block}
+  .project.wide>figure{margin-top:.6em}
   .page{max-width:42em}
 }
 @media (max-width:560px){
