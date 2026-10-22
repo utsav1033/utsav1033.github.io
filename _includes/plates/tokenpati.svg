@@ -1,0 +1,34 @@
+<svg class="plate-tokenpati" viewBox="0 0 540 252" role="img" aria-label="Three models measured against the usable memory of an Apple M4 with 16 GiB. Each bar is weights plus KV cache. Qwen3 8B fits and runs fast at 18 tokens a second; Qwen3 14B fits and runs at 10; Mistral Small 24B needs 15 GiB, crosses the 12 GiB usable line, and is too big.">
+<defs><pattern id="tp-hatch" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M 0 0 V 4" class="tp-h"/></pattern></defs>
+<style>.plate-tokenpati .tp-h{stroke:var(--ink);stroke-width:.8}.plate-tokenpati .wt{fill:url(#tp-hatch);stroke:var(--ink);stroke-width:1}.plate-tokenpati .kv{fill:var(--card);stroke:var(--ink);stroke-width:1}.plate-tokenpati .over{fill:var(--red);opacity:.22}.plate-tokenpati .lim{fill:none;stroke:var(--red);stroke-width:1.1;stroke-dasharray:4 3}.plate-tokenpati .bound{fill:none;stroke:var(--hair);stroke-width:.9}</style>
+<text class="name" x="36" y="24">Apple M4</text>
+<text class="sm" x="110" y="24">16 GiB unified · 4-bit · 8k context</text>
+<path class="bound" d="M 340.0 40 V 199"/>
+<text class="sm" x="340.0" y="213" text-anchor="middle">16 GiB</text>
+<path class="lim" d="M 264.0 40 V 199"/>
+<text class="red" x="264.0" y="213" text-anchor="middle">usable 12</text>
+<text x="36" y="63">Qwen3 8B</text>
+<text class="sm" x="258.0" y="63" text-anchor="end">5.8 GiB</text>
+<rect class="wt" x="36" y="70" width="89.4" height="13"/>
+<rect class="kv" x="125.4" y="70" width="21.4" height="13"/>
+<text x="368.0" y="81">18 tok/s</text>
+<text class="sm" x="368.0" y="97">runs fast</text>
+<text x="36" y="115">Qwen3 14B</text>
+<text class="sm" x="258.0" y="115" text-anchor="end">9.7 GiB</text>
+<rect class="wt" x="36" y="122" width="161.3" height="13"/>
+<rect class="kv" x="197.3" y="122" width="23.8" height="13"/>
+<text x="368.0" y="133">10 tok/s</text>
+<text class="sm" x="368.0" y="149">runs</text>
+<text x="36" y="167">Mistral Small 24B</text>
+<text class="sm" x="258.0" y="167" text-anchor="end">15.0 GiB</text>
+<rect class="wt" x="36" y="174" width="261.6" height="13"/>
+<rect class="kv" x="297.6" y="174" width="23.8" height="13"/>
+<rect class="over" x="264.0" y="174" width="57.4" height="13"/>
+<text class="red" x="368.0" y="185">too big</text>
+<text class="sm" x="368.0" y="201">never downloads</text>
+<rect class="wt" x="36" y="224" width="16" height="10"/>
+<text class="sm" x="58" y="234">weights</text>
+<rect class="kv" x="120" y="224" width="16" height="10"/>
+<text class="sm" x="142" y="234">KV cache</text>
+<text class="sm" x="368.0" y="234">speed ≈ bandwidth ÷ bytes</text>
+</svg>

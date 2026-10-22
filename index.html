@@ -14,6 +14,11 @@ layout: default
 </section>
 
 <section>
+{% include section-title.html id="open-source" title="Open source" icon="branch" %}
+<ul class="list">{% for x in site.data.oss %}<li><div class="head"><span><span class="oss-repo">{{ x.repo }}</span> · <a href="{{ x.url }}">{{ x.title }}</a></span><span class="when">{{ x.status }}</span></div><p class="sub">{{ x.text }}</p></li>{% endfor %}</ul>
+</section>
+
+<section>
 {% include section-title.html id="things" title="Smaller things" icon="lamp" %}
 {% include things.html %}
 </section>

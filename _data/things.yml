@@ -3,10 +3,6 @@
   url: https://github.com/utsav1033/agent-mark
   kind: evals
   text: Scores agents you can’t see inside by tracing every tool call; one adapter runs Composio’s Trustclaw against a live inbox.
-- name: tokenpati
-  url: https://github.com/utsav1033/jalad-local
-  kind: Rust CLI
-  text: A game show where your machine is in the hot seat. One command works out which local LLMs it can run, at what quant and how fast.
 - name: Feynman, Vol. III
   url: https://utsav1033.github.io/feynman-vol3/
   kind: web
