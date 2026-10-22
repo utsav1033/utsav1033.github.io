@@ -12,7 +12,7 @@
       title: Seven gates, one secret
       caption: The model writes kernels but never grades them. Failures go back with where and why; the hidden draw is never shown to it.
 
-- org: tokenpati
+- org: tokenp
   url: https://github.com/utsav1033/jalad-local
   when: local inference
   items:
@@ -24,7 +24,7 @@
       plate: tokenpati
       fig: 5
       title: What fits, and how fast
-      caption: tokenpati’s own maths on a 16 GiB M4. The 24B model needs 15 GiB, crosses the usable line, and is never downloaded.
+      caption: tokenp’s own maths on a 16 GiB M4. The 24B model needs 15 GiB, crosses the usable line, and is never downloaded.
 
 - org: FlowGap
   url: https://github.com/utsav1033/flowgap
