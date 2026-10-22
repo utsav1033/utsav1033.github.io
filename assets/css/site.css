@@ -164,7 +164,9 @@ svg .lnr{fill:none;stroke:var(--red);stroke-width:1.1}
 .list .head{display:flex;justify-content:space-between;align-items:baseline;gap:1em}
 .list .sub{color:var(--muted);font-size:18px;margin:.05em 0 0}
 .empty{color:var(--muted)}
-.oss-repo{font-family:var(--fell);font-size:21px}
+.oss-lead{margin:0 0 .5em;max-width:var(--text)}
+/* body font with lining figures, so the zero in mem0 never reads as an o */
+.oss .t-name{font-family:var(--body);font-weight:500;font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1}
 /* smaller things */
 .things{list-style:none;margin:0;padding:0;max-width:44em}
 .things li{display:grid;grid-template-columns:11em 7.5em 1fr;gap:0 1em;align-items:baseline;padding:.45em 0;border-bottom:1px dotted var(--hair)}

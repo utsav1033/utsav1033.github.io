@@ -1,7 +1,13 @@
-# Open source: repos I've contributed to (pull requests and reviews).
+# Open source: repos I've sent pull requests and reviews to. kind is the small tag beside the name.
 - name: MLX
   url: https://github.com/ml-explore/mlx
+  kind: kernels
+  text: Apple’s array framework for machine learning on Apple silicon.
 - name: KernelBench
   url: https://github.com/ScalingIntelligence/KernelBench
+  kind: kernels
+  text: Stanford’s benchmark for whether LLMs can write fast, correct GPU kernels.
 - name: mem0
   url: https://github.com/mem0ai/mem0
+  kind: agent memory
+  text: The memory layer that lets AI agents remember across sessions.
