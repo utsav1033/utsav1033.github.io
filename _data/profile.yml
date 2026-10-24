@@ -6,12 +6,10 @@ links:
   - { label: LinkedIn, url: "https://linkedin.com/in/utsav-khairnar" }
   - { label: Resume,   url: "/resume.pdf" }
 about: Engineering intern at [Alma](https://alma.inc), making computer use a reality.
-# Short lines under the tagline: k is the small label, v the line.
-notes:
-  - { k: builds, v: "Harnesses: the scaffolding that turns a model into something you can trust." }
-  - { k: lately, v: Falling down the GPU-kernel rabbit hole. }
-  - { k: off-screen, v: "Reading a lot, drawing now and then." }
-  - { k: mostly, v: Just looking for a good problem. }
+# A couple of short lines under the tagline, one paragraph each.
+more:
+  - I build harnesses, the scaffolding that turns a model into something you can trust. Lately, GPU kernels too.
+  - Away from the screen I read a lot and draw now and then.
 footer: No pages were dog-eared in the making of this site.
 quote:
   text: Live, then, and be happy, and never forget that until the day when God shall deign to reveal the future to man, all human wisdom is contained in these two words, ‘Wait and hope.’
