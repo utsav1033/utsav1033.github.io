@@ -5,13 +5,13 @@ links:
   - { label: GitHub,   url: "https://github.com/utsav1033" }
   - { label: LinkedIn, url: "https://linkedin.com/in/utsav-khairnar" }
   - { label: Resume,   url: "/resume.pdf" }
-about: Engineering intern at [Alma](https://alma.inc), making computer use a reality.
+about: I build harnesses for AI agents, the memory, evals and tracing that make them worth trusting.
 # A couple of short lines under the tagline, one paragraph each.
 more:
-  - I build harnesses, the scaffolding that turns a model into something you can trust. Lately, GPU kernels too.
+  - Engineering intern at [Alma](https://alma.inc), where our agents do real work in Blender and AutoCAD. On the side, GPU kernels and local inference.
   - Away from the screen I read a lot and draw now and then.
 footer: No pages were dog-eared in the making of this site.
 quote:
-  text: Live, then, and be happy, and never forget that until the day when God shall deign to reveal the future to man, all human wisdom is contained in these two words, ‘Wait and hope.’
-  by: Alexandre Dumas
-  work: The Count of Monte Cristo
+  text: All endings are also beginnings. We just don’t know it at the time.
+  by: Mitch Albom
+  work: The Five People You Meet in Heaven

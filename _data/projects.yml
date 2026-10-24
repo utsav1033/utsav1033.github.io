@@ -3,10 +3,10 @@
   when: GPU kernels
   items:
     - points:
-        - A model writes Metal kernels for Apple Silicon; a strict judge proves each one on hundreds of inputs, some the model never sees.
-        - The judge caught **all 75** bugs I planted; the usual one-size check caught 40.
-        - Alone, the kernels beat MLX by up to **1.8×**. Inside Qwen they barely matter, because from 3B up stock MLX already decodes at the memory-bandwidth limit.
-        - "What helps is reading less memory per token: speculative decoding made Qwen 3B **1.48× faster** at an 8k prompt, same output."
+        - Claude writes Metal kernels for Apple Silicon and carmen trusts none of them. Each is checked against a float64 answer key on hundreds of inputs, some the model never sees, then timed against MLX with error bars.
+        - "The judge is tested too: I planted 75 realistic bugs and it caught **all 75**, where the one-input check most benchmarks use caught 40. It also caught two of my own false speedups."
+        - "Alone, the kernels beat MLX by up to **1.82×**, wherever MLX runs several small kernels that could be one. Fused into Qwen 2.5 0.5B, they make decode **3% faster** with identical output."
+        - "Bigger models taught me the real limit: from 3B up, MLX already decodes at 97% of memory bandwidth. What helps is reading fewer bytes per token, so speculative decoding made Qwen 3B **1.48× faster** at an 8k prompt."
       plate: carmen
       fig: 4
       title: Seven gates, one secret
@@ -35,7 +35,7 @@
         - A voice agent can only handle what someone wrote a node for.
         - FlowGap reads its call transcripts and finds what callers actually wanted.
         - It drafts the nodes the flow is missing.
-        - In 298 real calls, **49% asked for something the flow couldn’t handle.**
+        - In 298 test calls, **49% asked for something the flow couldn’t handle.**
       plate: flowgap
       fig: 6
       title: Where calls leak

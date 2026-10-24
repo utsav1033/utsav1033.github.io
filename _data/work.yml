@@ -28,14 +28,23 @@
         - took ownership of 14 automated workflows, like saving or visualising content with a single trigger word.
         - designed robust CLIs for various apps for v0 of the agent.
         - built demos to turn the tech into a product.
-        - made the agent’s decision layer faster by capping its token usage, with no loss in accuracy.
+        - replaced the agent’s 72k-character planner with a one-pass classifier over 27 tools; tasks went from 33 s to 19 s and accuracy from 94% to 97%.
         - shipped the command-line version of the beta.
 
 - org: Reliance Industries
   when: Dec 2025 – Mar 2026
-  points:
-    - "<span class=\"k\">distributed systems</span>Improved the document-parsing microservice behind the letter-of-credit tool that business operations runs on: each document now takes **23 s instead of 72 s**, over 3,000+ documents a day for 230 sales executives."
-    - "<span class=\"k\">ML systems</span>Trained a model that forecasts salt production yield across six regions, **27% more accurate** than the old baseline."
+  lead: "ML engineering intern. Two things I built and shipped:"
+  groups:
+    - name: Reading letters of credit
+      points:
+        - Built the PDF-parsing microservice behind the internal letter-of-credit scrutiny tool, with OCR and a local LLM doing the reading.
+        - Each document now takes **23 s instead of 72 s**.
+        - It handles **3,000+ documents a day** for 230 sales executives across India.
+    - name: Forecasting salt yield
+      points:
+        - An XGBoost model trained on ten years of production data across six regions.
+        - "**27% more accurate** than the baseline it replaced."
+        - Served over FastAPI, with a dashboard and alerts for each region’s production planning.
 
 - org: Brydgework
   when: Apr – May 2026
