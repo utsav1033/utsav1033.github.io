@@ -2,7 +2,7 @@
 <header class="intro">
   <h1 class="name">{{ p.name }}</h1>
   <p class="city">{{ p.city }}</p>
-  <p class="links">{% for l in p.links %}<a href="{{ l.url }}">{{ l.label }}</a>{% endfor %}</p>
+  <p class="links">{% for l in p.links %}<a href="{{ l.url }}">{% include link-icon.html icon=l.icon %}{{ l.label }}</a>{% endfor %}</p>
   <p class="tagline">{{ p.about | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
   {% if p.more %}<div class="about">{% for l in p.more %}<p>{{ l }}</p>{% endfor %}</div>{% endif %}
   {% if p.quote %}<blockquote class="epigraph"><p>“{{ p.quote.text }}”</p><footer>— {{ p.quote.by }}, <cite>{{ p.quote.work }}</cite></footer></blockquote>{% endif %}

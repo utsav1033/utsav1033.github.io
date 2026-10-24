@@ -1,10 +1,10 @@
 name: Utsav Khairnar
 city: Bangalore, IN
 links:
-  - { label: Email,    url: "mailto:utsavkhairnar14@gmail.com" }
-  - { label: GitHub,   url: "https://github.com/utsav1033" }
-  - { label: LinkedIn, url: "https://linkedin.com/in/utsav-khairnar" }
-  - { label: Resume,   url: "/resume.pdf" }
+  - { label: GitHub,   url: "https://github.com/utsav1033", icon: github }
+  - { label: LinkedIn, url: "https://linkedin.com/in/utsav-khairnar", icon: linkedin }
+  - { label: Email,    url: "mailto:utsavkhairnar14@gmail.com", icon: mail }
+  - { label: Resume,   url: "/resume.pdf", icon: doc }
 about: Engineering intern at [Alma](https://alma.inc), making computer use a reality.
 # A couple of short lines under the tagline, one paragraph each.
 more:
