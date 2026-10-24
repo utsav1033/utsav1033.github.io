@@ -1,4 +1,4 @@
-# Open source: repos I've sent pull requests and reviews to. kind is the small tag beside the name.
+# Open source: agent, memory and kernel repos I contribute to. kind is the small tag beside the name.
 - name: MLX
   url: https://github.com/ml-explore/mlx
   kind: kernels

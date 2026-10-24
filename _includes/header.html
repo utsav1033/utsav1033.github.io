@@ -3,6 +3,7 @@
   <h1 class="name">{{ p.name }}</h1>
   <p class="city">{{ p.city }}</p>
   <p class="links">{% for l in p.links %}<a href="{{ l.url }}">{{ l.label }}</a>{% endfor %}</p>
-  <div class="about">{{ p.about | markdownify }}</div>
+  <p class="tagline">{{ p.about | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+  {% if p.notes %}<ul class="notes">{% for n in p.notes %}<li><span class="k">{{ n.k }}</span><span>{{ n.v }}</span></li>{% endfor %}</ul>{% endif %}
   {% if p.quote %}<blockquote class="epigraph"><p>“{{ p.quote.text }}”</p><footer>— {{ p.quote.by }}, <cite>{{ p.quote.work }}</cite></footer></blockquote>{% endif %}
 </header>

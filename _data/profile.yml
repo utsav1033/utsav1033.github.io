@@ -5,13 +5,15 @@ links:
   - { label: GitHub,   url: "https://github.com/utsav1033" }
   - { label: LinkedIn, url: "https://linkedin.com/in/utsav-khairnar" }
   - { label: Resume,   url: "/resume.pdf" }
-about: >-
-  Engineering intern at [Alma](https://alma.inc), working on making computer use a reality.
-  I like building harnesses, the scaffolding that turns a model into something you can trust,
-  and lately I’ve been falling down the GPU-kernel rabbit hole. Mostly I just like a good
-  problem. Away from the screen I read a lot and draw now and then.
+about: Engineering intern at [Alma](https://alma.inc), making computer use a reality.
+# Short lines under the tagline: k is the small label, v the line.
+notes:
+  - { k: builds, v: "Harnesses: the scaffolding that turns a model into something you can trust." }
+  - { k: lately, v: Falling down the GPU-kernel rabbit hole. }
+  - { k: off-screen, v: "Reading a lot, drawing now and then." }
+  - { k: mostly, v: Just looking for a good problem. }
 footer: No pages were dog-eared in the making of this site.
 quote:
-  text: There is neither happiness nor misery in the world; there is only the comparison of one state with another, nothing more. He who has felt the deepest grief is best able to experience supreme happiness. We must have felt what it is to die, Morrel, that we may appreciate the enjoyments of life. Live, then, and be happy, and never forget that until the day when God shall deign to reveal the future to man, all human wisdom is contained in these two words, ‘Wait and hope.’
+  text: Live, then, and be happy, and never forget that until the day when God shall deign to reveal the future to man, all human wisdom is contained in these two words, ‘Wait and hope.’
   by: Alexandre Dumas
   work: The Count of Monte Cristo

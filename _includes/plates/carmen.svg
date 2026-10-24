@@ -1,4 +1,4 @@
-<svg class="plate-carmen" viewBox="0 0 540 264" role="img" aria-label="Carmy, the model, writes three kernel drafts. Each passes seven gates in order: static, compile, no-tolerance checks, visible battery, fresh fuzz, a hidden draw of secret inputs whose results Carmy never sees, and timing against MLX. Failures return to Carmy with where and why; the winner is fused into Qwen 2.5 0.5B, 8 kernels to 2 per layer, decode 1.03 times faster. Below: of 75 planted bugs, a one-shape check lets 35 through; the judge catches all 75.">
+<svg class="plate-carmen" viewBox="0 0 540 264" role="img" aria-label="Carmy, the model, writes three kernel drafts. Each passes seven gates in order: static, compile, no-tolerance checks, visible battery, fresh fuzz, a hidden draw of secret inputs whose results Carmy never sees, and timing against MLX. Failures return to Carmy with where and why; the winner is fused into Qwen 2.5 0.5B, 8 kernels to 2 per layer, decode 1.02 times faster. Below: of 75 planted bugs, a one-shape check lets 35 through; the judge catches all 75.">
 <style>
 .plate-carmen .gate{fill:none;stroke:var(--ink);stroke-width:1.4;stroke-linecap:square}
 .plate-carmen .gate-r{fill:none;stroke:var(--red);stroke-width:1.4;stroke-linecap:square}
@@ -79,7 +79,7 @@
 <path class="layers" d="M 456 65 H 524 M 456 67 H 524 M 456 69 H 524 M 456 71 H 524 M 456 73 H 524 M 456 75 H 524 M 456 77 H 524 M 456 79 H 524 M 456 81 H 524 M 456 83 H 524 M 456 85 H 524 M 456 87 H 524 M 456 89 H 524 M 456 91 H 524 M 456 93 H 524 M 456 95 H 524 M 456 97 H 524 M 456 99 H 524 M 456 101 H 524 M 456 103 H 524 M 456 105 H 524 M 456 107 H 524 M 456 109 H 524 M 456 111 H 524"/>
 <rect class="frame" x="453" y="61" width="74" height="54"/>
 <text class="sm" x="490" y="135" text-anchor="middle">8 kernels → 2</text>
-<text class="sm" x="490" y="151" text-anchor="middle">decode 1.03×</text>
+<text class="sm" x="490" y="151" text-anchor="middle">decode 1.02×</text>
 <path class="div" d="M 16 166 H 524"/>
 <text class="sm" x="160" y="190">75 planted bugs</text>
 <text x="16" y="214">one-shape check</text>

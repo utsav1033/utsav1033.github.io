@@ -18,7 +18,7 @@ gates = [  # x, label, tier (0 = upper row, 1 = lower row)
 ]
 TIER_Y = {0: 40, 1: 58}
 
-A(f'<svg class="plate-carmen" viewBox="0 0 540 {H}" role="img" aria-label="Carmy, the model, writes three kernel drafts. Each passes seven gates in order: static, compile, no-tolerance checks, visible battery, fresh fuzz, a hidden draw of secret inputs whose results Carmy never sees, and timing against MLX. Failures return to Carmy with where and why; the winner is fused into Qwen 2.5 0.5B, 8 kernels to 2 per layer, decode 1.03 times faster. Below: of 75 planted bugs, a one-shape check lets 35 through; the judge catches all 75.">')
+A(f'<svg class="plate-carmen" viewBox="0 0 540 {H}" role="img" aria-label="Carmy, the model, writes three kernel drafts. Each passes seven gates in order: static, compile, no-tolerance checks, visible battery, fresh fuzz, a hidden draw of secret inputs whose results Carmy never sees, and timing against MLX. Failures return to Carmy with where and why; the winner is fused into Qwen 2.5 0.5B, 8 kernels to 2 per layer, decode 1.02 times faster. Below: of 75 planted bugs, a one-shape check lets 35 through; the judge catches all 75.">')
 A('''<style>
 .plate-carmen .gate{fill:none;stroke:var(--ink);stroke-width:1.4;stroke-linecap:square}
 .plate-carmen .gate-r{fill:none;stroke:var(--red);stroke-width:1.4;stroke-linecap:square}
@@ -94,7 +94,7 @@ d = " ".join(f"M {mx0} {my0+i*2} H {mx1}" for i in range(24))
 A(f'<path class="layers" d="{d}"/>')
 A(f'<rect class="frame" x="{mx0-3}" y="{my0-4}" width="{mx1-mx0+6}" height="{24*2+6}"/>')
 A(f'<text class="sm" x="490" y="{my0+70}" text-anchor="middle">8 kernels → 2</text>')
-A(f'<text class="sm" x="490" y="{my0+86}" text-anchor="middle">decode 1.03×</text>')
+A(f'<text class="sm" x="490" y="{my0+86}" text-anchor="middle">decode 1.02×</text>')
 
 # ---- division
 A(f'<path class="div" d="M 16 166 H 524"/>')

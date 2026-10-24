@@ -3,10 +3,10 @@
   when: GPU kernels
   items:
     - points:
-        - A model writes Metal kernels for Apple Silicon, but never grades its own work.
-        - A judge tests each one on hundreds of inputs, including some the model never sees, and only then times it.
-        - The survivors fused **8 MLX kernels into 2** per layer of Qwen 2.5, decoding **3% faster** with identical output.
-        - The judge caught **all 75** bugs I planted; a one-shape check caught 40.
+        - A model writes Metal kernels for Apple Silicon; a strict judge proves each one on hundreds of inputs, some the model never sees.
+        - The judge caught **all 75** bugs I planted; the usual one-size check caught 40.
+        - Alone, the kernels beat MLX by up to **1.8×**. Inside Qwen they barely matter, because from 3B up stock MLX already decodes at the memory-bandwidth limit.
+        - "What helps is reading less memory per token: speculative decoding made Qwen 3B **1.48× faster** at an 8k prompt, same output."
       plate: carmen
       fig: 4
       title: Seven gates, one secret
