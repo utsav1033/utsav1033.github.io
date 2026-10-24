@@ -6,11 +6,10 @@
   --fellsc:"IM Fell English SC","IM Fell English",Garamond,serif;
   --text:32em;
 }
-/* dark is the same paper, just later in the evening: warm brown stock, cream ink */
 :root[data-theme="dark"]{
-  --paper:#2b241b; --card:#332b21; --ink:#eadcc0; --muted:#ab9b80; --hair:#6f604a; --rule:#463b2d; --red:#e0875c;}
+  --paper:#121212; --card:#191918; --ink:#e6e3dc; --muted:#9a968f; --hair:#55534e; --rule:#2c2b29; --red:#e2866b;}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --paper:#2b241b; --card:#332b21; --ink:#eadcc0; --muted:#ab9b80; --hair:#6f604a; --rule:#463b2d; --red:#e0875c;}}
+  --paper:#121212; --card:#191918; --ink:#e6e3dc; --muted:#9a968f; --hair:#55534e; --rule:#2c2b29; --red:#e2866b;}}
 :root[data-theme="light"]{color-scheme:light} :root[data-theme="dark"]{color-scheme:dark}
 
 *{box-sizing:border-box}
@@ -24,9 +23,9 @@ a:hover{color:var(--red);text-decoration-color:var(--red)}
 p{margin:0 0 .7em}
 strong{font-weight:700}
 
-/* in the dark the grain stays brown, and the edges fall off like paper under a lamp */
-:root[data-theme="dark"] body{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .08  0 0 0 0 .05  0 0 0 0 .02  0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),radial-gradient(ellipse at 50% 30%,transparent 45%,rgba(10,6,2,.38) 100%);background-attachment:scroll,fixed}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .08  0 0 0 0 .05  0 0 0 0 .02  0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),radial-gradient(ellipse at 50% 30%,transparent 45%,rgba(10,6,2,.38) 100%);background-attachment:scroll,fixed}}
+/* in the dark the grain is grey, not brown */
+:root[data-theme="dark"] body{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}}
 
 /* ---------- light / dark switch, top left ---------- */
 .theme-toggle{font:inherit;position:absolute;top:calc(3.5em + 4px);right:2.5em;width:40px;height:40px;padding:6px;border:0;background:none;color:var(--muted);cursor:pointer;border-radius:50%}
