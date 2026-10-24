@@ -75,11 +75,9 @@ section{margin-top:2.6em}
 .lead{margin:0 0 .4em}
 .lead p{margin:0}
 .job-points{margin:.2em 0 0}
-/* a job told in a few short groups, two to a row */
-.groups{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.2em 2.8em;margin:1em 0 .4em}
-.group{padding-top:.9em;border-top:1px solid var(--rule)}
-.group h4{font-family:var(--body);font-weight:700;font-size:19px;letter-spacing:.01em;margin:0 0 .5em;line-height:1.3}
-.group ul.ornate{margin:0}
+/* a point's topic, run in ahead of it in bold */
+.job-points .k{font-weight:700;color:var(--ink)}
+.job-points .k::after{content:".";margin-right:.3em}
 
 /* a job's work as cards: heading, figure, paragraph; two to a row */
 .cards{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.6em 2.8em;margin:1em 0 .6em}
@@ -253,7 +251,7 @@ footer p{margin:.2em 0}
 
 /* ---------- one column below desktop width ---------- */
 @media (max-width:1080px){
-  .pair,.projects,.cards,.card.wide,.groups{grid-template-columns:minmax(0,1fr)}
+  .pair,.projects,.cards,.card.wide{grid-template-columns:minmax(0,1fr)}
   .card,.card.wide{display:block;margin-top:1.4em}
   .card.wide{display:flex;flex-direction:column}
   .card.wide figure{order:1}
