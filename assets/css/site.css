@@ -48,11 +48,11 @@ strong{font-weight:700}
 
 /* ---------- header ---------- */
 .name{font-family:var(--fellsc);font-weight:400;font-size:48px;letter-spacing:.03em;line-height:1.05;margin:0 0 .25em}
-.links{margin:0 0 1em}
+.links{margin:0 0 1.9em}
 .intro .points{max-width:40em;margin:0}
 .links a{margin-right:1em}
 .intro{max-width:none}
-.epigraph{margin:1.4em 0 0;padding:0;width:fit-content;max-width:40em}
+.epigraph{margin:1.7em 0 0;padding:0;width:fit-content;max-width:40em}
 .epigraph p{font-family:var(--fell);font-style:italic;font-size:21px;line-height:1.45;margin:0 0 .35em}
 .epigraph footer{color:var(--muted);font-size:17px;font-style:italic;margin:0;text-align:right}
 .epigraph cite{font-style:italic}
