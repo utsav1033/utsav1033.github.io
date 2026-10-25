@@ -1,7 +1,7 @@
 {% assign p = site.data.profile %}
 <header class="intro">
   <h1 class="name">{{ p.name }}</h1>
-  <ul class="ornate points">{% for l in p.points %}<li>{{ l | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>{% endfor %}</ul>
   <p class="links">{% for l in p.links %}<a href="{{ l.url }}">{{ l.label }}</a>{% endfor %}</p>
+  <ul class="ornate points">{% for l in p.points %}<li>{{ l | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>{% endfor %}</ul>
   {% if p.quote %}<blockquote class="epigraph"><p>“{{ p.quote.text }}”</p><footer>— {{ p.quote.by }}, <cite>{{ p.quote.work }}</cite></footer></blockquote>{% endif %}
 </header>

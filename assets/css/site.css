@@ -48,8 +48,8 @@ strong{font-weight:700}
 
 /* ---------- header ---------- */
 .name{font-family:var(--fellsc);font-weight:400;font-size:48px;letter-spacing:.03em;line-height:1.05;margin:0 0 .25em}
-.intro .points{max-width:40em;margin:.2em 0 .6em}
-.links{margin:0}
+.links{margin:0 0 1em}
+.intro .points{max-width:40em;margin:0}
 .links a{margin-right:1em}
 .intro{max-width:none}
 .epigraph{margin:1.4em 0 0;padding:0;width:fit-content;max-width:40em}
