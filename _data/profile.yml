@@ -1,17 +1,15 @@
 name: Utsav Khairnar
-city: Bangalore, IN
 links:
   - { label: Email,    url: "mailto:utsavkhairnar14@gmail.com" }
   - { label: GitHub,   url: "https://github.com/utsav1033" }
   - { label: LinkedIn, url: "https://linkedin.com/in/utsav-khairnar" }
   - { label: Resume,   url: "/resume.pdf" }
-about: I build harnesses for AI agents, the memory, evals and tracing that make them worth trusting.
-# A couple of short lines under the tagline, one paragraph each.
-more:
-  - Engineering intern at [Alma](https://alma.inc), where our agents do real work in Blender and AutoCAD. On the side, GPU kernels and local inference.
-  - Away from the screen I read a lot and draw now and then.
+# Two short points under the name, same size as the page text.
+points:
+  - I like building agent harnesses, memory and fast inference.
+  - Currently at [Alma](https://alma.inc), building agents that use computers.
 footer: No pages were dog-eared in the making of this site.
 quote:
-  text: All endings are also beginnings. We just don’t know it at the time.
+  text: Strangers are just family you have yet to come to know.
   by: Mitch Albom
   work: The Five People You Meet in Heaven
