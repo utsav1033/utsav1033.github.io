@@ -1,3 +1,31 @@
+- org: qwendoom
+  url: https://github.com/utsav1033/qwendoom
+  when: a model as a computer
+  items:
+    - points:
+        - "The real Doom, running inside a language model. Nothing is trained: the weights are set by hand so that every token the model writes is one step of a small computer."
+        - "There’s no OS and no disk. The game is written into the model’s memory once, and from then on the model runs every instruction itself."
+        - "Doom needs megabytes and the machine had 32 KB, so I grew its memory to **12 MB**: the model went from 11 layers to 328."
+        - "At first the first frame was **9 days** away. Skipping the parts of the model that provably can’t change the next token made it **47× faster**, with every token still matching a reference CPU. The boot is running now."
+      plate: qwendoom
+      fig: 4
+      title: The model is the machine
+      caption: Doom goes into the model’s memory once. After that, each token the model writes is fed back in, and each one is a step of the game.
+
+- org: bytesized
+  url: https://github.com/utsav1033/bytesized
+  when: tiny programs
+  items:
+    - points:
+        - "A real language model, SmolLM2-135M, run by a C program of **2,946 bytes**: small enough to fit in one QR code."
+        - "It reads the original model files as they are, and writes exactly the same words as the official Hugging Face code, token for token."
+        - "It started as 67,976 bytes of plain C. Eighteen small cuts, each one checked before the next, made it **23× smaller**."
+        - "Scan the QR code, make it runnable, and it writes code."
+      plate: bytesized
+      fig: 5
+      title: Small enough for a QR code
+      caption: The program’s size after each change. The last one lands 7 bytes under what a QR code can hold.
+
 - org: carmen
   url: https://github.com/utsav1033/carmen
   when: GPU kernels
@@ -8,7 +36,7 @@
         - "Alone, the kernels beat MLX by up to **1.82×**, wherever MLX runs several small kernels that could be one. Fused into Qwen 2.5 0.5B, they make decode **3% faster** with identical output."
         - "Bigger models taught me the real limit: from 3B up, MLX already decodes at 97% of memory bandwidth. What helps is reading fewer bytes per token, so speculative decoding made Qwen 3B **1.48× faster** at an 8k prompt."
       plate: carmen
-      fig: 4
+      fig: 6
       title: Seven gates, one secret
       caption: The model writes kernels but never grades them. Failures go back with where and why; the hidden draw is never shown to it.
 
@@ -22,7 +50,7 @@
         - Then it downloads, loads and chats with the pick on ollama, llama.cpp or MLX, and serves it on an OpenAI-compatible API.
         - "One Rust binary for macOS and Linux: `brew install utsav1033/tap/tokenpati`."
       plate: tokenpati
-      fig: 5
+      fig: 7
       title: What fits, and how fast
       caption: tokenp’s own maths on a 16 GiB M4. The 24B model needs 15 GiB, crosses the usable line, and is never downloaded.
 
@@ -37,6 +65,6 @@
         - It drafts the nodes the flow is missing.
         - In 298 test calls, **49% asked for something the flow couldn’t handle.**
       plate: flowgap
-      fig: 6
+      fig: 8
       title: Where calls leak
       caption: Intents clustered from 298 calls, matched to the flow’s nodes. The cluster with no match becomes a drafted node.

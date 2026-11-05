@@ -1,8 +1,4 @@
 # Smaller things: one line each. kind is a short tag shown beside the name.
-- name: Agent-Mark
-  url: https://github.com/utsav1033/agent-mark
-  kind: evals
-  text: Scores agents you can’t see inside by tracing every tool call; one adapter runs Composio’s Trustclaw against a live inbox.
 - name: Feynman, Vol. III
   url: https://utsav1033.github.io/feynman-vol3/
   kind: web
