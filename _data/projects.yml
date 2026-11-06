@@ -6,7 +6,8 @@
         - "The real Doom, running inside a language model. Nothing is trained: the weights are set by hand so that every token the model writes is one step of a small computer."
         - "There’s no OS and no disk. The game is written into the model’s memory once, and from then on the model runs every instruction itself."
         - "Doom needs megabytes and the machine had 32 KB, so I grew its memory to **12 MB**: the model went from 11 layers to 328."
-        - "At first the first frame was **9 days** away. Skipping the parts of the model that provably can’t change the next token made it **47× faster**, with every token still matching a reference CPU. The boot is running now."
+        - "At first the first frame was **9 days** away. Skipping the parts of the model that provably can’t change the next token made it **47× faster**, with every token still matching a reference CPU."
+        - "It works: the model booted Doom and drew its first **41 frames**, over 76 million tokens, each one **pixel-for-pixel** what the real machine draws."
       plate: qwendoom
       fig: 4
       title: The model is the machine
